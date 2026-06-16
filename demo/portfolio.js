@@ -505,7 +505,7 @@
   // before measuring — the 816px body pin does NOT un-match a viewport
   // media query, so the DOM must be restored explicitly there (the CSS side
   // is gated with body:not(...) classes).
-  var railsMql = window.matchMedia ? window.matchMedia('(min-width: 1792px)') : null;
+  var railsMql = window.matchMedia ? window.matchMedia('(min-width: 1200px)') : null;
   // Wide-screen rails: the WHOLE identity (photo + the full .identity-info —
   // name, headline, LIVE pill, stats, contact, summary) rides into the left
   // rail, photo on top. Only the timeline (#throughline) stays in the centre

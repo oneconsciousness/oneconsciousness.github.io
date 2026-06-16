@@ -2327,15 +2327,15 @@ body.print-continuous .item-meta { flex-wrap: nowrap; gap: 10px; }
    in-card (portfolio.js moves it home on beforeprint and before the
    continuous measurement). Below 1792px not one rule here applies — the
    narrow rendering stays byte-identical to the single-column layout. */
-@media (min-width: 1792px) {
+@media (min-width: 1200px) {
   body:not(.print-continuous):not(.print-doc-resume):not(.print-doc-portfolio) .layout {
-    max-width: 1824px; /* 24 pad + 270 demo + 18 gap + 1488 wrap + 24 pad */
+    max-width: 1620px;
   }
   body:not(.print-continuous):not(.print-doc-resume):not(.print-doc-portfolio) .wrap {
-    max-width: 1488px; /* 880 center + 2×280 rail + 2×24 gap */
+    max-width: none;
     display: grid;
-    grid-template-columns: minmax(250px, 1fr) minmax(0, 880px) minmax(250px, 1fr);
-    column-gap: 24px;
+    grid-template-columns: minmax(186px, 240px) minmax(0, 1fr) minmax(232px, 296px);
+    column-gap: 22px;
   }
   body:not(.print-continuous):not(.print-doc-resume):not(.print-doc-portfolio) .wrap > * { grid-column: 2; min-width: 0; }
   /* LEFT rail — the relocated summaries (one per persona; the active one
@@ -2394,6 +2394,34 @@ body.print-continuous .item-meta { flex-wrap: nowrap; gap: 10px; }
   body:not(.print-continuous):not(.print-doc-resume):not(.print-doc-portfolio) .about-rail:empty { display: none; }
   body:not(.print-continuous):not(.print-doc-resume):not(.print-doc-portfolio) .about-rail .summary { margin: 0; max-width: none; font-size: 13px; }
   body:not(.print-continuous):not(.print-doc-resume):not(.print-doc-portfolio) .about-rail .summary::before { content: "About"; display: block; width: max-content; border-top: 2px solid var(--accent-orange); padding-top: 7px; margin-bottom: 10px; font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-muted); }
+}
+
+/* ─── Apps → bottom nav bar on smaller views (sample) ──────────────────
+   Below the rail breakpoint the app selector docks to the bottom as a compact
+   tab bar (icon + label), so the big tile block never eats the reading column.
+   The About card folds back into the identity card (JS unmountRails). */
+@media (max-width: 1199px) {
+  .app-rail {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 58;
+    background: var(--card-bg); border-top: 1px solid var(--border-default);
+    padding: 6px 10px 6px 66px; /* left clears the persona strip */
+    box-shadow: 0 -4px 22px rgba(0, 0, 0, 0.10);
+  }
+  .app-rail > .about-rail { display: none; }
+  .app-rail > .section-grid {
+    display: flex; gap: 4px; margin: 0; overflow-x: auto; scrollbar-width: none;
+  }
+  .app-rail > .section-grid::-webkit-scrollbar { display: none; }
+  .section-grid .section-btn {
+    flex: 1 0 58px; min-width: 58px; flex-direction: column; gap: 2px;
+    padding: 7px 4px 6px; align-items: center; justify-content: flex-start;
+    border-radius: 10px; border-left: 0;
+  }
+  .section-grid .section-btn .icon { margin: 0; }
+  .section-grid .section-btn .body { align-items: center; gap: 0; min-width: 0; }
+  .section-grid .section-btn .label { font-size: 9.5px; line-height: 1.1; }
+  .section-grid .section-btn .meta { display: none; }
+  .layout { padding-bottom: 86px; }
 }
 
 /* THE THROUGHLINE on the continuous canvas — mirror of the print block above
