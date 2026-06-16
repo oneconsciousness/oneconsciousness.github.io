@@ -64,6 +64,19 @@
 <body>
 <div class="layout">
 
+  <!-- DEMO STRIP (sample-only) — the collapsed rail: a toggle that opens the
+       full demo-controls as an overlay, plus the persona avatars so a viewer
+       can switch persona without expanding anything. Keeps the portfolio
+       full-width by default. -->
+  <div class="persona-strip" id="persona-strip" aria-label="Demo">
+    <button class="dc-toggle" id="dc-toggle" type="button" aria-label="Open demo controls" title="Demo controls">
+      <span class="material-symbols-rounded">tune</span>
+    </button>
+    <div class="persona-strip-sep"></div>
+    <div class="persona-strip-list" id="persona-strip-list"></div>
+  </div>
+  <div class="dc-backdrop" id="dc-backdrop"></div>
+
   <!-- ════════════════════════════════════════════════════════════════
        DEMO CONTROLS · sample-only
        Lets reviewers see how the design scales across career length,
@@ -72,6 +85,7 @@
        NOT carry this panel.
        ════════════════════════════════════════════════════════════════ -->
   <aside class="demo-controls" id="demo-controls">
+    <button class="dc-close" id="dc-close" type="button" aria-label="Close controls"><span class="material-symbols-rounded">close</span></button>
     <div class="dc-header">
       <span class="dc-eyebrow">Demo controls</span>
       <h2 class="dc-title">Configure this sample</h2>
@@ -5710,5 +5724,35 @@
 <script src="data/reshma.js"></script>
 <script src="data/dominique.js"></script>
 <script src="portfolio.js"></script>
+<script>
+/* DEMO STRIP (sample-only): build the avatar rail from the panel's persona
+   buttons (reuses their data-persona; clicking a rail avatar fires the panel
+   button so setPersona runs and keeps every .persona-btn's active state in
+   sync), and wire the overlay open/close. */
+(function () {
+  var list = document.getElementById('persona-strip-list');
+  if (list) {
+    document.querySelectorAll('.demo-controls .persona-picker .persona-btn').forEach(function (pb) {
+      var img = pb.querySelector('.p-avatar img');
+      var nameEl = pb.querySelector('.p-name');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'persona-btn' + (pb.classList.contains('active') ? ' active' : '');
+      b.setAttribute('data-persona', pb.getAttribute('data-persona') || '');
+      b.title = nameEl ? nameEl.textContent.trim() : (pb.getAttribute('data-persona') || '');
+      b.innerHTML = '<span class="p-avatar"><img src="' + (img ? img.getAttribute('src') : '') + '" alt="" loading="lazy"></span>';
+      b.addEventListener('click', function () { pb.click(); });
+      list.appendChild(b);
+    });
+  }
+  var body = document.body;
+  function openDC() { body.classList.add('dc-open'); }
+  function closeDC() { body.classList.remove('dc-open'); }
+  var t = document.getElementById('dc-toggle'); if (t) t.addEventListener('click', openDC);
+  var c = document.getElementById('dc-close'); if (c) c.addEventListener('click', closeDC);
+  var bd = document.getElementById('dc-backdrop'); if (bd) bd.addEventListener('click', closeDC);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDC(); });
+})();
+</script>
 </body>
 </html>

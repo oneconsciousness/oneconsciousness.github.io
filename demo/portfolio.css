@@ -170,17 +170,13 @@ img { display: block; }
    reviewer see how the design scales across career-length and density.
 */
 .layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-  max-width: 1240px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 24px 24px 80px;
+  padding: 24px 28px 80px 96px; /* left clears the fixed persona strip */
 }
 .wrap {
-  flex: 1;
   min-width: 0;
-  max-width: 880px;
+  max-width: none; /* full width — the freed space lets the social feed go 3-up */
 }
 .material-symbols-rounded {
   font-variation-settings: 'opsz' 20, 'wght' 500, 'FILL' 0, 'GRAD' 0;
@@ -190,20 +186,65 @@ img { display: block; }
 
 /* ─── Demo controls panel (sample-only) ────────────────────────────── */
 .demo-controls {
-  flex: 0 0 270px;
-  position: sticky;
-  top: 24px;
-  align-self: flex-start;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 300px; z-index: 70;
   background: var(--card-bg);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-panel);
-  padding: 18px 18px 20px;
-  box-shadow: var(--shadow-sm);
+  border: none; border-right: 1px solid var(--border-default);
+  border-radius: 0;
+  padding: 18px 18px 24px;
+  box-shadow: none;
   font-family: var(--font-sans);
-  max-height: calc(100vh - 48px);
+  max-height: 100vh;
   overflow-y: auto;
   scrollbar-width: thin;
+  transform: translateX(-100%);
+  transition: transform 0.26s ease, box-shadow 0.26s ease;
 }
+body.dc-open .demo-controls { transform: translateX(0); box-shadow: 0 12px 48px rgba(0, 0, 0, 0.28); }
+
+/* ─── Demo strip (collapsed rail) + overlay chrome (sample-only) ────── */
+.persona-strip {
+  position: fixed; top: 0; left: 0; bottom: 0; width: 60px; z-index: 60;
+  display: flex; flex-direction: column; align-items: center; gap: 9px;
+  padding: 14px 0; background: var(--card-bg);
+  border-right: 1px solid var(--border-default);
+  overflow-y: auto; overflow-x: hidden; scrollbar-width: none;
+}
+.persona-strip::-webkit-scrollbar { display: none; }
+.dc-toggle {
+  width: 40px; height: 40px; border-radius: 11px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--surface-2); color: var(--text-muted);
+  transition: background 0.15s, color 0.15s;
+}
+.dc-toggle:hover { background: var(--accent-orange-bg); color: var(--accent-orange); }
+.dc-toggle .material-symbols-rounded { font-size: 20px; }
+.persona-strip-sep { width: 26px; height: 1px; background: var(--border-default); flex-shrink: 0; }
+.persona-strip-list { display: flex; flex-direction: column; align-items: center; gap: 9px; }
+.persona-strip .persona-btn {
+  width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+  padding: 0; border: 2px solid transparent; box-sizing: border-box; position: relative;
+  display: block; background: var(--surface-2); transition: border-color 0.15s, transform 0.15s;
+}
+.persona-strip .persona-btn:hover { transform: scale(1.09); }
+.persona-strip .persona-btn.active { border-color: var(--accent-orange); }
+.persona-strip .persona-btn .p-avatar { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; display: block; }
+.persona-strip .persona-btn .p-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.persona-strip .persona-btn .p-avatar::before { display: none; } /* no gen-star in the tiny rail */
+.dc-backdrop {
+  position: fixed; inset: 0; z-index: 65; background: rgba(8, 10, 14, 0.42);
+  opacity: 0; pointer-events: none; transition: opacity 0.26s ease;
+}
+body.dc-open .dc-backdrop { opacity: 1; pointer-events: auto; }
+.dc-close {
+  position: absolute; top: 14px; right: 14px; width: 30px; height: 30px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--surface-2); color: var(--text-muted); z-index: 3;
+  transition: background 0.15s, color 0.15s;
+}
+.dc-close:hover { background: var(--accent-orange-bg); color: var(--accent-orange); }
+.dc-close .material-symbols-rounded { font-size: 18px; }
 .demo-controls::-webkit-scrollbar { width: 6px; }
 .demo-controls::-webkit-scrollbar-track { background: transparent; }
 .demo-controls::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 3px; }
@@ -476,17 +517,9 @@ img { display: block; }
 /* Responsive: collapse layout on narrow screens */
 @media (max-width: 960px) {
   .layout {
-    flex-direction: column;
-    padding: 16px 14px 60px;
+    padding: 16px 14px 60px 74px;
   }
-  .demo-controls {
-    flex: 1 1 auto;
-    position: relative;
-    top: auto;
-    width: 100%;
-    max-height: none;
-    margin-bottom: 16px;
-  }
+  .demo-controls { width: 86vw; max-width: 320px; }
   .wrap { max-width: none; }
 }
 
@@ -556,7 +589,7 @@ img { display: block; }
   .topbar { display: none !important; }
   /* Sample-only chrome never prints: the demo-controls configurator panel
      disappears and the two-column .layout flattens to the portfolio alone. */
-  .demo-controls { display: none !important; }
+  .demo-controls, .persona-strip, .dc-backdrop { display: none !important; }
   .layout { display: block; max-width: none; padding: 0; }
   /* Animations would otherwise leave staggered items at opacity:0 on the print canvas. */
   .materialize, .stagger-1, .stagger-2, .stagger-3 { animation: none !important; opacity: 1 !important; }
@@ -1695,7 +1728,26 @@ h1.name {
 .social-embed { position: relative; width: 100%; }
 .social-embed iframe { width: 100%; border: 0; display: block; background: var(--surface-2); }
 .social-embed blockquote { margin: 0 !important; }
-.social-embed[data-embed-pending] { background: var(--surface-2); }
+/* ─── Loading states ───────────────────────────────────────────────── */
+/* Embeds: a 2×2 grid of pulsing squares centered in the pending box. */
+.social-embed[data-embed-pending] { display: flex; align-items: center; justify-content: center; background: var(--surface-2); }
+.embed-loader { display: grid; grid-template-columns: repeat(2, 13px); grid-template-rows: repeat(2, 13px); gap: 5px; }
+.embed-loader span { background: var(--accent-orange); border-radius: 3px; animation: embed-sq 1.1s ease-in-out infinite; }
+.embed-loader span:nth-child(1) { animation-delay: 0s; }
+.embed-loader span:nth-child(2) { animation-delay: 0.14s; }
+.embed-loader span:nth-child(4) { animation-delay: 0.28s; }
+.embed-loader span:nth-child(3) { animation-delay: 0.42s; }
+@keyframes embed-sq { 0%, 100% { opacity: 0.25; transform: scale(0.6); } 40% { opacity: 1; transform: scale(1); } }
+/* Image/icon areas: a generation-star sparkle that pulses + rotates behind the
+   photo until it loads (the opaque image then covers it). */
+@keyframes gen-star { 0%, 100% { opacity: 0.25; transform: translate(-50%, -50%) scale(0.7) rotate(0deg); } 50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1) rotate(90deg); } }
+.persona-btn .p-avatar, .photo-upload.has-photo { position: relative; }
+.persona-btn .p-avatar::before, .photo-upload.has-photo::before {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 50%; height: 50%; z-index: 0; pointer-events: none;
+  background: center / contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d97706'%3E%3Cpath d='M12 0c.7 6.3 5.4 11 11.7 11.7C17.4 12.4 12.7 17.1 12 23.4 11.3 17.1 6.6 12.4 .3 11.7 6.6 11 11.3 6.3 12 0z'/%3E%3C/svg%3E");
+  animation: gen-star 1.3s ease-in-out infinite;
+}
+.persona-btn .p-avatar img, .photo-upload.has-photo img { position: relative; z-index: 1; }
 .social-embed-static { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 92px; padding: 18px; text-decoration: none; color: var(--text-muted); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--surface-2); border-top: 1px solid var(--border-default); transition: color 0.15s, background 0.15s; }
 .social-embed-static:hover { color: var(--accent-orange); background: var(--accent-orange-bg); }
 .social-embed-static .material-symbols-rounded { font-size: 18px; }

@@ -813,7 +813,7 @@
         // EMBED CARD — header + a placeholder that lazy-loads the live embed when
         // scrolled into view + a quiet view link.
         card.className = 'social-card social-' + key + ' social-cls-embed';
-        card.innerHTML = head + '<div class="social-embed" data-embed-pending style="min-height:' + embedH + 'px"></div>' + viewLink;
+        card.innerHTML = head + '<div class="social-embed" data-embed-pending style="min-height:' + embedH + 'px"><div class="embed-loader" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>' + viewLink;
         var holder = card.querySelector('.social-embed');
         lazyEmbed(holder, function () {
           // Keep the min-height as a floor so the card never collapses while a
