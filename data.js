@@ -5,8 +5,8 @@ window.HOPE_DATA = {
     "headline": "Lead AI Engineer · GenAI, Multi-Agent Systems & Physical AI",
     "og_description": "Lead AI Engineer who ships production GenAI from zero — solo-built 10+ enterprise prototypes at EY (5 funded to production, $2M+ in client pipeline). Forward-deployed by instinct: he embeds with the problem, prototypes, and turns ambiguous client briefs into shipped systems.",
     "summary_short": "I build production GenAI systems from zero and ship them fast — 10+ enterprise prototypes at EY, 5 funded to production. I go where the impact is and deliver.",
-    "site_url": "",
-    "share_url": "",
+    "site_url": "https://oneconsciousness.github.io/",
+    "share_url": "https://oneconsciousness.github.io/",
     "target_company": null,
     "generation_date": "2026-06-25",
     "confidence": {
@@ -1961,26 +1961,33 @@ window.HOPE_DATA = {
   ],
   "social": [
     {
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/posts/oneconsciousness_next-time-you-think-of-giving-up-remember-activity-7471594580207931392-Jv0G",
+      "title": "Next time you think of giving up…",
+      "pinned": true
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/posts/oneconsciousness_ai-claude-simpleenglish-activity-7469026090976489472-NjQU",
+      "title": "AI, in plain English",
+      "pinned": true
+    },
+    {
       "platform": "instagram",
       "url": "https://www.instagram.com/p/DZfFoZQu_Mr/",
-      "title": "Building in public",
-      "caption": "GenAI in the wild — what it looks like when AI actually ships.",
-      "pinned": true
+      "pinned": false
     },
     {
       "platform": "instagram",
       "url": "https://www.instagram.com/p/DZOZiqIN_Vs/",
-      "title": "AI at EY's Global Summit",
-      "caption": "Senior leaders getting their hands dirty building agents. This is the shift.",
-      "pinned": true
+      "pinned": false
     },
     {
       "platform": "instagram",
       "url": "https://www.instagram.com/p/DZImFSAE1W0/",
-      "title": "Autonomous Inspection Platform",
-      "caption": null,
       "pinned": false
     }
   ],
-  "traveler": "rocket"
+  "traveler": "rocket",
+  "timeline_ridge": true
 };
