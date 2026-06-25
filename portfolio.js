@@ -503,8 +503,80 @@
     return frag(html);
   }
 
+  // radarLabel — one axis label, wrapped to 2 lines when long (split near the
+  // middle on a word break) so names like "Emergency Stabilization" don't run
+  // off the chart. anchor = start|middle|end (set from the vertex angle).
+  function radarLabel(text, x, anchor, yOne, yTop, hot) {
+    var cls = 'skill-radar-label' + (hot ? ' is-hot' : '');
+    var xs = x.toFixed(1);
+    var l1 = text, l2 = '';
+    if (text.length > 16 && text.indexOf(' ') > -1) {
+      var words = text.split(' '), a = '', b = '', half = text.length / 2;
+      for (var w = 0; w < words.length; w++) {
+        if (!a || a.length < half) a += (a ? ' ' : '') + words[w];
+        else b += (b ? ' ' : '') + words[w];
+      }
+      l1 = a; l2 = b;
+    }
+    var s = '<text class="' + cls + '" text-anchor="' + anchor + '" y="' +
+      (l2 ? yTop : yOne).toFixed(1) + '"><tspan x="' + xs + '">' + l1 + '</tspan>';
+    if (l2) s += '<tspan x="' + xs + '" dy="10.5">' + l2 + '</tspan>';
+    return s + '</text>';
+  }
+
+  // renderSkillRadar — OPTIONAL spider/radar of market-domain competency axes
+  // (skills.radar: [{axis, score 1-4, source?, inDemand?}]). Sits ABOVE the
+  // level-bar HUD. Returns '' when absent or < 3 valid axes, so older data.js
+  // (no radar key) renders the HUD alone — back-compat. Pure inline SVG; every
+  // color via var(--token)/color-mix (zero hex — §C.1). Static, so it inherits
+  // the pane's .materialize entrance and needs no reduced-motion handling.
+  function renderSkillRadar(d) {
+    var sk = d.skills || {};
+    var raw = Array.isArray(sk.radar) ? sk.radar : [];
+    var axes = raw.filter(function (a) {
+      return a && typeof a.axis === 'string' && a.axis.replace(/\s/g, '') &&
+        typeof a.score === 'number' && isFinite(a.score);
+    });
+    if (axes.length < 3) return '';              // a polygon needs >= 3 axes
+    if (axes.length > 8) axes = axes.slice(0, 8); // legibility ceiling
+
+    var N = axes.length, CX = 170, CY = 130, R = 80, RINGS = 4, LR = R + 14;
+    function ang(i) { return (-90 + i * 360 / N) * Math.PI / 180; }
+    function fx(i, r) { return (CX + r * Math.cos(ang(i))).toFixed(2); }
+    function fy(i, r) { return (CY + r * Math.sin(ang(i))).toFixed(2); }
+
+    var web = '';
+    for (var ring = 1; ring <= RINGS; ring++) {
+      var rr = R * ring / RINGS, pts = '';
+      for (var i = 0; i < N; i++) pts += (i ? ' ' : '') + fx(i, rr) + ',' + fy(i, rr);
+      web += '<polygon class="skill-radar-web" points="' + pts + '"/>';
+    }
+    var spokes = '', dots = '', labels = '', poly = '';
+    for (var j = 0; j < N; j++) {
+      spokes += '<line class="skill-radar-axis" x1="' + CX + '" y1="' + CY +
+        '" x2="' + fx(j, R) + '" y2="' + fy(j, R) + '"/>';
+      var sc = Math.max(1, Math.min(4, axes[j].score)), dr = R * sc / 4;
+      poly += (j ? ' ' : '') + fx(j, dr) + ',' + fy(j, dr);
+      var hot = !!axes[j].inDemand;
+      dots += '<circle class="skill-radar-dot' + (hot ? ' is-hot' : '') +
+        '" cx="' + fx(j, dr) + '" cy="' + fy(j, dr) + '" r="2.6"/>';
+      var c = Math.cos(ang(j)), ly = +fy(j, LR);
+      var anchor = c > 0.34 ? 'start' : (c < -0.34 ? 'end' : 'middle');
+      labels += radarLabel(esc(axes[j].axis), +fx(j, LR), anchor, ly + 3, ly - 2, hot);
+    }
+
+    var svg = '<svg class="skill-radar" viewBox="0 0 340 264" ' +
+      'preserveAspectRatio="xMidYMid meet" role="img" ' +
+      'aria-label="Competency radar across ' + N + ' domains">' +
+      web + spokes +
+      '<polygon class="skill-radar-poly" points="' + poly + '"/>' +
+      dots + labels +
+    '</svg>';
+    return '<div class="skill-radar-wrap">' + svg + '</div>';
+  }
+
   // renderSkills — grouped by category in skills.order. Seg color = LEVEL tier;
-  // --cat-color colors ONLY the ledge + name.
+  // --cat-color colors ONLY the ledge + name. A radar (skills.radar) sits above.
   function renderSkills(d) {
     var sk = d.skills || {};
     var order = Array.isArray(sk.order) ? sk.order : [];
@@ -540,6 +612,7 @@
     if (!blocks.replace(/\s/g, '')) return null; // no categories → no pane
 
     var html = '<div class="section-pane" data-pane="skills" id="pane-skills">' +
+      renderSkillRadar(d) +
       '<div class="skills-hud">' + blocks + '</div>' +
       '<a class="backtotop" href="#top" aria-hidden="true">↑ Contents</a>' +
     '</div>';
@@ -1333,6 +1406,18 @@
                       : '<span class="social-letter">' + esc((name || '?').charAt(0)) + '</span>';
       return '<span class="social-chip" style="background:' + b.c + '">' + glyph + '</span>';
     }
+    // Platforms whose LIVE embed self-brands (shows its own logo + author/source
+    // inside the embed), making our top .social-head chip redundant — so once the
+    // embed paints we hide the head (.social-selfbrand.social-embed-ok, CSS). The
+    // exceptions whose embeds DON'T reliably self-brand keep the chip: youtube,
+    // medium, dribbble, behance, figma, loom — as do ALL static/profile cards and
+    // the failed-embed fallback (the head is their only platform + caption).
+    // Verdict from per-platform embed research (current 2026).
+    var SELF_BRAND = {
+      linkedin: 1, instagram: 1, x: 1, tiktok: 1, vimeo: 1, spotify: 1,
+      soundcloud: 1, applemusic: 1, threads: 1, bluesky: 1, pinterest: 1,
+      codepen: 1, substack: 1, flickr: 1, gist: 1
+    };
     function brandColor(key) { return (B[key] || B.link).c; }
     var POST_RE = {
       tiktok: /\/video\/\d+/, instagram: /\/(p|reel|reels|tv)\//,
@@ -1392,7 +1477,7 @@
       var viewLink = '<a class="social-link" href="' + esc(url) + '" target="_blank" rel="noopener">'
         + esc(post.title || ('View on ' + name)) + '<span class="material-symbols-rounded ext">open_in_new</span></a>';
       if (embedHTML != null && EMBEDS_OK) {
-        card.className = 'social-card social-' + key + ' social-cls-embed';
+        card.className = 'social-card social-' + key + ' social-cls-embed' + (SELF_BRAND[key] ? ' social-selfbrand' : '');
         card.innerHTML = head + '<div class="social-embed" data-embed-pending style="min-height:' + embedH + 'px"><div class="embed-loader" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>' + viewLink;
         var holder = card.querySelector('.social-embed');
         lazyEmbed(holder, function () {
@@ -1404,8 +1489,21 @@
             if (settled) return; settled = true;
             if (mo) mo.disconnect(); if (poll) clearInterval(poll);
             holder.removeAttribute('data-embed-pending');
-            if (ok) { if (loader && loader.parentNode) loader.parentNode.removeChild(loader); }
-            else { holder.style.minHeight = '0'; card.classList.add('social-cls-failed'); holder.innerHTML = '<a class="social-embed-static" href="' + esc(url) + '" target="_blank" rel="noopener"><span class="material-symbols-rounded">open_in_new</span>View on ' + esc(name) + '</a>'; }
+            if (ok) { card.classList.add('social-embed-ok'); if (loader && loader.parentNode) loader.parentNode.removeChild(loader); }
+            else {
+              // Embed never painted (the routine case for tokenless Instagram/X
+              // widgets). Clear the reserved height so the card collapses to its
+              // natural size — without this the holder stays embed-tall and the
+              // CSS columns / Overview 2-up strip can't reflow (dead space). The
+              // .social-cls-failed class restyles the card as an intentional,
+              // richer brand fallback: chip + caption (already in head) + link.
+              holder.style.minHeight = '';
+              card.classList.add('social-cls-failed');
+              holder.innerHTML = '<a class="social-embed-fallback" href="' + esc(url) + '" target="_blank" rel="noopener"'
+                + ' style="--brand:' + brandColor(key) + '"><span class="social-embed-fallback-cta">'
+                + '<span class="material-symbols-rounded">open_in_new</span>View on ' + esc(name) + '</span>'
+                + '<span class="social-go material-symbols-rounded">arrow_outward</span></a>';
+            }
           }
           function check() { var f = holder.querySelector('iframe'); if (f && f.clientHeight > 40) finish(true); }
           function onload() { setTimeout(check, 250); }
@@ -1617,15 +1715,18 @@
     }
     var dMin = Infinity, dMax = -Infinity;
     density.forEach(function (v) { if (v < dMin) dMin = v; if (v > dMax) dMax = v; });
-    // STRICT LEFT→RIGHT baseline: the per-node "lift" stays OFF (lift = 0) so
-    // nodes + traveler ride one flat line — no zig-zag (PR #6's win, kept).
-    // The density "ridge" is DECOUPLED from the lift (issue #8): it is a pure
-    // z-index:0 backdrop silhouette (portfolio.css .tl-ridge) that never
-    // displaces nodes, so it can return as a concentration cue without the
-    // wobble. Opt-in per portfolio via window.HOPE_DATA.timeline_ridge (default
-    // off preserves PR #6's flat default); when on, .tl-has-ridge adds the
-    // label headroom the backdrop needs.
-    var hasRidge = !!(window.HOPE_DATA && window.HOPE_DATA.timeline_ridge);
+    // STRICT LEFT→RIGHT: the timeline is ONE clean flat line by default. The
+    // per-node "lift" floated nodes up the density curve — that vertical wobble
+    // fought the horizontal read, so it is permanently OFF (lift = 0): nodes +
+    // traveler always ride a single baseline.
+    //
+    // OPT-IN RIDGE (issue #8): the density silhouette is drawn ONLY as a static
+    // BACKDROP behind the flat nodes when the author sets
+    // HOPE_DATA.timeline_ridge = true. Nodes never move — they stay on the flat
+    // baseline. Default OFF: when timeline_ridge is absent/false, hasRidge is
+    // false, the ridge SVG is not drawn, and .tl-rail keeps its compact base
+    // margins (byte-identical to the flat default).
+    var hasRidge = !!hopeData.timeline_ridge;
     entries.forEach(function (e) { e.lift = 0; });
 
     var rail = document.createElement('div');

@@ -1202,6 +1202,46 @@ window.HOPE_DATA = {
       "Data Engineering & Visualization",
       "Physical AI & Robotics"
     ],
+    "radar": [
+      {
+        "axis": "Generative AI Engineering",
+        "score": 4,
+        "source": "SFIA 9",
+        "inDemand": true
+      },
+      {
+        "axis": "Agentic Systems",
+        "score": 4,
+        "source": "SFIA 9",
+        "inDemand": true
+      },
+      {
+        "axis": "Machine Learning & NLP",
+        "score": 3,
+        "source": "SFIA 9"
+      },
+      {
+        "axis": "Software Engineering",
+        "score": 3,
+        "source": "SFIA 9"
+      },
+      {
+        "axis": "Cloud & MLOps",
+        "score": 3,
+        "source": "SFIA 9",
+        "inDemand": true
+      },
+      {
+        "axis": "Data Engineering",
+        "score": 2,
+        "source": "SFIA 9"
+      },
+      {
+        "axis": "Physical AI",
+        "score": 2,
+        "source": "SFIA 9"
+      }
+    ],
     "categories": {
       "AI-Native Development": {
         "category": "methods",

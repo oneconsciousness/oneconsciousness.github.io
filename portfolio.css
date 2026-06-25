@@ -240,6 +240,10 @@ img { display: block; }
   body.print-doc-portfolio.print-style-ink .level-bar .seg { background: #555 !important; }
   body.print-doc-portfolio.print-style-ink .skill-cat-header .ledge { box-shadow: none; }
   body.print-doc-portfolio.print-style-ink .skill-cat { --cat-color: #333 !important; }
+  /* Radar in ink: crisp mono outline, no tint fill; the web rings follow
+     --border-default (#cfcfcf) so the chart still reads on white. */
+  body.print-doc-portfolio.print-style-ink .skill-radar-poly { fill: transparent !important; stroke: #111 !important; }
+  body.print-doc-portfolio.print-style-ink .skill-radar-dot { fill: #111 !important; }
   /* Hardcoded rgba contrib type-icon accents bypass the token swap — force monochrome. */
   body.print-doc-portfolio.print-style-ink .contrib-head .type-icon { color: #555 !important; }
 
@@ -632,6 +636,21 @@ h1.name { margin: 0 0 2px; font-size: 22px; font-weight: 700; letter-spacing: -0
 .skill-cat-header .count { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-dim); }
 .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px; }
 
+/* ── Skills radar — optional spider chart above the level-bar HUD ─────────
+   Inline SVG built by renderSkillRadar(); EVERY color is a token so light /
+   dark / ink track automatically (the radar carries no hex). Static (no
+   animation) → inherits the pane's .materialize entrance, so prefers-reduced-
+   motion is already honored. */
+.skill-radar-wrap { display: flex; justify-content: center; margin: 4px 0 24px; }
+.skill-radar { width: 100%; max-width: 440px; height: auto; overflow: visible; }
+.skill-radar-web { fill: none; stroke: var(--border-default); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.skill-radar-axis { fill: none; stroke: var(--border-subtle); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.skill-radar-poly { fill: color-mix(in srgb, var(--accent-orange) 14%, transparent); stroke: var(--accent-orange); stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.skill-radar-dot { fill: var(--accent-orange); }
+.skill-radar-dot.is-hot { stroke: var(--card-bg); stroke-width: 1.5; }
+.skill-radar-label { font-family: var(--font-mono); font-size: 9.5px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; fill: var(--text-secondary); }
+.skill-radar-label.is-hot { fill: var(--accent-orange); }
+
 /* ── Social Feed (optional app) ─── cards JS-rendered by portfolio.js into
    #social-grid. Two templates: EMBED cards (live media) + branded PROFILE
    cards (designed link tiles) — no bland link cards. MASONRY via CSS columns,
@@ -665,6 +684,26 @@ h1.name { margin: 0 0 2px; font-size: 22px; font-weight: 700; letter-spacing: -0
 .social-embed-static { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 92px; padding: 18px; text-decoration: none; color: var(--text-muted); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--surface-2); border-top: 1px solid var(--border-default); transition: color 0.15s, background 0.15s; }
 .social-embed-static:hover { color: var(--accent-orange); background: var(--accent-orange-bg); }
 .social-embed-static .material-symbols-rounded { font-size: 18px; }
+/* Self-branding live embeds (LinkedIn, Instagram, X, TikTok, players, …) already
+   show the platform + author INSIDE the embed, so once the embed paints the top
+   .social-head chip is pure redundancy — hide it. Static / profile cards and the
+   failed-embed fallback (.social-cls-failed, no .social-embed-ok) keep the head;
+   so do the weak-branding exceptions (youtube/medium/dribbble/behance/figma/loom,
+   never flagged .social-selfbrand). */
+.social-selfbrand.social-embed-ok .social-head { display: none; }
+/* FAILED-EMBED fallback — when an embed never paints (routine for tokenless
+   Instagram/X widgets) JS clears the reserved min-height and flags the card
+   .social-cls-failed, so it collapses to this brand-tinted link tile instead
+   of leaving dead space. The head (chip + caption) above already carries the
+   post content; this row is the intentional "View on …" call-to-action. */
+.social-cls-failed .social-embed { min-height: 0; background: transparent; }
+.social-cls-failed .social-link { display: none; }
+.social-embed-fallback { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 13px 12px; text-decoration: none; border-top: 1px solid var(--border-default); background: var(--surface-2); font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brand); transition: background 0.15s; }
+.social-embed-fallback:hover { background: var(--accent-orange-bg); }
+.social-embed-fallback-cta { display: inline-flex; align-items: center; gap: 7px; min-width: 0; }
+.social-embed-fallback-cta .material-symbols-rounded { font-size: 16px; }
+.social-embed-fallback .social-go { color: var(--text-dim); font-size: 18px; }
+.social-embed-fallback:hover .social-go { color: var(--brand); transform: translate(2px, -2px); }
 .social-link { display: inline-flex; align-items: center; gap: 5px; padding: 9px 13px 11px; font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; color: var(--accent-cyan); text-decoration: none; transition: color 0.15s; }
 .social-link .ext { font-size: 13px; }
 .social-link:hover { color: var(--accent-orange); }
@@ -694,10 +733,6 @@ h1.name { margin: 0 0 2px; font-size: 22px; font-weight: 700; letter-spacing: -0
 .overview-latest { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: stretch; }
 .overview-latest .social-card { display: flex; flex-direction: column; }
 .overview-latest .social-cls-profile .social-profile { flex: 1; }
-/* Failed embed (issue #7): release the reserved height so the card collapses to
-   its link instead of leaving dead space, and don't stretch it in the 2-up strip. */
-.social-cls-failed .social-embed { min-height: 0; }
-.overview-latest .social-card.social-cls-failed { align-self: start; }
 .overview-highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
 .feature-card { display: flex; align-items: center; gap: 11px; padding: 12px 13px; background: var(--card-bg); border: 1px solid var(--border-default); border-left: 3px solid var(--accent); border-radius: var(--radius-card); text-decoration: none; transition: border-color 0.15s, background 0.15s, transform 0.15s, box-shadow 0.25s; }
 .feature-card:hover { background: var(--card-bg-hover); transform: translateY(-1px); }
@@ -934,12 +969,14 @@ body.print-continuous .item-meta { flex-wrap: nowrap; gap: 10px; }
 .tl-track { position: absolute; left: 0; right: 0; top: 50%; height: 2px; margin-top: -1px; border-radius: var(--radius-pill); background: var(--border-default); }
 .tl-tick { position: absolute; top: calc(50% + 4px); width: 1px; height: 5px; background: var(--border-default); }
 .tl-tick-year { position: absolute; top: 6px; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); letter-spacing: 0.06em; }
-/* The ridge — the density silhouette under the nodes ("mountain peaks"):
-   busy eras rise, quiet stretches stay near the baseline; a single-thread
-   career renders flat (portfolio.js skips the SVG entirely). Vector + tokens:
-   prints crisp, the dark theme swaps it, ink's monochrome token override
-   covers it for free. Geometry pairs with RIDGE_H in portfolio.js — change
-   both together. */
+/* The ridge — the density silhouette BEHIND the flat nodes ("mountain peaks"):
+   busy eras rise, quiet stretches stay near the baseline. OPT-IN (issue #8):
+   drawn only when HOPE_DATA.timeline_ridge = true; otherwise portfolio.js skips
+   the SVG entirely and the timeline stays flat. Nodes never lift — the ridge is
+   a static backdrop (z-index 0, under the z-index 2 nodes). Vector + tokens:
+   prints crisp, the dark theme swaps it, ink's monochrome token override covers
+   it for free. Geometry pairs with RIDGE_H in portfolio.js — change both
+   together. */
 .tl-ridge { position: absolute; left: 0; right: 0; bottom: 50%; width: 100%; height: 30px; z-index: 0; overflow: visible; }
 .tl-ridge-fill { fill: var(--accent-orange); fill-opacity: 0.07; stroke: none; }
 .tl-ridge-line { fill: none; stroke: var(--accent-orange); stroke-opacity: 0.38; stroke-width: 1.25px; }
