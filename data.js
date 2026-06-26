@@ -52,7 +52,7 @@ window.HOPE_DATA = {
     ],
     "summary": "I haven't manually written a line of code since Claude Code launched — I build exclusively with AI, owning the architecture, product thinking, and problem decomposition while shipping at a pace that used to take whole teams. At EY I solo-built 10+ GenAI prototypes in just over a year; 5 secured production funding, because my prototypes ARE the business case. Before that I founded CareerX (Microsoft for Startups, up to $250K) and ran NSF-funded research at Iowa on 700M-row datasets. The range is the point — electronics, data science, startups, enterprise AI, physical AI — I go where the impact is, embed with the problem, and deliver.",
     "stats": {
-      "skills": 45,
+      "skills": 48,
       "roles": 6,
       "contributions": 22
     }
@@ -119,7 +119,7 @@ window.HOPE_DATA = {
                   "category": "languages"
                 },
                 {
-                  "name": "Azure OpenAI (GPT-4)",
+                  "name": "Azure OpenAI",
                   "category": "tools"
                 },
                 {
@@ -159,7 +159,7 @@ window.HOPE_DATA = {
                   "category": "tools"
                 },
                 {
-                  "name": "Azure OpenAI (GPT-4)",
+                  "name": "Azure OpenAI",
                   "category": "tools"
                 },
                 {
@@ -238,7 +238,7 @@ window.HOPE_DATA = {
                   "category": "tools"
                 },
                 {
-                  "name": "Azure OpenAI (GPT-4)",
+                  "name": "Azure OpenAI",
                   "category": "tools"
                 },
                 {
@@ -371,7 +371,7 @@ window.HOPE_DATA = {
                   "category": "tools"
                 },
                 {
-                  "name": "Azure OpenAI (GPT-4)",
+                  "name": "Azure OpenAI",
                   "category": "tools"
                 },
                 {
@@ -477,7 +477,7 @@ window.HOPE_DATA = {
                   "category": "analytical"
                 },
                 {
-                  "name": "Azure OpenAI (GPT-4)",
+                  "name": "Azure OpenAI",
                   "category": "tools"
                 },
                 {
@@ -1004,7 +1004,7 @@ window.HOPE_DATA = {
           "category": "tools"
         },
         {
-          "name": "Azure OpenAI (GPT-4)",
+          "name": "Azure OpenAI",
           "category": "tools"
         },
         {
@@ -1255,6 +1255,15 @@ window.HOPE_DATA = {
             "name": "Claude Code / Factory (AI-native development)",
             "level": 3,
             "years": 1
+          },
+          {
+            "name": "Claude Code + Routines",
+            "level": 4,
+            "years": 1
+          },
+          {
+            "name": "Claude Cowork + Scheduled Tasks",
+            "level": 3
           }
         ]
       },
@@ -1382,9 +1391,14 @@ window.HOPE_DATA = {
         "category": "tools",
         "items": [
           {
-            "name": "Azure OpenAI (GPT-4)",
+            "name": "Azure OpenAI",
             "level": 3,
             "years": 2
+          },
+          {
+            "name": "Azure AI Foundry",
+            "level": 3,
+            "years": 1
           },
           {
             "name": "Azure AI Search",
