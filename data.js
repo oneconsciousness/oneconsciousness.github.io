@@ -54,7 +54,7 @@ window.HOPE_DATA = {
     "stats": {
       "skills": 48,
       "roles": 6,
-      "contributions": 24
+      "contributions": 26
     }
   },
   "overview": {
@@ -91,10 +91,10 @@ window.HOPE_DATA = {
       "company_initial": "E",
       "dates": "Jan 2025 — Present",
       "is_current": true,
-      "contribution_count": 8,
+      "contribution_count": 10,
       "kpis": {
         "ic": 6,
-        "lead": 2,
+        "lead": 4,
         "metric": 5
       },
       "groups": [
@@ -364,6 +364,60 @@ window.HOPE_DATA = {
             },
             {
               "num": 8,
+              "icon": "emoji_events",
+              "action": "Helped run an MCP-server-building competition in the protocol's earliest days — authored the guide, the documentation, and the competition guidelines that let a 250-strong AI engineering team get hands-on with MCP through creative use cases.",
+              "skills": [
+                {
+                  "name": "MCP Protocol",
+                  "category": "methods"
+                },
+                {
+                  "name": "Technical Documentation",
+                  "category": "interpersonal"
+                },
+                {
+                  "name": "Developer Enablement",
+                  "category": "interpersonal"
+                }
+              ],
+              "competencies": [
+                "technical evangelism",
+                "enablement",
+                "communication"
+              ],
+              "domain": "Enterprise AI / Enablement",
+              "scope": "team",
+              "impact": "Turned a brand-new protocol into something the whole team could touch — working MCP servers, built for fun, within weeks of the spec landing."
+            },
+            {
+              "num": 9,
+              "icon": "gavel",
+              "action": "Judged a team-wide competition for junior engineers — end-to-end full-stack projects pitched as use cases with real profit potential for EY — evaluating business value first, then architecture, then execution.",
+              "skills": [
+                {
+                  "name": "Technical Leadership",
+                  "category": "interpersonal"
+                },
+                {
+                  "name": "Full-Stack Architecture",
+                  "category": "methods"
+                },
+                {
+                  "name": "Mentoring",
+                  "category": "interpersonal"
+                }
+              ],
+              "competencies": [
+                "technical leadership",
+                "mentoring",
+                "product thinking"
+              ],
+              "domain": "Enterprise AI / Leadership",
+              "scope": "team",
+              "impact": "Pushed early-career builders to think like founders: every project scored on what it could actually earn the firm."
+            },
+            {
+              "num": 10,
               "icon": "groups",
               "action": "Led technical design decisions, managed developers and analysts, and served as trusted advisor for GenAI architecture across the organization.",
               "skills": [
