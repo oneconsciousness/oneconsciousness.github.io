@@ -188,7 +188,7 @@ window.HOPE_DATA = {
             {
               "num": 3,
               "icon": "schedule",
-              "action": "Designed agentic orchestration using Autogen + MCP with specialized agents for intake, risk assessment, scheduling, and data queries, plus HITL checkpoints at key decision points.",
+              "action": "Built an internal AI-assisted project-management tool — agentic orchestration using Autogen + MCP with specialized agents for intake, risk assessment, scheduling, and data queries, plus HITL checkpoints at key decision points.",
               "skills": [
                 {
                   "name": "Autogen",
@@ -227,7 +227,7 @@ window.HOPE_DATA = {
             {
               "num": 4,
               "icon": "image",
-              "action": "Shipped a full-stack AI image-generation app (FastAPI + React) on Azure with prompt editing, style selection, and monitoring — prototyped and deployed in 11 days.",
+              "action": "Shipped a full-stack AI image-generation app (FastAPI + React) on Azure with prompt editing, style selection, and monitoring — solo-engineered the AI stack, partnering with a DevOps engineer and key stakeholders for fast resolutions and unblocks.",
               "skills": [
                 {
                   "name": "FastAPI",
@@ -262,7 +262,7 @@ window.HOPE_DATA = {
                 "direction": "achieved",
                 "subject": "users; 11 days concept-to-production"
               },
-              "impact": "100,000+ people used it in a global campaign; concept to production in under two weeks."
+              "impact": "100,000+ people used it in a global campaign with zero downtime in production; dev → UAT → prod in 11 days."
             },
             {
               "num": 5,
@@ -1010,7 +1010,7 @@ window.HOPE_DATA = {
       "dates": null,
       "is_active": false,
       "initial": "A",
-      "description": "Full-stack app (FastAPI + React) for AI-powered image generation with prompt editing and style selection. Deployed on Azure with monitoring. Prototyped and live in 11 days. (Portfolio-safe name for an internal EY project.)",
+      "description": "Full-stack app (FastAPI + React) for AI-powered image generation with prompt editing and style selection. Deployed on Azure with monitoring. Solo-engineered the AI stack, partnering with a DevOps engineer and key stakeholders for fast resolutions and unblocks. (Portfolio-safe name for an internal EY project.)",
       "skills": [
         {
           "name": "TypeScript",
@@ -1038,16 +1038,16 @@ window.HOPE_DATA = {
         }
       ],
       "best_metric": "100K+ users",
-      "impact": "Concept to production in 11 days for a global campaign."
+      "impact": "100K+ users in a global campaign, zero downtime in production; dev → UAT → prod in 11 days."
     },
     {
       "id": "multi-agent-engine",
-      "name": "Multi-Agent Workflow Engine",
-      "tagline": "Agentic orchestration with human-in-the-loop",
+      "name": "AI-Assisted Project Management Tool",
+      "tagline": "Internal EY tool · agentic orchestration + HITL",
       "dates": null,
       "is_active": false,
-      "initial": "M",
-      "description": "Multi-agent system with agentic orchestration and human-in-the-loop checkpoints — specialized agents for intake, risk assessment, scheduling, data queries, and UI. Built with Autogen and MCP. (Portfolio-safe name for an internal EY project.)",
+      "initial": "A",
+      "description": "Internal project-management tool built AI-first — specialized agents for intake, risk assessment, scheduling, data queries, and UI, with human-in-the-loop checkpoints at key decision points. Built with Autogen and MCP. (Portfolio-safe description of an internal EY tool.)",
       "skills": [
         {
           "name": "Multi-Agent Orchestration",
@@ -1088,21 +1088,6 @@ window.HOPE_DATA = {
         {
           "name": "Historical Data Analysis",
           "category": "analytical"
-        }
-      ]
-    },
-    {
-      "id": "ai-project-management",
-      "name": "AI-Assisted Project Management Tool",
-      "tagline": "Internal tool · project management, AI-first",
-      "dates": null,
-      "is_active": false,
-      "initial": "P",
-      "description": "An internal project-management tool built from an AI-driven perspective — AI assistance woven into how projects get planned, tracked, and moved forward.",
-      "skills": [
-        {
-          "name": "AI-Assisted Workflows",
-          "category": "methods"
         }
       ]
     },
