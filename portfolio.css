@@ -570,7 +570,7 @@ h1.name { margin: 0 0 2px; font-size: 22px; font-weight: 700; letter-spacing: -0
 .item-card.expanded .chevron { transform: rotate(180deg); color: var(--accent-orange); }
 .chevron .material-symbols-rounded { font-size: 18px; }
 .item-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-.item-card.expanded .item-body { max-height: 1500px; }
+.item-card.expanded .item-body { max-height: 5000px; }
 .item-body-inner { padding: 0 19px 18px 19px; display: flex; flex-direction: column; gap: 14px; }
 .item-divider { height: 1px; background: linear-gradient(90deg, var(--accent-cyan-edge), var(--border-default), transparent); margin: 2px 0 4px; }
 
