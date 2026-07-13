@@ -54,7 +54,7 @@ window.HOPE_DATA = {
     "stats": {
       "skills": 48,
       "roles": 6,
-      "contributions": 23
+      "contributions": 24
     }
   },
   "overview": {
@@ -91,9 +91,9 @@ window.HOPE_DATA = {
       "company_initial": "E",
       "dates": "Jan 2025 — Present",
       "is_current": true,
-      "contribution_count": 7,
+      "contribution_count": 8,
       "kpis": {
-        "ic": 5,
+        "ic": 6,
         "lead": 2,
         "metric": 5
       },
@@ -267,22 +267,22 @@ window.HOPE_DATA = {
             {
               "num": 5,
               "icon": "hub",
-              "action": "Built MCP servers enabling standardized tool integration across agent frameworks; contributed to 15+ repositories on the enterprise multi-agent platform spanning Python and TypeScript.",
+              "action": "Co-built an enterprise agent-template library — reusable starting points for agents across LangGraph, Autogen, and Semantic Kernel, plus MCP servers for standardized tool integration — contributing across 15+ repositories in Python and TypeScript, on a team of seven to eight alongside directors and distinguished technologists.",
               "skills": [
-                {
-                  "name": "MCP Protocol",
-                  "category": "methods"
-                },
-                {
-                  "name": "A2A Protocol",
-                  "category": "methods"
-                },
                 {
                   "name": "LangGraph",
                   "category": "methods"
                 },
                 {
                   "name": "Autogen",
+                  "category": "methods"
+                },
+                {
+                  "name": "Semantic Kernel",
+                  "category": "methods"
+                },
+                {
+                  "name": "MCP Protocol",
                   "category": "methods"
                 },
                 {
@@ -305,7 +305,34 @@ window.HOPE_DATA = {
                 "direction": "achieved",
                 "subject": "repositories contributed to"
               },
-              "impact": "Foundational infrastructure for agent deployment at scale across the organization; cross-stack Python and TypeScript."
+              "impact": "Prototypes delivered in a matter of weeks; foundational infrastructure for agent deployment at scale across the organization."
+            },
+            {
+              "num": 6,
+              "icon": "monitoring",
+              "action": "Self-deployed Langfuse (open-source LLM observability) on Docker within a day of trying it — inside its first week of public release — and integrated it into the AI-assisted project-management tool for full-stack tracing, demoing it to key stakeholders within the week.",
+              "skills": [
+                {
+                  "name": "Langfuse",
+                  "category": "tools"
+                },
+                {
+                  "name": "Docker",
+                  "category": "tools"
+                },
+                {
+                  "name": "LLM Observability",
+                  "category": "analytical"
+                }
+              ],
+              "competencies": [
+                "initiative",
+                "rapid prototyping",
+                "ecosystem awareness"
+              ],
+              "domain": "AI Observability",
+              "scope": "company-wide",
+              "impact": "Put a brand-new observability tool on the firm's radar — held the first conversations with the startup's founders and orchestrated the initial partnership call."
             }
           ]
         },
@@ -313,7 +340,7 @@ window.HOPE_DATA = {
           "kind": "lead",
           "contributions": [
             {
-              "num": 6,
+              "num": 7,
               "icon": "groups",
               "action": "Set up a booth and handed tools to global partners, guiding senior leaders to build agents live on platforms like Copilot Studio and internal systems.",
               "skills": [
@@ -336,7 +363,7 @@ window.HOPE_DATA = {
               "impact": "Demonstrated the shift toward SME-driven AI adoption; raised the team's visibility with leadership at a flagship global summit."
             },
             {
-              "num": 7,
+              "num": 8,
               "icon": "groups",
               "action": "Led technical design decisions, managed developers and analysts, and served as trusted advisor for GenAI architecture across the organization.",
               "skills": [
@@ -1071,12 +1098,16 @@ window.HOPE_DATA = {
     {
       "id": "financial-prediction",
       "name": "Financial Prediction & Historical Analysis",
-      "tagline": "AI-driven predictive + prescriptive analytics",
+      "tagline": "Predictive + prescriptive analytics on stock data",
       "dates": null,
       "is_active": false,
       "initial": "F",
-      "description": "AI-driven financial prediction built on deep historical data analysis — forecasting what's coming (predictive) and recommending what to do about it (prescriptive).",
+      "description": "Full-stack analytics tool over stock data — predictive and prescriptive — with client dashboards that surface trends, derive the insights behind them, and put them one glance away, so a financial adviser can walk into a client meeting already knowing the story. Contributed the Python backend within a seven-to-eight-person full-stack team (front-end, back-end, DevOps), working with tech leads, managers, directors, and the business team — the first project of the EY chapter.",
       "skills": [
+        {
+          "name": "Python",
+          "category": "languages"
+        },
         {
           "name": "Predictive Analytics",
           "category": "analytical"
@@ -1135,7 +1166,7 @@ window.HOPE_DATA = {
       "dates": null,
       "is_active": false,
       "initial": "E",
-      "description": "Core contributor to an enterprise multi-agent platform spanning gateway services, document ingestion, agent-to-agent communication (LangGraph + Autogen), a Kubernetes operator, vector storage (pgvector), and CLI tooling. Cross-stack Python and TypeScript across 15+ repositories. (Portfolio-safe name for an internal EY project.)",
+      "description": "Core contributor to an enterprise multi-agent platform — reusable agent templates across LangGraph, Autogen, and Semantic Kernel, gateway services, document ingestion, agent-to-agent communication, a Kubernetes operator, vector storage (pgvector), and CLI tooling. Cross-stack Python and TypeScript across 15+ repositories, built with a seven-to-eight-person team alongside directors and distinguished technologists. (Portfolio-safe name for an internal EY project.)",
       "skills": [
         {
           "name": "Multi-Agent Orchestration",
