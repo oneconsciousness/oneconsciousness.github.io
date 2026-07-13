@@ -54,7 +54,7 @@ window.HOPE_DATA = {
     "stats": {
       "skills": 48,
       "roles": 6,
-      "contributions": 22
+      "contributions": 23
     }
   },
   "overview": {
@@ -91,10 +91,10 @@ window.HOPE_DATA = {
       "company_initial": "E",
       "dates": "Jan 2025 — Present",
       "is_current": true,
-      "contribution_count": 6,
+      "contribution_count": 7,
       "kpis": {
         "ic": 5,
-        "lead": 1,
+        "lead": 2,
         "metric": 5
       },
       "groups": [
@@ -104,7 +104,7 @@ window.HOPE_DATA = {
             {
               "num": 1,
               "icon": "rocket_launch",
-              "action": "Built 10+ GenAI prototypes from scratch, each designed to demonstrate immediate business value and adapt to production.",
+              "action": "Solo-built 10+ GenAI prototypes across multi-agent orchestration, document intelligence, and physical AI — each production-adaptable from day one.",
               "skills": [
                 {
                   "name": "Multi-Agent Orchestration",
@@ -144,7 +144,7 @@ window.HOPE_DATA = {
             {
               "num": 2,
               "icon": "smart_toy",
-              "action": "Built a platform with a Unitree GO2 quadruped, chat-based robot command interface, factory-level warning system, and actionable inspection report generation; deployed with ROS2, Azure IoT Hub, Azure OpenAI, and Docker.",
+              "action": "Teamed with partners, directors, fellow developers, and data engineers and architects — a crew of five to six — to build a platform with a Unitree GO2 quadruped, chat-based robot command interface, factory-level warning system, and actionable inspection report generation; deployed with ROS2, Azure IoT Hub, Azure OpenAI, and Docker.",
               "skills": [
                 {
                   "name": "Unitree GO2 SDK",
@@ -227,7 +227,7 @@ window.HOPE_DATA = {
             {
               "num": 4,
               "icon": "image",
-              "action": "Designed and deployed a FastAPI + React app on Azure with prompt editing, style selection, and monitoring — in 11 days.",
+              "action": "Shipped a full-stack AI image-generation app (FastAPI + React) on Azure with prompt editing, style selection, and monitoring — prototyped and deployed in 11 days.",
               "skills": [
                 {
                   "name": "FastAPI",
@@ -334,6 +334,25 @@ window.HOPE_DATA = {
               "domain": "Enterprise AI / Evangelism",
               "scope": "industry",
               "impact": "Demonstrated the shift toward SME-driven AI adoption; raised the team's visibility with leadership at a flagship global summit."
+            },
+            {
+              "num": 7,
+              "icon": "groups",
+              "action": "Led technical design decisions, managed developers and analysts, and served as trusted advisor for GenAI architecture across the organization.",
+              "skills": [
+                {
+                  "name": "Multi-Agent Orchestration",
+                  "category": "methods"
+                }
+              ],
+              "competencies": [
+                "technical leadership",
+                "mentoring",
+                "architecture"
+              ],
+              "domain": "Enterprise AI / Leadership",
+              "scope": "company-wide",
+              "impact": "Trusted advisor for GenAI architecture across the organization."
             }
           ]
         }
@@ -345,6 +364,7 @@ window.HOPE_DATA = {
       "role_title": "Founder & CTO",
       "company": "CareerX, Inc.",
       "company_initial": "C",
+      "logo": "careerx-logo.jpeg",
       "dates": "Aug 2024 — May 2025",
       "is_current": false,
       "contribution_count": 6,
@@ -860,6 +880,7 @@ window.HOPE_DATA = {
       "id": "auckam",
       "role_title": "Embedded Systems Intern",
       "company": "Auckam",
+      "company_domain": "auckam.com",
       "company_initial": "A",
       "dates": "May 2019 — Jun 2019",
       "is_current": false,
@@ -1046,6 +1067,44 @@ window.HOPE_DATA = {
         }
       ],
       "best_metric": "3 wks → 2 days"
+    },
+    {
+      "id": "financial-prediction",
+      "name": "Financial Prediction & Historical Analysis",
+      "tagline": "AI-driven predictive + prescriptive analytics",
+      "dates": null,
+      "is_active": false,
+      "initial": "F",
+      "description": "AI-driven financial prediction built on deep historical data analysis — forecasting what's coming (predictive) and recommending what to do about it (prescriptive).",
+      "skills": [
+        {
+          "name": "Predictive Analytics",
+          "category": "analytical"
+        },
+        {
+          "name": "Prescriptive Analytics",
+          "category": "analytical"
+        },
+        {
+          "name": "Historical Data Analysis",
+          "category": "analytical"
+        }
+      ]
+    },
+    {
+      "id": "ai-project-management",
+      "name": "AI-Assisted Project Management Tool",
+      "tagline": "Internal tool · project management, AI-first",
+      "dates": null,
+      "is_active": false,
+      "initial": "P",
+      "description": "An internal project-management tool built from an AI-driven perspective — AI assistance woven into how projects get planned, tracked, and moved forward.",
+      "skills": [
+        {
+          "name": "AI-Assisted Workflows",
+          "category": "methods"
+        }
+      ]
     },
     {
       "id": "autonomous-inspection",
