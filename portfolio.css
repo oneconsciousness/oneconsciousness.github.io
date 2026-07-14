@@ -308,7 +308,9 @@ img { display: block; }
   body.print-doc-resume #resume-view h3,
   body.print-doc-resume #resume-view p { margin: 0; }
   body.print-doc-resume #resume-view h2 { break-after: avoid; page-break-after: avoid; }
-  body.print-doc-resume .resume-entry { break-inside: avoid; page-break-inside: avoid; }
+  body.print-doc-resume .resume-entry { break-inside: auto; page-break-inside: auto; }
+  body.print-doc-resume .resume-entry-head,
+  body.print-doc-resume .resume-org { break-after: avoid; page-break-after: avoid; }
   body.print-doc-resume #resume-view li { orphans: 2; widows: 2; }
   /* Title left, dates right — flex, not a table: copies out as linear text,
      so the PDF still passes the plain-text ATS paste test. */
