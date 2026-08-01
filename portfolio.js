@@ -366,6 +366,7 @@
           '<div class="item-info">' +
             '<div class="title-row">' +
               '<span class="role-title">' + esc(r.role_title) + '</span>' +
+              (r.tag_pill ? '<span class="status-pill shipped">' + esc(r.tag_pill) + '</span>' : '') +
               (isCur ? '<span class="active-pill">Active</span>' : '') +
             '</div>' +
             '<span class="role-company">' + esc(r.company) + '</span>' +
@@ -406,11 +407,30 @@
             groups +
           '</div></div>' +
         '</div>';
-      return card;
-    }).join('');
+      return { html: card, section: r.section || 'fulltime' };
+    });
+
+    var body;
+    if (d.experience_layout === 'grouped') {
+      var secDefs = [
+        { key: 'fulltime', label: 'Full-Time', icon: 'work' },
+        { key: 'nonprofit', label: 'Non-Profit', icon: 'volunteer_activism' },
+        { key: 'internships', label: 'Internships', icon: 'school' }
+      ];
+      body = secDefs.map(function (s) {
+        var sec = cards.filter(function (c) { return c.section === s.key; });
+        if (!sec.length) return '';
+        return '<div class="group-header ic exp-sec-head" style="margin:20px 4px 4px">' +
+          '<span class="material-symbols-rounded">' + s.icon + '</span>' +
+          '<span class="title">' + s.label + '</span><span class="bar"></span></div>' +
+          sec.map(function (c) { return c.html; }).join('');
+      }).join('');
+    } else {
+      body = cards.map(function (c) { return c.html; }).join('');
+    }
 
     var html = '<div class="section-pane" data-pane="experience" id="pane-experience">' +
-      cards +
+      body +
       '<a class="backtotop" href="#top" aria-hidden="true">↑ Contents</a>' +
     '</div>';
     return frag(html);
@@ -443,6 +463,28 @@
     return out;
   }
 
+  // emphOr — curated inline emphasis: when the (escaped) text carries
+  // **markers**, they win; otherwise fall back to the automatic bolder.
+  function ident(t) { return t; }
+  var LINKIFY = ['artofliving.org', 'agenthope.ai', 'careerx.app'];
+  function linkify(html) {
+    var out = String(html);
+    LINKIFY.forEach(function (dom) {
+      var i = out.indexOf(dom);
+      if (i === -1) return;
+      if (out.lastIndexOf('<a', i) > out.lastIndexOf('</a>', i)) return;
+      out = out.slice(0, i) +
+        '<a href="https://' + dom + '" target="_blank" rel="noopener">' + dom + '</a>' +
+        out.slice(i + dom.length);
+    });
+    return out;
+  }
+  function emphOr(escaped, fallback) {
+    var s = String(escaped);
+    if (s.indexOf('**') === -1) return fallback(s);
+    return s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\*\*/g, '');
+  }
+
   // A single .contrib bullet inside an experience group. One idea per line:
   // the sentence, the emerald result, the skills. (domain / scope / num /
   // competencies stay in the data — the human view keeps only what a
@@ -456,12 +498,16 @@
       metric = ' <span class="metric-inline">' + esc(c.metric.value) + ' ' + esc(c.metric.subject) + ' ' + arrow + '</span>';
     }
     var impact = c.impact
-      ? '<p class="contrib-impact">' + boldMetrics(esc(c.impact)) + '</p>'
+      ? '<p class="contrib-impact">' + linkify(emphOr(esc(c.impact), boldMetrics)) + '</p>'
       : '';
     var skills = skillChips(c.skills);
+    var deep = c.project_ref
+      ? '<div class="project-link-row"><a class="project-link" href="#" data-deep="tl-' + esc(c.project_ref) + '">' +
+        '<span class="material-symbols-rounded">arrow_forward</span>Explore this project</a></div>'
+      : '';
     return '<article class="contrib ' + kind + '">' +
-      '<p class="contrib-action">' + boldActionMentions(esc(c.action), c.skills) + metric + '</p>' +
-      impact + skills +
+      '<p class="contrib-action">' + linkify(emphOr(esc(c.action), function (t) { return boldActionMentions(t, c.skills); })) + metric + '</p>' +
+      impact + skills + deep +
     '</article>';
   }
 
@@ -475,7 +521,7 @@
       var datesSpan = p.dates ? '<span class="role-dates">' + esc(p.dates) + '</span>' : '';
       var pill = p.best_metric ? '<span class="contrib-pill">' + esc(p.best_metric) + '</span>' : '';
       var impact = p.impact
-        ? '<div class="contrib-impact"><span class="material-symbols-rounded">arrow_forward</span><p>' + esc(p.impact) + '</p></div>'
+        ? '<p class="contrib-impact">' + emphOr(esc(p.impact), boldMetrics) + '</p>'
         : '';
       var skills = skillChips(p.skills);
       var linkRow = '';
@@ -490,7 +536,7 @@
       return '<div class="item-card project" data-expand id="tl-' + esc(p.id) + '">' +
         '<span class="accent-bar"></span>' +
         '<div class="item-head">' +
-          favicon(p.domain, p.initial, p.name) +
+          favicon(p.domain, p.initial, p.name, p.logo) +
           '<div class="item-info">' +
             '<div class="title-row">' +
               '<span class="role-title">' + esc(p.name) + '</span>' +
@@ -718,28 +764,32 @@
   // Experience section, given a role_title / company / dates head and an
   // already-built <li> bullet string. Shared by all three content modes so
   // the header markup never drifts between them.
-  function renderResumeExperienceEntry(roleTitle, company, dates, bulletsHtml) {
-    return '<article class="resume-entry">' +
-      '<div class="resume-entry-head"><h3>' + esc(roleTitle) + '</h3>' +
+  function renderResumeExperienceEntry(roleTitle, company, dates, bulletsHtml, inlineOrg) {
+    var roleHtml = esc(roleTitle).replace(/\((Volunteer|Pro-bono)\)/, '<span style="font-weight:400">($1)</span>');
+    var head = inlineOrg
+      ? '<div class="resume-entry-head"><h3>' + roleHtml +
+        ' <span style="font-weight:400">| ' + linkify(esc(company)) + '</span></h3>' +
+        '<span class="resume-dates">' + esc(dates) + '</span></div>'
+      : '<div class="resume-entry-head"><h3>' + roleHtml + '</h3>' +
         '<span class="resume-dates">' + esc(dates) + '</span></div>' +
-      '<p class="resume-org">' + esc(company) + '</p>' +
+        '<p class="resume-org">' + linkify(esc(company)) + '</p>';
+    return '<article class="resume-entry">' + head +
       '<ul>' + bulletsHtml + '</ul>' +
     '</article>';
   }
 
   // renderResumeCuratedExperience — 'highlights' mode: today's unchanged
   // behavior, from the curated d.resume.experience[].bullets[].
-  function renderResumeCuratedExperience(r) {
+  function renderResumeCuratedExperience(r, inlineOrg) {
     return (Array.isArray(r.experience) ? r.experience : []).map(function (e) {
       var bullets = (Array.isArray(e.bullets) ? e.bullets : []).map(function (b) {
         if (b && b.tag != null && String(b.tag).trim() !== '') {
-          return '<li>' + esc(b.text) + ' <strong>' + esc(b.tag) + '</strong></li>';
+          return '<li>' + linkify(emphOr(esc(b.text), ident)) + ' <strong>' + esc(b.tag) + '</strong></li>';
         }
         // Documented fail-soft: missing tag → unbolded <li> + WARNING.
-        try { console.warn('[hope-portfolio] renderResumeView: bullet missing tag: ' + String(b && b.text).slice(0, 80)); } catch (e2) {}
-        return '<li>' + esc(b && b.text) + '</li>';
+        return '<li>' + linkify(emphOr(esc(b && b.text), ident)) + '</li>';
       }).join('');
-      return renderResumeExperienceEntry(e.role_title, e.company, e.dates, bullets);
+      return renderResumeExperienceEntry(e.role_title, e.company, e.dates, bullets, inlineOrg);
     }).join('');
   }
 
@@ -747,9 +797,9 @@
   // modes: "action — impact" (em dash only when impact exists), figures bold
   // via boldMetrics on the already-escaped, combined string. No colors, no
   // skill chips, no tags.
-  function renderResumeContributionBullet(c) {
-    var text = esc(c.action) + (c.impact ? ' — ' + esc(c.impact) : '');
-    return '<li>' + boldMetrics(text) + '</li>';
+  function renderResumeContributionBullet(c, noImpact) {
+    var text = esc(c.action) + (!noImpact && c.impact ? ' - ' + esc(c.impact) : '');
+    return '<li>' + linkify(emphOr(text, boldMetrics)) + '</li>';
   }
 
   // renderResumeFullExperience — 'top5' / 'complete' modes: every role from
@@ -766,7 +816,8 @@
         });
       });
       if (cap) contribs = contribs.slice(0, cap);
-      var bullets = contribs.map(renderResumeContributionBullet).join('');
+      var noImpact = e.section === 'internships';
+      var bullets = contribs.map(function (c) { return renderResumeContributionBullet(c, noImpact); }).join('');
       return renderResumeExperienceEntry(e.role_title, e.company, e.dates, bullets);
     }).join('');
   }
@@ -794,7 +845,23 @@
     if (shareUrl) contactBits.push('<a href="' + esc(shareUrl) + '" target="_blank" rel="noopener">Portfolio</a>');
 
     var expHtml;
-    if (content === 'complete') {
+    if (content === 'onepage' && r.onepage) {
+      expHtml = renderResumeCuratedExperience(r.onepage);
+    } else if (content === 'mercury' && r.mercury) {
+      expHtml = renderResumeCuratedExperience(r.mercury, true);
+    } else if (content === 'simplifiedq' && r.simplifiedq) {
+      expHtml = renderResumeCuratedExperience(r.simplifiedq, true);
+    } else if (content === 'amex' && r.amex) {
+      expHtml = renderResumeCuratedExperience(r.amex, true);
+    } else if (content === 'bcg' && r.bcg) {
+      expHtml = renderResumeCuratedExperience(r.bcg, true);
+    } else if (content === 'nvidia' && r.nvidia) {
+      expHtml = renderResumeCuratedExperience(r.nvidia, true);
+    } else if (content === 'google' && r.google) {
+      expHtml = renderResumeCuratedExperience(r.google, true);
+    } else if (content === 'bain' && r.bain) {
+      expHtml = renderResumeCuratedExperience(r.bain, true);
+    } else if (content === 'complete') {
       expHtml = renderResumeFullExperience(d.experience, 0);
     } else if (content === 'top5') {
       expHtml = renderResumeFullExperience(d.experience, 5);
@@ -810,6 +877,42 @@
       '</article>';
     }).join('');
 
+    var skillsGroups = (content === 'onepage' && r.onepage && r.onepage.skills_groups) || (content === 'mercury' && r.mercury && r.mercury.skills_groups) || (content === 'simplifiedq' && r.simplifiedq && r.simplifiedq.skills_groups) || (content === 'amex' && r.amex && r.amex.skills_groups) || (content === 'bcg' && r.bcg && r.bcg.skills_groups) || (content === 'nvidia' && r.nvidia && r.nvidia.skills_groups) || (content === 'google' && r.google && r.google.skills_groups) || (content === 'bain' && r.bain && r.bain.skills_groups) || r.skills_groups;
+    var skillsHtml;
+    if (Array.isArray(skillsGroups) && skillsGroups.length) {
+      // Row layout: "Category: items" per line, category bolded (one <strong>/line).
+      skillsHtml = skillsGroups.map(function (g) {
+        var s = String(g);
+        var i = s.indexOf(': ');
+        var label = i > 0 ? s.slice(0, i) : '';
+        var rest = i > 0 ? s.slice(i + 2) : s;
+        return '<p class="resume-skills" style="margin:0 0 3px">' +
+          (label ? '<strong>' + esc(label) + ':</strong> ' : '') + esc(rest) + '</p>';
+      }).join('');
+    } else {
+      skillsHtml = '<p class="resume-skills">' + esc(r.skills_line) + '</p>';
+    }
+    var skillsTech = (content === 'onepage' && r.onepage && r.onepage.skills_tech) || (content === 'mercury' && r.mercury && r.mercury.skills_tech) || r.skills_tech;
+    if (Array.isArray(skillsTech) && skillsTech.length) {
+      skillsHtml += skillsTech.map(function (tl) {
+        return '<p class="resume-skills" style="margin:4px 0 0">' + esc(tl) + '</p>';
+      }).join('');
+    }
+    var skillsSection = '<section class="resume-section"><h2>Skills</h2>' + skillsHtml + '</section>';
+
+    var pjSrc = null;
+    ['onepage','mercury','simplifiedq','amex','bcg','nvidia','google','bain'].forEach(function (k) {
+      if (content === k && r[k] && Array.isArray(r[k].projects) && r[k].projects.length) pjSrc = r[k].projects;
+    });
+    if (!pjSrc && Array.isArray(r.projects) && r.projects.length) pjSrc = r.projects;
+    var resumeProjectsSection = '';
+    if (pjSrc) {
+      resumeProjectsSection = '<section class="resume-section"><h2>Projects <span style="font-weight:400;text-transform:none;letter-spacing:0">(complete list in portfolio)</span></h2><article class="resume-entry"><ul>' +
+        pjSrc.map(function (pj) {
+          return '<li><strong>' + esc(pj.name) + '</strong> - ' + linkify(emphOr(esc(pj.text), ident)) + '</li>';
+        }).join('') + '</ul></article></section>';
+    }
+
     mount.innerHTML =
       '<header class="resume-header">' +
         '<h1>' + esc(meta.name) + '</h1>' +
@@ -817,11 +920,11 @@
         '<p class="resume-contact">' + contactBits.join(' · ') + '</p>' +
       '</header>' +
       '<section class="resume-section"><h2>Summary</h2>' +
-        '<p class="resume-summary">' + esc(r.summary) + '</p></section>' +
+        '<p class="resume-summary">' + esc((content === 'onepage' && r.onepage && r.onepage.summary) || (content === 'mercury' && r.mercury && r.mercury.summary) || (content === 'simplifiedq' && r.simplifiedq && r.simplifiedq.summary) || (content === 'amex' && r.amex && r.amex.summary) || (content === 'bcg' && r.bcg && r.bcg.summary) || (content === 'nvidia' && r.nvidia && r.nvidia.summary) || (content === 'google' && r.google && r.google.summary) || (content === 'bain' && r.bain && r.bain.summary) || r.summary) + '</p></section>' +
+      skillsSection +
       '<section class="resume-section"><h2>Experience</h2>' + expHtml + '</section>' +
-      '<section class="resume-section"><h2>Education</h2>' + eduHtml + '</section>' +
-      '<section class="resume-section"><h2>Skills</h2>' +
-        '<p class="resume-skills">' + esc(r.skills_line) + '</p></section>';
+      resumeProjectsSection +
+      '<section class="resume-section"><h2>Education</h2>' + eduHtml + '</section>';
   }
 
   // ─── Helpers shared by grid / TOC / panes ───────────────────────────────
@@ -1044,14 +1147,14 @@
   var exportModal = document.getElementById('export-modal');
   var resumeView = document.getElementById('resume-view');
 
-  var RESUME_MIN_BODY_PT = 10;
+  var RESUME_MIN_BODY_PT = 9;
   var RESUME_MIN_LEADING = 1.2;
-  var RESUME_BASE_PT = { classic: 11, modern: 10.5, compact: 10 };
+  var RESUME_BASE_PT = { classic: 10, modern: 10.5, compact: 10 };
   var RESUME_PREF_KEY = 'hope-resume-pref';
   var RESUME_STYLES = ['classic', 'modern', 'compact'];
   var RESUME_FONTS = ['georgia', 'times', 'inter'];
   var RESUME_FITS = ['comfortable', 'auto'];
-  var RESUME_CONTENTS = ['highlights', 'top5', 'complete'];
+  var RESUME_CONTENTS = ['highlights', 'mercury', 'simplifiedq', 'amex', 'bcg', 'nvidia', 'google', 'bain', 'onepage', 'top5', 'complete'];
   var RESUME_FONT_STACKS = {
     georgia: "Georgia, 'Times New Roman', serif",
     times: "'Times New Roman', Times, serif",
@@ -1119,7 +1222,7 @@
 
   // ── Resume auto-fit ──
   var RESUME_PAGE_CONTENT_W_PX = 816 - 2 * (0.55 * 96); // 710.4
-  var RESUME_PAGE_CONTENT_H_PX = 1056 - 2 * (0.5 * 96); // 960
+  var RESUME_PAGE_CONTENT_H_PX = 1056 - 2 * (0.4 * 96); // 979.2
   var RESUME_RFS_STEP = 0.02;
   var measureResumePages = function () {
     void resumeView.offsetHeight;
@@ -1185,8 +1288,9 @@
       document.body.classList.add('print-doc-resume', 'print-style-' + style);
       resumeView.style.setProperty('--resume-font', RESUME_FONT_STACKS[font] || RESUME_FONT_STACKS.georgia);
       renderResumeView(HOPE, content);
+      if (content === 'mercury' || content === 'simplifiedq' || content === 'amex' || content === 'bcg' || content === 'nvidia' || content === 'google' || content === 'bain') resumeView.style.setProperty('--rfs', '0.9');
       closeExportModal();
-      if (fit === 'auto') runResumeAutoFit(style);
+      if (fit === 'auto' || content === 'onepage') runResumeAutoFit(style);
       window.print();
     });
     window.addEventListener('afterprint', function () {
@@ -2052,4 +2156,20 @@
       });
     });
   })();
+
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[data-deep]') : null;
+    if (!a) return;
+    ev.preventDefault();
+    var btn = document.querySelector('.section-btn[data-section="projects"]');
+    if (btn) btn.click();
+    var card = document.getElementById(a.getAttribute('data-deep'));
+    if (!card) return;
+    if (card.hasAttribute('data-expand')) card.classList.add('expanded');
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    card.classList.remove('tl-flash');
+    void card.offsetWidth;
+    card.classList.add('tl-flash');
+    setTimeout(function () { card.classList.remove('tl-flash'); }, 1300);
+  });
 })();

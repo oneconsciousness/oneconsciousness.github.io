@@ -4,42 +4,42 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Arun Ganapathy — Portfolio</title>
-<meta name="description" content="Lead AI Engineer who ships production GenAI from zero — solo-built 10+ enterprise prototypes at EY (5 funded to production, $2M+ in client pipeline). Forward-deployed by instinct: he embeds with the problem, prototypes, and turns ambiguous client briefs into shipped systems." />
+<meta name="description" content="Lead AI Engineer who ships production GenAI from zero - solo-built 10+ enterprise prototypes at EY (5 funded to production, $2M+ in client pipeline). Forward-deployed by instinct: he embeds with the problem, prototypes, and turns ambiguous client briefs into shipped systems." />
 <!-- Share target. Empty at generation time; the publish skill rewrites content=""
      to the live GitHub Pages URL (https://<owner>.github.io/<repo>/) before the
      final deploy push, so the Share button copies the canonical published link.
      Opened locally before publish, the button falls back to window.location.href. -->
 <meta name="hope:share-url" content="https://oneconsciousness.github.io/" />
-<!-- OG / link-preview meta — how this link unfurls rich on LinkedIn / X / WhatsApp.
+<!-- OG / link-preview meta - how this link unfurls rich on LinkedIn / X / WhatsApp.
      og:url, og:image and twitter:image ship empty; the publish skill stamps them with
      ABSOLUTE URLs (SITE_URL and SITE_URL + og-image.png) before the final deploy push.
      The 1200×630 og-image.png is screenshotted from the skill-generated share-card.html. -->
 <meta property="og:type" content="profile" />
 <meta property="og:title" content="Arun Ganapathy — Lead AI Engineer · GenAI, Multi-Agent Systems &amp; Physical AI" />
-<meta property="og:description" content="Lead AI Engineer who ships production GenAI from zero — solo-built 10+ enterprise prototypes at EY (5 funded to production, $2M+ in client pipeline). Forward-deployed by instinct: he embeds with the problem, prototypes, and turns ambiguous client briefs into shipped systems." />
+<meta property="og:description" content="Lead AI Engineer who ships production GenAI from zero - solo-built 10+ enterprise prototypes at EY (5 funded to production, $2M+ in client pipeline). Forward-deployed by instinct: he embeds with the problem, prototypes, and turns ambiguous client briefs into shipped systems." />
 <meta property="og:url" content="https://oneconsciousness.github.io/" />
 <meta property="og:image" content="https://oneconsciousness.github.io/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Arun Ganapathy — Lead AI Engineer · GenAI, Multi-Agent Systems &amp; Physical AI" />
-<meta name="twitter:description" content="Lead AI Engineer who ships production GenAI from zero — solo-built 10+ enterprise prototypes at EY (5 funded to production, $2M+ in client pipeline). Forward-deployed by instinct: he embeds with the problem, prototypes, and turns ambiguous client briefs into shipped systems." />
+<meta name="twitter:description" content="Lead AI Engineer who ships production GenAI from zero - solo-built 10+ enterprise prototypes at EY (5 funded to production, $2M+ in client pipeline). Forward-deployed by instinct: he embeds with the problem, prototypes, and turns ambiguous client briefs into shipped systems." />
 <meta name="twitter:image" content="https://oneconsciousness.github.io/og-image.png" />
 <link rel="canonical" href="https://oneconsciousness.github.io/" />
 <!-- Provenance (disclosed, not hidden): a standards-based generator tag + a
      schema.org ProfilePage so recruiters/crawlers can read who made this and with what.
-     This is the user's file under MIT — see the footer note; it's theirs to keep or remove. -->
-<meta name="generator" content="Hope — github.com/oneconsciousness/job-hunt-with-hope" />
+     This is the user's file under MIT - see the footer note; it's theirs to keep or remove. -->
+<meta name="generator" content="Hope - github.com/oneconsciousness/job-hunt-with-hope" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  "dateCreated": "2026-06-25",
+  "dateCreated": "2026-07-22",
   "about": {
     "@type": "Person",
     "name": "Arun Ganapathy",
     "jobTitle": "Lead AI Engineer · GenAI, Multi-Agent Systems & Physical AI",
-    "description": "Lead AI Engineer who ships production GenAI from zero — solo-built 10+ enterprise prototypes at EY (5 funded to production, $2M+ in client pipeline). Forward-deployed by instinct: he embeds with the problem, prototypes, and turns ambiguous client briefs into shipped systems.",
+    "description": "Lead AI Engineer who ships production GenAI from zero - solo-built 10+ enterprise prototypes at EY (5 funded to production, $2M+ in client pipeline). Forward-deployed by instinct: he embeds with the problem, prototypes, and turns ambiguous client briefs into shipped systems.",
     "url": "",
     "image": "",
     "sameAs": [
@@ -59,7 +59,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..700,0..1,-50..200" rel="stylesheet">
-<!-- Theme init — the ONE permitted inline script besides the JSON-LD above
+<!-- Theme init - the ONE permitted inline script besides the JSON-LD above
      (modular contract: references/design-tokens.md § "Modular structure").
      It must run inline in <head>, before first paint, so a saved dark theme
      never flashes light while portfolio.js (classic, end-of-body) loads.
@@ -78,12 +78,12 @@
 <div class="wrap" id="top">
 
   <!--
-    MOUNT-POINT OWNERSHIP (cross-file contract — canon §10):
+    MOUNT-POINT OWNERSHIP (cross-file contract - canon §10):
       .seo-fallback        → static stamped; renderIdentity REMOVES it (replaced by .identity-row)
       #identity-mount      → renderIdentity (builds .identity-row); #throughline is a DIRECT child here
       #print-toc-links     → renderPrintTOC
       .section-grid#section-grid-mount → renderSectionGrid (appends .section-btn INTO it; never nests a 2nd .section-grid)
-      <panes are appended DIRECTLY into .wrap by renderPanes — NO wrapper div>
+      <panes are appended DIRECTLY into .wrap by renderPanes - NO wrapper div>
       #footer-mount        → renderFooter
       #resume-view         → renderResumeView
     DIRECT-CHILD-OF-.wrap INVARIANT: .identity-card, .print-toc, every .section-pane,
@@ -93,7 +93,7 @@
       direct children (CSS L1098 .identity-card > .identity-row, L1105/1106 :has(> .tl-strip)).
   -->
 
-  <!-- TOPBAR: static chrome (share/PDF/theme) — IDs/SVGs stay, no content tokens -->
+  <!-- TOPBAR: static chrome (share/PDF/theme) - IDs/SVGs stay, no content tokens -->
   <div class="topbar materialize">
     <div class="share-wrap">
       <button id="share-btn" class="action-btn" type="button" aria-label="Share this portfolio" aria-haspopup="true" aria-expanded="false">
@@ -122,7 +122,7 @@
   <div class="seo-fallback">
     <h1>Arun Ganapathy</h1>
     <p>Lead AI Engineer · GenAI, Multi-Agent Systems &amp; Physical AI</p>
-    <p>I build production GenAI systems from zero and ship them fast — 10+ enterprise prototypes at EY, 5 funded to production. I go where the impact is and deliver.</p>
+    <p>I build production GenAI systems from zero and ship them fast - 10+ enterprise prototypes at EY, 5 funded to production. I go where the impact is and deliver.</p>
   </div>
 
   <!-- IDENTITY CARD: shell only; renderIdentity builds .identity-row, prepended before #throughline -->
@@ -156,10 +156,10 @@
      <style>, applies --resume-font (and floor-aware auto-fit --rfs when
      chosen) on #resume-view, closes, calls window.print(). Last choice
      persists in localStorage ('hope-resume-pref').
-     PORTFOLIO PDF — gated for the next release; re-enable by restoring the
+     PORTFOLIO PDF - gated for the next release; re-enable by restoring the
      Document fieldset (and the portfolio Style + Layout fieldsets that hung
-     off it). The print engine — continuous-mode JS, portfolio print styles,
-     print TOC, body-class plumbing — is kept intact; only this UI entry
+     off it). The print engine - continuous-mode JS, portfolio print styles,
+     print TOC, body-class plumbing - is kept intact; only this UI entry
      point is gone. The default no-class browser print (Cmd+P) still prints
      the paginated classic portfolio. -->
 <div id="export-modal" hidden role="dialog" aria-modal="true" aria-labelledby="export-modal-title">
@@ -175,7 +175,7 @@
         <label class="export-opt">
           <input type="radio" name="export-style-resume" value="classic" checked />
           <span class="opt-name">Classic<span class="opt-tag">Recommended</span></span>
-          <span class="opt-desc">Timeless serif résumé — black on white, single column.</span>
+          <span class="opt-desc">Timeless serif résumé - black on white, single column.</span>
         </label>
         <label class="export-opt">
           <input type="radio" name="export-style-resume" value="modern" />
@@ -185,7 +185,7 @@
         <label class="export-opt">
           <input type="radio" name="export-style-resume" value="compact" />
           <span class="opt-name">Compact</span>
-          <span class="opt-desc">Dense — fits more per page, never below the readability floor.</span>
+          <span class="opt-desc">Dense - fits more per page, never below the readability floor.</span>
         </label>
       </div>
     </fieldset>
@@ -230,7 +230,47 @@
         <label class="export-opt">
           <input type="radio" name="export-content-resume" value="highlights" checked />
           <span class="opt-name">Highlights<span class="opt-tag">Recommended</span></span>
-          <span class="opt-desc">The curated short list — top moments only.</span>
+          <span class="opt-desc">The curated short list - top moments only.</span>
+        </label>
+        <label class="export-opt">
+          <input type="radio" name="export-content-resume" value="mercury" />
+          <span class="opt-name">Mercury</span>
+          <span class="opt-desc">Curated for the Mercury AI Engineering role - tighter, smaller type.</span>
+        </label>
+        <label class="export-opt">
+          <input type="radio" name="export-content-resume" value="simplifiedq" />
+          <span class="opt-name">simplifiedQ</span>
+          <span class="opt-desc">Curated for the simplifiedQ Founding Engineer role.</span>
+        </label>
+        <label class="export-opt">
+          <input type="radio" name="export-content-resume" value="amex" />
+          <span class="opt-name">Amex</span>
+          <span class="opt-desc">Curated for the Amex AI Engineer III - Agentic AI role.</span>
+        </label>
+        <label class="export-opt">
+          <input type="radio" name="export-content-resume" value="bcg" />
+          <span class="opt-name">BCG</span>
+          <span class="opt-desc">Curated for BCG Platinion AI Tech Architect - AI Platforms.</span>
+        </label>
+        <label class="export-opt">
+          <input type="radio" name="export-content-resume" value="nvidia" />
+          <span class="opt-name">NVIDIA</span>
+          <span class="opt-desc">Curated for the NVIDIA Applied AI Engineer role (JR2018178).</span>
+        </label>
+        <label class="export-opt">
+          <input type="radio" name="export-content-resume" value="google" />
+          <span class="opt-name">Google</span>
+          <span class="opt-desc">Curated for a new Google AI engineering team (referral).</span>
+        </label>
+        <label class="export-opt">
+          <input type="radio" name="export-content-resume" value="bain" />
+          <span class="opt-name">Bain</span>
+          <span class="opt-desc">Curated for Bain AIS - Lead, AI Engineering.</span>
+        </label>
+        <label class="export-opt">
+          <input type="radio" name="export-content-resume" value="onepage" />
+          <span class="opt-name">One page</span>
+          <span class="opt-desc">The tightest cut - one page, top signal only.</span>
         </label>
         <label class="export-opt">
           <input type="radio" name="export-content-resume" value="top5" />
@@ -251,7 +291,7 @@
   </div>
 </div>
 
-<!-- Classic scripts only — no type=module, no fetch(), no import: the folder
+<!-- Classic scripts only - no type=module, no fetch(), no import: the folder
      must open perfectly by double-clicking index.html offline (file:// law,
      references/design-tokens.md § "Modular structure"). data.js loads first
      so window.HOPE_DATA exists before portfolio.js runs. -->

@@ -97,7 +97,7 @@ img { display: block; }
    design survives, (2) expand every collapsed pane + card so the whole
    portfolio prints (not just the open tab), (3) keep cards intact across page
    breaks, and (4) drop the interactive chrome (topbar, chevrons). */
-@page { size: Letter; margin: 0.5in 0.55in; }
+@page { size: Letter; margin: 0.4in 0; }
 @media print {
   :root { color-scheme: light; }
   html, body { background: #fff !important; }
@@ -308,9 +308,7 @@ img { display: block; }
   body.print-doc-resume #resume-view h3,
   body.print-doc-resume #resume-view p { margin: 0; }
   body.print-doc-resume #resume-view h2 { break-after: avoid; page-break-after: avoid; }
-  body.print-doc-resume .resume-entry { break-inside: auto; page-break-inside: auto; }
-  body.print-doc-resume .resume-entry-head,
-  body.print-doc-resume .resume-org { break-after: avoid; page-break-after: avoid; }
+  body.print-doc-resume .resume-entry { break-inside: avoid; page-break-inside: avoid; }
   body.print-doc-resume #resume-view li { orphans: 2; widows: 2; }
   /* Title left, dates right — flex, not a table: copies out as linear text,
      so the PDF still passes the plain-text ATS paste test. */
@@ -324,17 +322,17 @@ img { display: block; }
         rides --resume-font (the dialog's Font override). ── */
   body.print-doc-resume.print-style-classic #resume-view {
     font-family: var(--resume-font, Georgia, 'Charter', 'Times New Roman', serif);
-    font-size: calc(11pt * var(--rfs, 1)); line-height: 1.35; padding: 0.5in 0.45in;
+    font-size: calc(10pt * var(--rfs, 1)); line-height: 1.35; padding: 0.08in 0.55in 0.1in;
   }
-  body.print-doc-resume.print-style-classic #resume-view h1 { font-size: calc(22pt * var(--rfs, 1)); font-weight: 400; text-align: center; letter-spacing: 0.04em; }
-  body.print-doc-resume.print-style-classic .resume-headline { text-align: center; font-size: calc(11pt * var(--rfs, 1)); margin-top: 2pt; }
-  body.print-doc-resume.print-style-classic .resume-contact { text-align: center; font-size: calc(10pt * var(--rfs, 1)); margin-top: 3pt; }
+  body.print-doc-resume.print-style-classic #resume-view h1 { font-size: calc(21pt * var(--rfs, 1)); font-weight: 400; text-align: center; letter-spacing: 0.04em; }
+  body.print-doc-resume.print-style-classic .resume-headline { text-align: center; font-size: calc(10pt * var(--rfs, 1)); margin-top: 2pt; }
+  body.print-doc-resume.print-style-classic .resume-contact { text-align: center; font-size: calc(9pt * var(--rfs, 1)); margin-top: 3pt; }
   body.print-doc-resume.print-style-classic .resume-header { margin-bottom: 16pt; }
-  body.print-doc-resume.print-style-classic #resume-view h2 { font-size: calc(11pt * var(--rfs, 1)); font-weight: 700; text-transform: uppercase; letter-spacing: 0.10em; border-bottom: 0.75pt solid #111; padding-bottom: 2pt; margin: 14pt 0 6pt; }
-  body.print-doc-resume.print-style-classic #resume-view h3 { font-size: calc(11pt * var(--rfs, 1)); font-weight: 700; }
+  body.print-doc-resume.print-style-classic #resume-view h2 { font-size: calc(10pt * var(--rfs, 1)); font-weight: 700; text-transform: uppercase; letter-spacing: 0.10em; border-bottom: 0.75pt solid #111; padding-bottom: 2pt; margin: 14pt 0 6pt; }
+  body.print-doc-resume.print-style-classic #resume-view h3 { font-size: calc(10pt * var(--rfs, 1)); font-weight: 700; }
   body.print-doc-resume.print-style-classic .resume-entry { margin: 0 0 9pt; }
   body.print-doc-resume.print-style-classic .resume-org,
-  body.print-doc-resume.print-style-classic .resume-dates { font-size: calc(10.5pt * var(--rfs, 1)); font-style: italic; }
+  body.print-doc-resume.print-style-classic .resume-dates { font-size: calc(9.5pt * var(--rfs, 1)); font-style: italic; }
   body.print-doc-resume.print-style-classic #resume-view ul { margin: 3pt 0 0; padding-left: 14pt; }
   body.print-doc-resume.print-style-classic #resume-view li { margin: 0 0 2.5pt; }
   /* One bolded key sub-phrase per bullet (see #resume-view authoring comments). */
@@ -349,7 +347,7 @@ img { display: block; }
         Font sizes ride --rfs (floor 0.952); family rides --resume-font. ── */
   body.print-doc-resume.print-style-modern #resume-view {
     font-family: var(--resume-font, var(--font-sans));
-    font-size: calc(10.5pt * var(--rfs, 1)); line-height: 1.4; color: #1a1a1a; padding: 0.35in 0.45in;
+    font-size: calc(10.5pt * var(--rfs, 1)); line-height: 1.4; color: #1a1a1a; padding: 0.05in 0.55in 0.1in;
   }
   /* No negative letter-spacing anywhere in #resume-view — ATS-safety rule. */
   body.print-doc-resume.print-style-modern #resume-view h1 { font-size: calc(23pt * var(--rfs, 1)); font-weight: 700; color: #D97706; }
