@@ -612,7 +612,7 @@ window.HOPE_DATA = {
                 "direction": "achieved",
                 "subject": "Microsoft for Startups Level 3 cloud credits"
               },
-              "impact": "Level 4 Microsoft for Startups, $250K backing; 86% of active customers got multiple interviews and successfully landed jobs.",
+              "impact": "Level 3 Founder (worth up to $250K), sponsored by Microsoft for Startups; 86% of active customers got multiple interviews and successfully landed jobs.",
               "project_ref": "careerx-platform"
             },
             {
@@ -1405,7 +1405,7 @@ window.HOPE_DATA = {
       "dates": null,
       "is_active": false,
       "initial": "C",
-      "description": "Full-stack Generative AI platform built from zero as a Microsoft-backed startup (Level 4). Graph database of skills with agentic management, RAG-powered assistant, proprietary HTML-to-JSON resume algorithm (under 1 second), and fine-tuned LLMs - all on Azure. CareerX later evolved into Hope, an open-source Claude plugin - the same idea, rebuilt for how people work with agents now.",
+      "description": "Full-stack Generative AI platform built from zero as a Microsoft-backed startup. Graph database of skills with agentic management, RAG-powered assistant, proprietary HTML-to-JSON resume algorithm (under 1 second), and fine-tuned LLMs - all on Azure. CareerX later evolved into Hope, an open-source Claude plugin - the same idea, rebuilt for how people work with agents now.",
       "skills": [
         {
           "name": "LangChain",
@@ -1947,7 +1947,7 @@ window.HOPE_DATA = {
         "dates": "Aug 2024 - Present",
         "bullets": [
           {
-            "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 4 Microsoft for Startups** founder ($250K backing); now a free, open-source **Claude plugin**."
+            "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 3 Founder (worth up to $250K)** sponsored by Microsoft for Startups; now a free, open-source **Claude plugin**."
           },
           {
             "text": "**86% of active customers** landed multiple interviews and, ultimately, jobs."
@@ -2044,7 +2044,7 @@ window.HOPE_DATA = {
           "dates": "Aug 2024 - Present",
           "bullets": [
             {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** on **$250K of Microsoft for Startups (Level 4)** backing; now a free, open-source **Claude plugin**."
+              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 3 Founder (worth up to $250K)** sponsored by Microsoft for Startups; now a free, open-source **Claude plugin**."
             }
           ]
         },
@@ -2113,7 +2113,7 @@ window.HOPE_DATA = {
           "dates": "Aug 2024 - Present",
           "bullets": [
             {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 4 Microsoft for Startups** founder ($250K backing); now a free, open-source **Claude plugin**."
+              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 3 Founder (worth up to $250K)** sponsored by Microsoft for Startups; now a free, open-source **Claude plugin**."
             },
             {
               "text": "**86% of active customers** landed multiple interviews and, ultimately, jobs."
@@ -2172,7 +2172,7 @@ window.HOPE_DATA = {
           "dates": "Aug 2024 - Present",
           "bullets": [
             {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 4 Microsoft for Startups** founder ($250K backing); now a free, open-source **Claude plugin**."
+              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 3 Founder (worth up to $250K)** sponsored by Microsoft for Startups; now a free, open-source **Claude plugin**."
             },
             {
               "text": "**86% of active customers** landed multiple interviews and, ultimately, jobs."
@@ -2273,7 +2273,7 @@ window.HOPE_DATA = {
           "dates": "Aug 2024 - Present",
           "bullets": [
             {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** on **$250K of Microsoft for Startups (Level 4)** backing; now a free, **open-source Claude plugin** (this resume was built with it)."
+              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 3 Founder (worth up to $250K)**, sponsored by Microsoft for Startups; now a free, **open-source Claude plugin**."
             },
             {
               "text": "Cut data-labelling errors **90%** with an **agentic RAG workflow** over the skills graph, and fine-tuned LLMs on synthetic data to **95% task accuracy**."
@@ -2352,7 +2352,7 @@ window.HOPE_DATA = {
           "dates": "Aug 2024 - Present",
           "bullets": [
             {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** on **$250K of Microsoft for Startups (Level 4)** backing - skills graph DB, agentic RAG, **LangChain** - now a free, open-source **Claude plugin**."
+              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 3 Founder (worth up to $250K)**, sponsored by Microsoft for Startups; now a free, open-source **Claude plugin**."
             },
             {
               "text": "**86% of active customers** landed multiple interviews and, ultimately, jobs."
@@ -2439,7 +2439,7 @@ window.HOPE_DATA = {
           "dates": "Aug 2024 - Present",
           "bullets": [
             {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** on **$250K of Microsoft for Startups (Level 4)** backing; now a free, **open-source Claude plugin** that generated this resume."
+              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 3 Founder (worth up to $250K)**, sponsored by Microsoft for Startups; now a free, **open-source Claude plugin**."
             },
             {
               "text": "Built the platform's core: skills **graph database**, agentic RAG (**LangChain**), and LLMs fine-tuned on synthetic data to **95% task accuracy**."
@@ -2574,7 +2574,7 @@ window.HOPE_DATA = {
           "dates": "Aug 2024 - Present",
           "bullets": [
             {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** from zero on **$250K of Microsoft for Startups (Level 4)** backing; now a free, **open-source Claude plugin** that generated this resume."
+              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 3 Founder (worth up to $250K)**, sponsored by Microsoft for Startups; now a free, **open-source Claude plugin**."
             },
             {
               "text": "Built the platform's core: skills **graph database**, agentic RAG, and LLMs fine-tuned on synthetic data to **95% task accuracy**."
@@ -2689,7 +2689,7 @@ window.HOPE_DATA = {
           "dates": "Aug 2024 - Present",
           "bullets": [
             {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** on **$250K of Microsoft for Startups (Level 4)** backing; now a free, open-source **Claude plugin**."
+              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 3 Founder (worth up to $250K)** sponsored by Microsoft for Startups; now a free, open-source **Claude plugin**."
             },
             {
               "text": "Cut data-labelling errors **90%** with **graph-based retrieval**: an agentic RAG workflow using contextual retrieval and re-ranking over a Neo4j skills graph."
