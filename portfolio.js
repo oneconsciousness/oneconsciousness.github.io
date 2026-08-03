@@ -517,7 +517,7 @@
     var projs = Array.isArray(d.projects) ? d.projects : [];
     if (!projs.length) return null;
 
-    var cards = projs.map(function (p) {
+    var cardList = projs.map(function (p) {
       var datesSpan = p.dates ? '<span class="role-dates">' + esc(p.dates) + '</span>' : '';
       var pill = p.best_metric ? '<span class="contrib-pill">' + esc(p.best_metric) + '</span>' : '';
       var impact = p.impact
@@ -558,10 +558,28 @@
           '</article>' +
         '</div></div>' +
       '</div>';
-    }).join('');
+    });
+    var cards = cardList.join('');
+
+    var body = cards;
+    if (projs.some(function (x) { return x.group; })) {
+      var order = [
+        { key: 'independent', label: 'Independent, Academic & Open Source', icon: 'rocket_launch' },
+        { key: 'company', label: 'Company & Client Work', icon: 'apartment' }
+      ];
+      var byGroup = projs.map(function (x, i) { return { g: x.group || 'company', html: cardList[i] }; });
+      body = order.map(function (grp) {
+        var mine = byGroup.filter(function (x) { return x.g === grp.key; });
+        if (!mine.length) return '';
+        return '<div class="group-header ic proj-sec-head" style="margin:18px 4px 6px">' +
+            '<span class="material-symbols-rounded">' + grp.icon + '</span>' +
+            '<span class="title">' + grp.label + '</span><span class="bar"></span></div>' +
+          mine.map(function (x) { return x.html; }).join('');
+      }).join('');
+    }
 
     var html = '<div class="section-pane" data-pane="projects" id="pane-projects">' +
-      cards +
+      body +
       '<a class="backtotop" href="#top" aria-hidden="true">↑ Contents</a>' +
     '</div>';
     return frag(html);
@@ -861,6 +879,10 @@
       expHtml = renderResumeCuratedExperience(r.google, true);
     } else if (content === 'bain' && r.bain) {
       expHtml = renderResumeCuratedExperience(r.bain, true);
+    } else if (content === 'tmobile' && r.tmobile) {
+      expHtml = renderResumeCuratedExperience(r.tmobile, true);
+    } else if (content === 'amexclassic' && r.amexclassic) {
+      expHtml = renderResumeCuratedExperience(r.amexclassic, true);
     } else if (content === 'complete') {
       expHtml = renderResumeFullExperience(d.experience, 0);
     } else if (content === 'top5') {
@@ -877,7 +899,7 @@
       '</article>';
     }).join('');
 
-    var skillsGroups = (content === 'onepage' && r.onepage && r.onepage.skills_groups) || (content === 'mercury' && r.mercury && r.mercury.skills_groups) || (content === 'simplifiedq' && r.simplifiedq && r.simplifiedq.skills_groups) || (content === 'amex' && r.amex && r.amex.skills_groups) || (content === 'bcg' && r.bcg && r.bcg.skills_groups) || (content === 'nvidia' && r.nvidia && r.nvidia.skills_groups) || (content === 'google' && r.google && r.google.skills_groups) || (content === 'bain' && r.bain && r.bain.skills_groups) || r.skills_groups;
+    var skillsGroups = (content === 'onepage' && r.onepage && r.onepage.skills_groups) || (content === 'mercury' && r.mercury && r.mercury.skills_groups) || (content === 'simplifiedq' && r.simplifiedq && r.simplifiedq.skills_groups) || (content === 'amex' && r.amex && r.amex.skills_groups) || (content === 'bcg' && r.bcg && r.bcg.skills_groups) || (content === 'nvidia' && r.nvidia && r.nvidia.skills_groups) || (content === 'google' && r.google && r.google.skills_groups) || (content === 'bain' && r.bain && r.bain.skills_groups) || (content === 'tmobile' && r.tmobile && r.tmobile.skills_groups) || (content === 'amexclassic' && r.amexclassic && r.amexclassic.skills_groups) || r.skills_groups;
     var skillsHtml;
     if (Array.isArray(skillsGroups) && skillsGroups.length) {
       // Row layout: "Category: items" per line, category bolded (one <strong>/line).
@@ -901,7 +923,7 @@
     var skillsSection = '<section class="resume-section"><h2>Skills</h2>' + skillsHtml + '</section>';
 
     var pjSrc = null;
-    ['onepage','mercury','simplifiedq','amex','bcg','nvidia','google','bain'].forEach(function (k) {
+    ['onepage','mercury','simplifiedq','amex','bcg','nvidia','google','bain','tmobile','amexclassic'].forEach(function (k) {
       if (content === k && r[k] && Array.isArray(r[k].projects) && r[k].projects.length) pjSrc = r[k].projects;
     });
     if (!pjSrc && Array.isArray(r.projects) && r.projects.length) pjSrc = r.projects;
@@ -920,7 +942,7 @@
         '<p class="resume-contact">' + contactBits.join(' · ') + '</p>' +
       '</header>' +
       '<section class="resume-section"><h2>Summary</h2>' +
-        '<p class="resume-summary">' + esc((content === 'onepage' && r.onepage && r.onepage.summary) || (content === 'mercury' && r.mercury && r.mercury.summary) || (content === 'simplifiedq' && r.simplifiedq && r.simplifiedq.summary) || (content === 'amex' && r.amex && r.amex.summary) || (content === 'bcg' && r.bcg && r.bcg.summary) || (content === 'nvidia' && r.nvidia && r.nvidia.summary) || (content === 'google' && r.google && r.google.summary) || (content === 'bain' && r.bain && r.bain.summary) || r.summary) + '</p></section>' +
+        '<p class="resume-summary">' + esc((content === 'onepage' && r.onepage && r.onepage.summary) || (content === 'mercury' && r.mercury && r.mercury.summary) || (content === 'simplifiedq' && r.simplifiedq && r.simplifiedq.summary) || (content === 'amex' && r.amex && r.amex.summary) || (content === 'bcg' && r.bcg && r.bcg.summary) || (content === 'nvidia' && r.nvidia && r.nvidia.summary) || (content === 'google' && r.google && r.google.summary) || (content === 'bain' && r.bain && r.bain.summary) || (content === 'tmobile' && r.tmobile && r.tmobile.summary) || (content === 'amexclassic' && r.amexclassic && r.amexclassic.summary) || r.summary) + '</p></section>' +
       skillsSection +
       '<section class="resume-section"><h2>Experience</h2>' + expHtml + '</section>' +
       resumeProjectsSection +
@@ -1154,7 +1176,7 @@
   var RESUME_STYLES = ['classic', 'modern', 'compact'];
   var RESUME_FONTS = ['georgia', 'times', 'inter'];
   var RESUME_FITS = ['comfortable', 'auto'];
-  var RESUME_CONTENTS = ['highlights', 'mercury', 'simplifiedq', 'amex', 'bcg', 'nvidia', 'google', 'bain', 'onepage', 'top5', 'complete'];
+  var RESUME_CONTENTS = ['highlights', 'mercury', 'simplifiedq', 'amex', 'bcg', 'nvidia', 'google', 'bain', 'tmobile', 'amexclassic', 'onepage', 'top5', 'complete'];
   var RESUME_FONT_STACKS = {
     georgia: "Georgia, 'Times New Roman', serif",
     times: "'Times New Roman', Times, serif",
@@ -1288,7 +1310,7 @@
       document.body.classList.add('print-doc-resume', 'print-style-' + style);
       resumeView.style.setProperty('--resume-font', RESUME_FONT_STACKS[font] || RESUME_FONT_STACKS.georgia);
       renderResumeView(HOPE, content);
-      if (content === 'mercury' || content === 'simplifiedq' || content === 'amex' || content === 'bcg' || content === 'nvidia' || content === 'google' || content === 'bain') resumeView.style.setProperty('--rfs', '0.9');
+      if (content === 'mercury' || content === 'simplifiedq' || content === 'amex' || content === 'bcg' || content === 'nvidia' || content === 'google' || content === 'bain' || content === 'tmobile' || content === 'amexclassic') resumeView.style.setProperty('--rfs', '0.9');
       closeExportModal();
       if (fit === 'auto' || content === 'onepage') runResumeAutoFit(style);
       window.print();
