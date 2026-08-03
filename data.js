@@ -3573,14 +3573,16 @@ window.HOPE_DATA = {
   "social": [
     {
       "platform": "linkedin",
-      "url": "https://www.linkedin.com/posts/oneconsciousness_next-time-you-think-of-giving-up-remember-activity-7471594580207931392-Jv0G",
-      "title": "Next time you think of giving up…",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7373867271653482496/",
+      "title": "View on LinkedIn",
+      "caption": "Coming back to posting, and what the first half of the year was heads-down on.",
       "pinned": true
     },
     {
       "platform": "linkedin",
-      "url": "https://www.linkedin.com/posts/oneconsciousness_ai-claude-simpleenglish-activity-7469026090976489472-NjQU",
-      "title": "AI, in plain English",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7435021792164868097/",
+      "title": "View on LinkedIn",
+      "caption": "Just over a year at EY: countless prototypes, and the ones that mattered went to production fast.",
       "pinned": true
     },
     {
