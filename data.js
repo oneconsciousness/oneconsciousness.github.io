@@ -50,7 +50,7 @@ window.HOPE_DATA = {
         "resume": true
       }
     ],
-    "summary": "I haven't manually written a line of code since Claude Code launched - I build exclusively with AI, owning the architecture, product thinking, and problem decomposition while shipping at a pace that used to take whole teams. At EY I solo-built 10+ GenAI prototypes in just over a year; 5 secured production funding, because my prototypes ARE the business case. Before that I founded CareerX (Microsoft for Startups, up to $250K) and ran NSF-funded research at Iowa on 700M-row datasets. The range is the point - electronics, data science, startups, enterprise AI, Physical AI - I go where the impact is, embed with the problem, and deliver.",
+    "summary": "I haven't manually written a line of code since Claude Code launched - I build exclusively with AI, owning the architecture, product thinking, and problem decomposition while shipping at a pace that used to take whole teams. At EY I solo-built 10+ GenAI prototypes in just over a year; 5 secured production funding, because my prototypes ARE the business case. Before that I founded CareerX (Level 4 Microsoft for Startups founder, backed up to $250K) and ran NSF-funded research at Iowa on 700M-row datasets. The range is the point - electronics, data science, startups, enterprise AI, Physical AI - I go where the impact is, embed with the problem, and deliver.",
     "stats": {
       "skills": 55,
       "roles": 7,
