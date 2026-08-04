@@ -3615,7 +3615,7 @@ window.HOPE_DATA = {
       "reactions": 69,
       "comments": 14,
       "image": "li-post-2.jpg",
-      "image_alt": "Arun with four colleagues at the EY “The Edge — Agent builder” booth, Global Clients & Industries Leadership Summit 2026",
+      "image_alt": "Arun with four colleagues at the EY “The Edge - Agent builder” booth, Global Clients & Industries Leadership Summit 2026",
       "text": "Just over a year at EY. Countless prototypes. The ones that matter went to production fast. The numbers don't lie.\n\nIf you're an AI-native engineer, you know it's not just about shipping projects. Bridging the gap between today and tomorrow - a world running on AI - means prototyping fast and making sure those ideas actually land in production and succeed.\n\nI recently attended the EY's Global Clients & Industries Leadership Summit 2026, where we set up an Agent Builder booth. We didn't just demo - we handed the tools to global partners and watched senior leaders get their hands dirty, building agents on platforms like Copilot Studio and other internal AI platforms. The future of enterprise AI hinges on one thing: SMEs who can engage directly to shape our inputs to AI. That collaboration is what turns a prototype into a production system. And when they do, everything moves faster and safer.\n\nI'm glad to see leaders like Jessica DiOrio Dunn, Biju Varghese, and Abel Sabu championing this vision at EY - and I'm proud to be part of this journey with them.\n\nNITRO x EY moves different.",
       "deep": "tl-ey",
       "deep_label": "View the EY experience"
