@@ -27,6 +27,18 @@
   /* App colour code (founder-set) — per-section accent on the nav tiles; an app
      with no code falls back to --app-default (dark gray). overview + social = brand orange. */
   --app-overview: var(--accent-orange); --app-social: var(--accent-orange); --app-experience: #2563EB; --app-skills: #9F1239; --app-education: #0D9488; --app-certifications: #C026D3; --app-projects: #6B7280; --app-default: #6B7280;
+  /* Platform brand marks — the ONE place platform hex is allowed to live.
+     portfolio.js's social brand registry reads these as var(--brand-<key>), so
+     the renderer and data.js stay hex-free (design-tokens.md §3b). Brand hues
+     are identity, not theme: they are deliberately NOT re-mapped in dark. */
+  --brand-youtube: #FF0000; --brand-vimeo: #1AB7EA; --brand-spotify: #1DB954;
+  --brand-soundcloud: #FF5500; --brand-applemusic: #FA243C; --brand-figma: #F24E1E;
+  --brand-codepen: #0EA5E9; --brand-loom: #625DF5; --brand-bluesky: #0085FF;
+  --brand-linkedin: #0A66C2; --brand-substack: #FF6719; --brand-flickr: #0063DC;
+  --brand-tiktok: #EE1D52; --brand-instagram: #E1306C; --brand-x: #0F1419;
+  --brand-threads: #000000; --brand-pinterest: #BD081C; --brand-dribbble: #EA4C89;
+  --brand-behance: #1769FF; --brand-medium: #12100E; --brand-gist: #181717;
+  --brand-link: #D97706;
   --border-default: rgba(31,22,14,0.10); --border-subtle: rgba(31,22,14,0.05); --border-hover: rgba(31,22,14,0.20);
   --radius-card: 8px; --radius-panel: 10px; --radius-button: 6px; --radius-pill: 9999px; --radius-tight: 3px;
   --shadow-sm: 0 1px 2px rgba(31,22,14,0.04); --shadow-md: 0 2px 8px rgba(31,22,14,0.06);
@@ -701,6 +713,51 @@ h1.name { margin: 0 0 2px; font-size: 22px; font-weight: 700; letter-spacing: -0
 .social-profile:hover .social-go { color: var(--brand); transform: translate(2px, -2px); }
 .social-profile:hover .social-cap { color: var(--brand); }
 
+/* ── POST card (.social-cls-post) ── the self-rendered rich preview we use in
+   place of a platform iframe. LinkedIn only serves /embed/ for posts the author
+   opted in, and even those paint an unclamped text wall with the image below
+   the fold — so when a social entry carries its own payload (text/image/counts)
+   portfolio.js builds this instead. Same shell as every other .social-card
+   (card-bg + border + radius); everything inside is tokens only.
+   Order: head (avatar · name · headline · age · brand mark) → clamped text →
+   image → footer (counts · outbound link). */
+.social-cls-post { display: flex; flex-direction: column; }
+.post-head { display: flex; align-items: flex-start; gap: 10px; padding: 12px 13px 9px; }
+.post-avatar { width: 38px; height: 38px; border-radius: var(--radius-pill); object-fit: cover; flex-shrink: 0; border: 1px solid var(--border-default); background: var(--surface-2); }
+.post-avatar-fallback { display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-sans); font-weight: 800; font-size: 16px; color: var(--text-secondary); }
+.post-ident { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
+.post-author { font-size: 13.5px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.005em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.post-headline { font-size: 11.5px; color: var(--text-muted); line-height: 1.35; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.post-age { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); margin-top: 1px; }
+/* Brand mark: currentColor so it inherits this one rule. color-mix pulls the
+   platform hue toward the current text color, which keeps it legible in BOTH
+   themes without a second brand token. */
+.post-mark { flex-shrink: 0; display: inline-flex; line-height: 0; color: var(--text-dim); }
+.post-mark svg { width: 17px; height: 17px; }
+.social-linkedin .post-mark { color: color-mix(in srgb, var(--brand-linkedin) 72%, var(--text-primary)); }
+/* Clamp is CSS, never a JS substring — the preview can't cut mid-word.
+   --post-lines is the single knob (the narrow + print overrides below turn it
+   down). max-height is belt-and-braces: -webkit-line-clamp alone leaks a sliver
+   of the next line when the text carries hard breaks (white-space: pre-line),
+   and vertical padding is kept off this box so the calc stays honest. */
+.post-text {
+  --post-lines: 4;
+  margin: 0 0 11px; padding: 0 13px; font-size: 12.5px; line-height: 1.55;
+  max-height: calc(var(--post-lines) * 1.55em);
+  color: var(--text-secondary); white-space: pre-line; overflow-wrap: anywhere;
+  display: -webkit-box; -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--post-lines); line-clamp: var(--post-lines); overflow: hidden;
+}
+.post-media { display: block; flex: 1 1 auto; min-height: 0; padding: 0 13px; text-decoration: none; }
+.post-media img { display: block; width: 100%; height: 100%; min-height: 128px; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radius-card); background: var(--surface-2); border: 1px solid var(--border-subtle); }
+.post-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 13px 11px; margin-top: auto; }
+.post-counts { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.02em; color: var(--text-muted); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.post-cta { display: inline-flex; align-items: center; gap: 4px; flex-shrink: 0; font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; color: var(--accent-cyan); text-decoration: none; transition: color 0.15s; }
+.post-cta .ext { font-size: 14px; transition: transform 0.15s; }
+.post-cta:hover { color: var(--accent-orange); }
+.post-cta:hover .ext { transform: translate(2px, -2px); }
+.social-cls-post:hover .post-media img { border-color: var(--border-hover); }
+
 /* ── Overview "Featured" board ─── "Latest from" (pinned socials, 2-up) +
    "Highlights" (featured work items that jump to their full entry). Both
    strips JS-rendered + hidden until filled, so the board leaves no residue. */
@@ -729,8 +786,14 @@ h1.name { margin: 0 0 2px; font-size: 22px; font-weight: 700; letter-spacing: -0
 .feature-go { color: var(--text-dim); font-size: 18px; flex-shrink: 0; transition: color 0.15s, transform 0.15s; }
 .feature-card:hover .feature-go { color: var(--accent); transform: translateX(2px); }
 
-/* Embeds can't print / don't exist offline; profile cards always work. Print: links only. */
-@media print { .social-embed { display: none !important; } .social-link, .social-handle { color: #111 !important; } }
+/* Embeds can't print / don't exist offline; profile cards always work. Print: links only.
+   Post cards keep the same contract — the media is a raster the PDF budget
+   doesn't want, so it drops out and the card prints as author + text + link. */
+@media print {
+  .social-embed, .post-media, .post-mark { display: none !important; }
+  .social-link, .social-handle, .post-cta, .post-counts { color: #111 !important; }
+  .post-text { --post-lines: 3; }
+}
 .skill-cell { display: flex; align-items: center; gap: 10px; background: var(--card-bg); border: 1px solid var(--border-default); border-radius: var(--radius-card); padding: 8px 12px; transition: all 0.2s; box-shadow: var(--shadow-sm); }
 .skill-cell:hover { background: var(--card-bg-hover); border-color: var(--accent-orange); }
 .level-bar { display: flex; align-items: flex-end; gap: 2px; flex-shrink: 0; }
@@ -841,6 +904,11 @@ h1.name { margin: 0 0 2px; font-size: 22px; font-weight: 700; letter-spacing: -0
   .summary-stats { gap: 12px 20px; }
   .section-grid { grid-template-columns: 1fr; }
   .overview-latest { grid-template-columns: 1fr; } /* one column on a phone — 2-up embeds would be too narrow */
+  /* Post cards go full-bleed-width on a phone: the headline is the only piece
+     that can't wrap, so it ellipsises; the media keeps a wider crop so a
+     full-width card doesn't turn into a billboard. */
+  .post-media img { aspect-ratio: 16 / 9; }
+  .post-text { --post-lines: 3; }
   /* Collapsed/expanded tiles on a phone: give the role its own full-width row,
      then drop the summary cluster (contributions count + breakdown hexes +
      chevron) onto a clean right-aligned second row — so the contributions tag
@@ -1195,3 +1263,11 @@ body.print-continuous .tl-node.tl-stagger .tl-node-label { top: calc(100% + 62px
   /* Apps grid below the bio — single-column tiles, same anatomy and behavior. */
   body:not(.print-continuous):not(.print-doc-resume):not(.print-doc-portfolio) .about-rail > .section-grid { grid-template-columns: 1fr; margin-bottom: 0; }
 }
+
+.post-deep { display: flex; align-items: center; gap: 5px; margin-top: 7px; padding-top: 7px;
+  border-top: 1px solid var(--border-subtle, rgba(0,0,0,.07));
+  font-family: var(--font-mono); font-size: 11.5px; font-weight: 600; letter-spacing: .02em;
+  color: var(--accent-orange); text-decoration: none; }
+.post-deep:hover { text-decoration: underline; }
+.post-deep .ext { font-size: 14px; }
+@media print { .post-deep { display: none !important; } }

@@ -3573,17 +3573,52 @@ window.HOPE_DATA = {
   "social": [
     {
       "platform": "linkedin",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7435171817109024768/",
+      "title": "View on LinkedIn",
+      "pinned": true,
+      "author": "Youngjun Choi, PhD",
+      "author_headline": "Global Robotics & Physical AI Leader at EY",
+      "posted": "4mo",
+      "reactions": 171,
+      "comments": 13,
+      "image": "post-physical-ai.jpg",
+      "image_alt": "The EY global Physical AI team with quadruped robots in the EY.ai Lab",
+      "text": "Loved an energizing, hands-on working session with our global Physical AI team in the EY.ai Lab and hosting EY leaders. Our mission is clear: help clients accelerate and scale their Physical AI journey, turning strategy into real-world impact.\n\nWhat makes this EY global team exceptional: Client-First, Innovation-Powered, Team-Enabled. Thank you to our global Physical AI team and partners, including Arun Ganapathy.",
+      "deep": "tl-autonomous-inspection",
+      "deep_label": "View the Autonomous Inspection Platform",
+      "avatar": "avatar-choi.jpg"
+    },
+    {
+      "platform": "linkedin",
       "url": "https://www.linkedin.com/feed/update/urn:li:activity:7373867271653482496/",
       "title": "View on LinkedIn",
       "caption": "Coming back to posting, and what the first half of the year was heads-down on.",
-      "pinned": true
+      "pinned": false,
+      "author": "Arun Ganapathy",
+      "author_headline": "// AI @EY \\\\ Founder @Hope // MSBA @UI \\\\",
+      "posted": "10mo",
+      "reactions": 105,
+      "comments": 18,
+      "image": "li-post-1.jpg",
+      "image_alt": "Illustration of five people leaping in celebration around an oversized cupcake",
+      "text": "It’s been a while since I last posted here. The first half of this year was heads-down, but I’m excited to share that I started a new position as Senior AI Engineer at EY in January!\n\nNITRO is an innovation team within EY where the stakes are high and we take ideas from 0 to 1. You can find me building and scaling AI/ML driven applications along with highly skilled developers and engineers. Thanks for the opportunity - Biju Varghese, Abel Sabu, Kiran Krishna, Akash Joseph, Balu Chand."
     },
     {
       "platform": "linkedin",
       "url": "https://www.linkedin.com/feed/update/urn:li:activity:7435021792164868097/",
       "title": "View on LinkedIn",
       "caption": "Just over a year at EY: countless prototypes, and the ones that mattered went to production fast.",
-      "pinned": true
+      "pinned": true,
+      "author": "Arun Ganapathy",
+      "author_headline": "// AI @EY \\\\ Founder @Hope // MSBA @UI \\\\",
+      "posted": "4mo",
+      "reactions": 69,
+      "comments": 14,
+      "image": "li-post-2.jpg",
+      "image_alt": "Arun with four colleagues at the EY “The Edge — Agent builder” booth, Global Clients & Industries Leadership Summit 2026",
+      "text": "Just over a year at EY. Countless prototypes. The ones that matter went to production fast. The numbers don't lie.\n\nIf you're an AI-native engineer, you know it's not just about shipping projects. Bridging the gap between today and tomorrow - a world running on AI - means prototyping fast and making sure those ideas actually land in production and succeed.\n\nI recently attended the EY's Global Clients & Industries Leadership Summit 2026, where we set up an Agent Builder booth. We didn't just demo - we handed the tools to global partners and watched senior leaders get their hands dirty, building agents on platforms like Copilot Studio and other internal AI platforms. The future of enterprise AI hinges on one thing: SMEs who can engage directly to shape our inputs to AI. That collaboration is what turns a prototype into a production system. And when they do, everything moves faster and safer.\n\nI'm glad to see leaders like Jessica DiOrio Dunn, Biju Varghese, and Abel Sabu championing this vision at EY - and I'm proud to be part of this journey with them.\n\nNITRO x EY moves different.",
+      "deep": "tl-ey",
+      "deep_label": "View the EY experience"
     },
     {
       "platform": "instagram",
