@@ -883,6 +883,30 @@
       expHtml = renderResumeCuratedExperience(r.tmobile, true);
     } else if (content === 'amexclassic' && r.amexclassic) {
       expHtml = renderResumeCuratedExperience(r.amexclassic, true);
+    } else if (content === 'anthropiclabs' && r.anthropiclabs) {
+      expHtml = renderResumeCuratedExperience(r.anthropiclabs, true);
+    } else if (content === 'anthropicarch' && r.anthropicarch) {
+      expHtml = renderResumeCuratedExperience(r.anthropicarch, true);
+    } else if (content === 'openaicodex' && r.openaicodex) {
+      expHtml = renderResumeCuratedExperience(r.openaicodex, true);
+    } else if (content === 'openaifde' && r.openaifde) {
+      expHtml = renderResumeCuratedExperience(r.openaifde, true);
+    } else if (content === 'ppxagents' && r.ppxagents) {
+      expHtml = renderResumeCuratedExperience(r.ppxagents, true);
+    } else if (content === 'ppxfde' && r.ppxfde) {
+      expHtml = renderResumeCuratedExperience(r.ppxfde, true);
+    } else if (content === 'startup' && r.startup) {
+      expHtml = renderResumeCuratedExperience(r.startup, true);
+    } else if (content === 'googlefde' && r.googlefde) {
+      expHtml = renderResumeCuratedExperience(r.googlefde, true);
+    } else if (content === 'applefde' && r.applefde) {
+      expHtml = renderResumeCuratedExperience(r.applefde, true);
+    } else if (content === 'appleai' && r.appleai) {
+      expHtml = renderResumeCuratedExperience(r.appleai, true);
+    } else if (content === 'applecombo' && r.applecombo) {
+      expHtml = renderResumeCuratedExperience(r.applecombo, true);
+    } else if (content === 'appledata' && r.appledata) {
+      expHtml = renderResumeCuratedExperience(r.appledata, true);
     } else if (content === 'complete') {
       expHtml = renderResumeFullExperience(d.experience, 0);
     } else if (content === 'top5') {
@@ -899,7 +923,7 @@
       '</article>';
     }).join('');
 
-    var skillsGroups = (content === 'onepage' && r.onepage && r.onepage.skills_groups) || (content === 'mercury' && r.mercury && r.mercury.skills_groups) || (content === 'simplifiedq' && r.simplifiedq && r.simplifiedq.skills_groups) || (content === 'amex' && r.amex && r.amex.skills_groups) || (content === 'bcg' && r.bcg && r.bcg.skills_groups) || (content === 'nvidia' && r.nvidia && r.nvidia.skills_groups) || (content === 'google' && r.google && r.google.skills_groups) || (content === 'bain' && r.bain && r.bain.skills_groups) || (content === 'tmobile' && r.tmobile && r.tmobile.skills_groups) || (content === 'amexclassic' && r.amexclassic && r.amexclassic.skills_groups) || r.skills_groups;
+    var skillsGroups = (content === 'onepage' && r.onepage && r.onepage.skills_groups) || (content === 'mercury' && r.mercury && r.mercury.skills_groups) || (content === 'simplifiedq' && r.simplifiedq && r.simplifiedq.skills_groups) || (content === 'amex' && r.amex && r.amex.skills_groups) || (content === 'bcg' && r.bcg && r.bcg.skills_groups) || (content === 'nvidia' && r.nvidia && r.nvidia.skills_groups) || (content === 'google' && r.google && r.google.skills_groups) || (content === 'bain' && r.bain && r.bain.skills_groups) || (content === 'tmobile' && r.tmobile && r.tmobile.skills_groups) || (content === 'amexclassic' && r.amexclassic && r.amexclassic.skills_groups) || (content === 'anthropiclabs' && r.anthropiclabs && r.anthropiclabs.skills_groups) || (content === 'anthropicarch' && r.anthropicarch && r.anthropicarch.skills_groups) || (content === 'openaicodex' && r.openaicodex && r.openaicodex.skills_groups) || (content === 'openaifde' && r.openaifde && r.openaifde.skills_groups) || (content === 'ppxagents' && r.ppxagents && r.ppxagents.skills_groups) || (content === 'ppxfde' && r.ppxfde && r.ppxfde.skills_groups) || (content === 'startup' && r.startup && r.startup.skills_groups) || (content === 'googlefde' && r.googlefde && r.googlefde.skills_groups) || (content === 'appledata' && r.appledata && r.appledata.skills_groups) || (content === 'applecombo' && r.applecombo && r.applecombo.skills_groups) || (content === 'applefde' && r.applefde && r.applefde.skills_groups) || (content === 'appleai' && r.appleai && r.appleai.skills_groups) || r.skills_groups;
     var skillsHtml;
     if (Array.isArray(skillsGroups) && skillsGroups.length) {
       // Row layout: "Category: items" per line, category bolded (one <strong>/line).
@@ -923,9 +947,11 @@
     var skillsSection = '<section class="resume-section"><h2>Skills</h2>' + skillsHtml + '</section>';
 
     var pjSrc = null;
-    ['onepage','mercury','simplifiedq','amex','bcg','nvidia','google','bain','tmobile','amexclassic'].forEach(function (k) {
-      if (content === k && r[k] && Array.isArray(r[k].projects) && r[k].projects.length) pjSrc = r[k].projects;
-    });
+    // Any curated mode may carry its own projects. Previously a hardcoded whitelist,
+    // which silently dropped the Projects section from every mode added after it.
+    if (content && r[content] && Array.isArray(r[content].projects) && r[content].projects.length) {
+      pjSrc = r[content].projects;
+    }
     if (!pjSrc && Array.isArray(r.projects) && r.projects.length) pjSrc = r.projects;
     var resumeProjectsSection = '';
     if (pjSrc) {
@@ -938,11 +964,11 @@
     mount.innerHTML =
       '<header class="resume-header">' +
         '<h1>' + esc(meta.name) + '</h1>' +
-        '<p class="resume-headline">' + esc(meta.headline) + '</p>' +
+        '<p class="resume-headline">' + esc((r[content] && r[content].headline) || meta.headline) + '</p>' +
         '<p class="resume-contact">' + contactBits.join(' · ') + '</p>' +
       '</header>' +
       '<section class="resume-section"><h2>Summary</h2>' +
-        '<p class="resume-summary">' + esc((content === 'onepage' && r.onepage && r.onepage.summary) || (content === 'mercury' && r.mercury && r.mercury.summary) || (content === 'simplifiedq' && r.simplifiedq && r.simplifiedq.summary) || (content === 'amex' && r.amex && r.amex.summary) || (content === 'bcg' && r.bcg && r.bcg.summary) || (content === 'nvidia' && r.nvidia && r.nvidia.summary) || (content === 'google' && r.google && r.google.summary) || (content === 'bain' && r.bain && r.bain.summary) || (content === 'tmobile' && r.tmobile && r.tmobile.summary) || (content === 'amexclassic' && r.amexclassic && r.amexclassic.summary) || r.summary) + '</p></section>' +
+        '<p class="resume-summary">' + esc((content === 'applecombo' && r.applecombo && r.applecombo.summary) || (content === 'applefde' && r.applefde && r.applefde.summary) || (content === 'appleai' && r.appleai && r.appleai.summary) || (content === 'appledata' && r.appledata && r.appledata.summary) || (content === 'googlefde' && r.googlefde && r.googlefde.summary) || (content === 'anthropiclabs' && r.anthropiclabs && r.anthropiclabs.summary) || (content === 'anthropicarch' && r.anthropicarch && r.anthropicarch.summary) || (content === 'openaicodex' && r.openaicodex && r.openaicodex.summary) || (content === 'openaifde' && r.openaifde && r.openaifde.summary) || (content === 'ppxagents' && r.ppxagents && r.ppxagents.summary) || (content === 'ppxfde' && r.ppxfde && r.ppxfde.summary) || (content === 'startup' && r.startup && r.startup.summary) || (content === 'onepage' && r.onepage && r.onepage.summary) || (content === 'mercury' && r.mercury && r.mercury.summary) || (content === 'simplifiedq' && r.simplifiedq && r.simplifiedq.summary) || (content === 'amex' && r.amex && r.amex.summary) || (content === 'bcg' && r.bcg && r.bcg.summary) || (content === 'nvidia' && r.nvidia && r.nvidia.summary) || (content === 'google' && r.google && r.google.summary) || (content === 'bain' && r.bain && r.bain.summary) || (content === 'tmobile' && r.tmobile && r.tmobile.summary) || (content === 'amexclassic' && r.amexclassic && r.amexclassic.summary) || r.summary) + '</p></section>' +
       skillsSection +
       '<section class="resume-section"><h2>Experience</h2>' + expHtml + '</section>' +
       resumeProjectsSection +
@@ -1176,7 +1202,7 @@
   var RESUME_STYLES = ['classic', 'modern', 'compact'];
   var RESUME_FONTS = ['georgia', 'times', 'inter'];
   var RESUME_FITS = ['comfortable', 'auto'];
-  var RESUME_CONTENTS = ['highlights', 'mercury', 'simplifiedq', 'amex', 'bcg', 'nvidia', 'google', 'bain', 'tmobile', 'amexclassic', 'onepage', 'top5', 'complete'];
+  var RESUME_CONTENTS = ['highlights', 'mercury', 'simplifiedq', 'amex', 'bcg', 'nvidia', 'google', 'bain', 'tmobile', 'amexclassic', 'onepage', 'top5', 'complete', 'anthropiclabs', 'anthropicarch', 'openaicodex', 'openaifde', 'ppxagents', 'ppxfde', 'startup', 'googlefde', 'appledata', 'applefde', 'appleai', 'applecombo'];
   var RESUME_FONT_STACKS = {
     georgia: "Georgia, 'Times New Roman', serif",
     times: "'Times New Roman', Times, serif",
@@ -1310,7 +1336,7 @@
       document.body.classList.add('print-doc-resume', 'print-style-' + style);
       resumeView.style.setProperty('--resume-font', RESUME_FONT_STACKS[font] || RESUME_FONT_STACKS.georgia);
       renderResumeView(HOPE, content);
-      if (content === 'mercury' || content === 'simplifiedq' || content === 'amex' || content === 'bcg' || content === 'nvidia' || content === 'google' || content === 'bain' || content === 'tmobile' || content === 'amexclassic') resumeView.style.setProperty('--rfs', '0.9');
+      if (content === 'mercury' || content === 'simplifiedq' || content === 'amex' || content === 'bcg' || content === 'nvidia' || content === 'google' || content === 'bain' || content === 'tmobile' || content === 'appledata' || content === 'applecombo' || content === 'applefde' || content === 'appleai' || content === 'googlefde' || content === 'amexclassic' || content === 'anthropiclabs' || content === 'anthropicarch' || content === 'openaicodex' || content === 'openaifde' || content === 'ppxagents' || content === 'ppxfde' || content === 'startup') resumeView.style.setProperty('--rfs', '0.9');
       closeExportModal();
       if (fit === 'auto' || content === 'onepage') runResumeAutoFit(style);
       window.print();

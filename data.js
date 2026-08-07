@@ -2,12 +2,11 @@ window.HOPE_DATA = {
   "schema_version": 2,
   "meta": {
     "name": "Arun Ganapathy",
-    "headline": "Lead AI Engineer · GenAI, Multi-Agent Systems & Physical AI",
-    "og_description": "Lead AI Engineer who ships production GenAI from zero - solo-built 10+ enterprise prototypes at EY (5 funded to production, $2M+ in client pipeline). Forward-deployed by instinct: he embeds with the problem, prototypes, and turns ambiguous client briefs into shipped systems.",
+    "headline": "Forward Deployed AI Engineer · GenAI, Multi-Agent Systems & Physical AI",
+    "og_description": "Forward Deployed AI Engineer who ships production GenAI from zero - solo-built 10+ enterprise prototypes at EY (5 funded to production, $2M+ in client pipeline). Forward-deployed by instinct: he embeds with the problem, prototypes, and turns ambiguous client briefs into shipped systems.",
     "summary_short": "I build production GenAI systems from zero and ship them fast - 10+ enterprise prototypes at EY, 5 funded to production. I go where the impact is and deliver.",
     "site_url": "https://oneconsciousness.github.io/",
     "share_url": "https://oneconsciousness.github.io/",
-    "target_company": null,
     "generation_date": "2026-07-22",
     "confidence": {
       "experience": {
@@ -86,14 +85,14 @@ window.HOPE_DATA = {
   "experience": [
     {
       "id": "ey",
-      "role_title": "Lead AI Engineer",
+      "role_title": "Forward Deployed AI Engineer",
       "company": "EY",
       "company_initial": "E",
       "dates": "Jan 2025 - Present",
       "is_current": true,
-      "contribution_count": 10,
+      "contribution_count": 11,
       "kpis": {
-        "ic": 6,
+        "ic": 7,
         "lead": 4,
         "metric": 5
       },
@@ -103,8 +102,43 @@ window.HOPE_DATA = {
           "contributions": [
             {
               "num": 1,
+              "icon": "insights",
+              "action": "Built the Python backend and **ELT pipeline on Databricks** for a **production** agent-driven financial prediction platform, optimising transformations in **PySpark** and mentoring a junior engineer through it.",
+              "skills": [
+                {
+                  "name": "Databricks",
+                  "category": "tools"
+                },
+                {
+                  "name": "PySpark",
+                  "category": "tools"
+                },
+                {
+                  "name": "Python",
+                  "category": "tools"
+                },
+                {
+                  "name": "ELT Pipelines",
+                  "category": "tools"
+                },
+                {
+                  "name": "FastAPI",
+                  "category": "tools"
+                }
+              ],
+              "competencies": [
+                "data engineering",
+                "mentoring"
+              ],
+              "domain": "Financial services",
+              "scope": "Production platform",
+              "metric": null,
+              "impact": "Put an agent-driven forecasting platform on a data pipeline the analysts could rely on."
+            },
+            {
+              "num": 2,
               "icon": "image",
-              "action": "Shipped a **multimodal image-generation agent**: it generates and edits images through chat, capturing user intent and style requirements (FastAPI, React, Azure OpenAI); deployed as an API on **Azure Container Apps** with Grafana monitoring.",
+              "action": "Shipped a **multimodal image-generation agent** used by **100K+ people**, taken **dev to production in 11 days**: it generates and edits images through chat, capturing user intent and style (FastAPI, React, Azure OpenAI on **Azure Container Apps**, Grafana monitoring).",
               "skills": [
                 {
                   "name": "FastAPI",
@@ -143,7 +177,7 @@ window.HOPE_DATA = {
               "project_ref": "ai-image-gen"
             },
             {
-              "num": 2,
+              "num": 3,
               "icon": "smart_toy",
               "action": "Built a **remote robot command center** for live monitoring and guidance: an **agentic chat** drives a Unitree GO2 through factory inspection tasks, streaming photos back so an operator can direct it to specific areas in real time (ROS2, Azure IoT Hub, Azure OpenAI, Docker).",
               "skills": [
@@ -188,7 +222,7 @@ window.HOPE_DATA = {
               "project_ref": "autonomous-inspection"
             },
             {
-              "num": 3,
+              "num": 4,
               "icon": "schedule",
               "action": "Built an **AI agent for a JIRA-style project-management tool**: an **agent harness** on Autogen, with **MCP servers** hosting the agent's tools and prompts, plus human-in-the-loop checkpoints.",
               "skills": [
@@ -228,7 +262,7 @@ window.HOPE_DATA = {
               "project_ref": "multi-agent-engine"
             },
             {
-              "num": 4,
+              "num": 5,
               "icon": "hub",
               "action": "Co-built the firm's **Enterprise Agent Starter Kit** with **no-code, low-code, and pro-code** paths: reusable agent templates across LangGraph, Autogen, and Semantic Kernel, plus **MCP servers**, across 15+ repos in Python, TypeScript, and C#.",
               "skills": [
@@ -276,9 +310,9 @@ window.HOPE_DATA = {
               "project_ref": "enterprise-agent-platform"
             },
             {
-              "num": 5,
+              "num": 6,
               "icon": "monitoring",
-              "action": "Deployed **Langfuse** (LLM observability) on Docker, a **self-directed** adoption: wired it into a live production project as a demo and presented it to key stakeholders.",
+              "action": "Deployed **Langfuse** observability in its **first release week**, a **self-directed** adoption: wired full-stack tracing into a live production agent to surface **latency, cost and failure modes**, then presented it to stakeholders.",
               "skills": [
                 {
                   "name": "Langfuse",
@@ -303,9 +337,9 @@ window.HOPE_DATA = {
               "impact": "Owned it end to end; opened the firm's first partnership talks with Langfuse's founders."
             },
             {
-              "num": 6,
+              "num": 7,
               "icon": "rocket_launch",
-              "action": "**Solo-engineered 10+ full-stack AI agent prototypes**: multi-agent systems, document intelligence, Physical AI, each production-adaptable.",
+              "action": "**Solo-engineered 10+ full-stack AI agent prototypes** - multi-agent systems, document intelligence, Physical AI - of which **5 were funded to production**.",
               "skills": [
                 {
                   "name": "Multi-Agent Orchestration",
@@ -348,7 +382,7 @@ window.HOPE_DATA = {
           "kind": "lead",
           "contributions": [
             {
-              "num": 7,
+              "num": 8,
               "icon": "emoji_events",
               "action": "Authored the guide, docs, and rules for an **MCP-server-building competition** in the protocol's first weeks - for a 250-person AI engineering team.",
               "skills": [
@@ -375,9 +409,9 @@ window.HOPE_DATA = {
               "impact": "The whole team shipped working MCP servers within weeks of the spec landing."
             },
             {
-              "num": 8,
+              "num": 9,
               "icon": "groups",
-              "action": "Guided senior partners to **build agents live** at EY's global leadership summit - Copilot Studio and internal platforms.",
+              "action": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at EY's **Global Leadership Summit**, handing them the tools instead of demoing to them.",
               "skills": [
                 {
                   "name": "Multi-Agent Orchestration",
@@ -398,7 +432,7 @@ window.HOPE_DATA = {
               "impact": "Raised the team's profile with global leadership."
             },
             {
-              "num": 9,
+              "num": 10,
               "icon": "gavel",
               "action": "Judged a team-wide **full-stack AI prototypes competition** for junior engineers, scored on **business value first**, then architecture, then execution.",
               "skills": [
@@ -425,7 +459,7 @@ window.HOPE_DATA = {
               "impact": "Pushed early-career builders to think like founders."
             },
             {
-              "num": 10,
+              "num": 11,
               "icon": "groups",
               "action": "**Trusted advisor for GenAI architecture** across the organization - led technical design decisions and managed developers and analysts.",
               "skills": [
@@ -459,11 +493,11 @@ window.HOPE_DATA = {
       "is_current": true,
       "section": "nonprofit",
       "tag_pill": "Non-Profit",
-      "contribution_count": 2,
+      "contribution_count": 3,
       "kpis": {
-        "ic": 2,
+        "ic": 3,
         "lead": 0,
-        "metric": 2
+        "metric": 0
       },
       "groups": [
         {
@@ -546,6 +580,41 @@ window.HOPE_DATA = {
               ],
               "domain": "AI Content Production / Non-Profit",
               "scope": "team"
+            },
+            {
+              "num": 3,
+              "icon": "fact_check",
+              "action": "Built the **Node.js backend for the RAG evaluation platform**: **LLM-as-judge** scoring, replay runs, human review queues and per-run cost tracking (Next.js API routes, Playwright, Qdrant).",
+              "skills": [
+                {
+                  "name": "Node.js",
+                  "category": "tools"
+                },
+                {
+                  "name": "Next.js",
+                  "category": "tools"
+                },
+                {
+                  "name": "Playwright",
+                  "category": "tools"
+                },
+                {
+                  "name": "Qdrant",
+                  "category": "tools"
+                },
+                {
+                  "name": "LLM-as-Judge",
+                  "category": "tools"
+                }
+              ],
+              "competencies": [
+                "evaluation",
+                "observability"
+              ],
+              "domain": "Non-profit",
+              "scope": "Internal platform",
+              "metric": null,
+              "impact": "Made agent quality measurable instead of argued about."
             }
           ]
         }
@@ -560,9 +629,9 @@ window.HOPE_DATA = {
       "logo": "careerx-logo.jpeg",
       "dates": "Aug 2024 - Present",
       "is_current": true,
-      "contribution_count": 6,
+      "contribution_count": 7,
       "kpis": {
-        "ic": 5,
+        "ic": 6,
         "lead": 1,
         "metric": 4
       },
@@ -753,6 +822,49 @@ window.HOPE_DATA = {
               "domain": "LLM Engineering / Backend",
               "scope": "company-wide",
               "impact": "Low latency without compromising answer quality."
+            },
+            {
+              "num": 6,
+              "icon": "bolt",
+              "action": "Built the **real-time backend on NestJS and WebSockets** with **MCP servers**, Prisma over Postgres and OpenTelemetry tracing, in a **Turborepo monorepo** of shared typed packages.",
+              "skills": [
+                {
+                  "name": "NestJS",
+                  "category": "tools"
+                },
+                {
+                  "name": "Node.js",
+                  "category": "tools"
+                },
+                {
+                  "name": "WebSockets",
+                  "category": "tools"
+                },
+                {
+                  "name": "Prisma",
+                  "category": "tools"
+                },
+                {
+                  "name": "PostgreSQL",
+                  "category": "tools"
+                },
+                {
+                  "name": "OpenTelemetry",
+                  "category": "tools"
+                },
+                {
+                  "name": "Turborepo",
+                  "category": "tools"
+                }
+              ],
+              "competencies": [
+                "backend architecture",
+                "typed boundaries"
+              ],
+              "domain": "Career tech",
+              "scope": "Production platform",
+              "metric": null,
+              "impact": "Gave the multi-agent platform a real-time spine with tracing built in."
             }
           ]
         },
@@ -760,7 +872,7 @@ window.HOPE_DATA = {
           "kind": "lead",
           "contributions": [
             {
-              "num": 6,
+              "num": 7,
               "icon": "explore",
               "action": "Conducted **extensive customer discovery** and market research.",
               "skills": [
@@ -1771,7 +1883,7 @@ window.HOPE_DATA = {
             "years": 1
           },
           {
-            "name": "AG-UI Protocol",
+            "name": "A2UI Protocol",
             "level": 2,
             "years": 1
           }
@@ -2070,13 +2182,19 @@ window.HOPE_DATA = {
         }
       ]
     },
-    "summary": "Six years of full-stack engineering spanning pharma, research, consulting, and life as a Microsoft-backed founder taught me one thing: I do my best work with AI on the team. The fast-changing AI scene is the thrill I look forward to in my work; I adapt quickly to new technologies and love converting prototypes into scalable production systems. Today that means shipping production AI agents. Off the clock, I'm the loving uncle with the guitar, sharing music and creativity with my six-year-old niece and newborn nephew.",
+    "summary": "Six years spanning pharma, research, consulting, and life as a Microsoft-backed founder taught me one thing: I do my best work with AI on the team. The fast-changing AI scene is the thrill I look forward to in my work; I adapt quickly to new technologies and love converting prototypes into scalable production systems. Today that means shipping production AI agents. Off the clock, I'm the loving uncle with the guitar, sharing music and creativity with my six-year-old niece and newborn nephew.",
     "experience": [
       {
-        "role_title": "Lead AI Engineer",
+        "role_title": "Forward Deployed AI Engineer",
         "company": "EY",
         "dates": "Jan 2025 - Present",
         "bullets": [
+          {
+            "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at EY's **Global Leadership Summit**, handing them the tools instead of demoing to them."
+          },
+          {
+            "text": "Built the Python backend and **ELT pipeline on Databricks** for a **production** financial prediction platform, optimising transformations in **PySpark** and mentoring a junior engineer."
+          },
           {
             "text": "Shipped a **multimodal image-generation agent** used by **100,000+ people**, taking it dev to prod in 11 days (FastAPI, React, Azure OpenAI on Azure Container Apps with Grafana monitoring)."
           },
@@ -2090,7 +2208,7 @@ window.HOPE_DATA = {
             "text": "Co-built the **Enterprise Agent Starter Kit** across **15+ repositories**: agent templates (LangGraph, Autogen, Semantic Kernel) and MCP servers in Python, TypeScript, and C#."
           },
           {
-            "text": "Deployed **Langfuse** LLM observability **within its first week of release**, self-directed, and demoed it on a live production project to key stakeholders."
+            "text": "Deployed **Langfuse** observability **in its first release week**, self-directed, wiring full-stack tracing into a live agent to surface latency, cost and failure modes."
           },
           {
             "text": "**Solo-engineered 10+ full-stack AI agent prototypes** - multi-agent systems, document intelligence, Physical AI - of which **5 secured production funding**."
@@ -2179,10 +2297,10 @@ window.HOPE_DATA = {
     ],
     "skills_line": "Multi-Agent Systems, Agent Harnesses, MCP, RAG Pipelines, LLM Gateways, LLM Evals & Observability (Langfuse), Context Engineering, LangGraph, Autogen, Claude, OpenAI, Python, TypeScript, SQL, FastAPI, React, Azure OpenAI, AWS, Docker",
     "onepage": {
-      "summary": "Lead AI Engineer shipping production AI Agents: multi-agent systems, MCP, RAG, Physical AI. 5+ agent prototypes funded for production at EY, $2M+ pipeline. Microsoft-backed founder; NSF researcher.",
+      "summary": "Forward Deployed AI Engineer shipping production AI Agents: multi-agent systems, MCP, RAG, Physical AI. 5+ agent prototypes funded for production at EY, $2M+ pipeline. Microsoft-backed founder; NSF researcher.",
       "experience": [
         {
-          "role_title": "Lead AI Engineer",
+          "role_title": "Forward Deployed AI Engineer",
           "company": "EY",
           "dates": "Jan 2025 - Present",
           "bullets": [
@@ -2239,31 +2357,66 @@ window.HOPE_DATA = {
       "Cloud Platforms: Azure, AWS, GCP",
       "Industries: Financial Services, Consulting, Robotics, HR Tech, Pharma & Life Sciences, Non-Profit"
     ],
-    "mercury": {
-      "summary": "Six years of full-stack engineering spanning pharma, research, consulting, and life as a Microsoft-backed founder taught me one thing: I do my best work with AI on the team. The fast-changing AI scene is the thrill I look forward to in my work; I adapt quickly to new technologies and love converting prototypes into scalable production systems. Today that means shipping production AI agents. Off the clock, I'm the loving uncle with the guitar, sharing music and creativity with my six-year-old niece and newborn nephew.",
+    "aiengineer": {
+      "headline": "Forward Deployed AI Engineer · Agentic Systems, Retrieval & Data Platforms",
+      "summary": "Generative AI unleashed a productivity beast in me. Rapid prototyping is most of my job: at EY I solo-built 10+ AI agent prototypes and 5 earned production funding, so I know how to test an idea cheaply and which ones deserve to become systems. Six years across pharma, research, consulting and life as a Microsoft-backed founder taught me the hardest part is rarely the model; it is the data reaching it and the vague ask behind it, which is why half my week is in the room with the people who will use the thing. I give live demos rather than recorded ones, and I put in the work beforehand so they run perfectly. Off the clock, I'm the loving uncle with the guitar.",
+      "skills_groups": [
+        "Agentic Systems: Multi-Agent Design, Agent Harness Engineering, LLM Orchestration, MCP Servers, ReAct Reasoning, Human-in-the-Loop",
+        "Retrieval: Hybrid RAG, Embeddings, Chunking, Contextual Retrieval & Re-ranking, Semantic Search, Context Engineering",
+        "Frameworks & Protocols: LangChain, LangGraph, Autogen, Semantic Kernel, FastAPI, NestJS; MCP, A2A, A2UI",
+        "Full-Stack: Node.js, Express, React, Next.js, REST & API Design, WebSockets, Prisma, Async Python",
+        "Data Engineering: SQL, ETL/ELT Pipelines, Schema Design, Data Modeling, Data Quality & Validation, QC, A/B Testing",
+        "Big Data & Stores: PySpark, Dask, Polars, Pandas, Databricks; PostgreSQL, Oracle SQL, BigQuery, CosmosDB, Neo4j, Weaviate, Qdrant, Azure AI Search",
+        "Evaluation & Observability: LLM Evals, LLM-as-Judge, Replay Harnesses, Langfuse, LangSmith, OpenTelemetry, Grafana, Cost Metrics",
+        "Modeling & Analytics: MINLP Optimization, Marketing Mix Modeling, Time-Series (ARIMA), Clustering, Tableau, Power BI, D3.js, Qlik, Alteryx, DAX",
+        "AI-Assisted Development: Claude Code, Codex, Claude Agent SDK, Prompt & Context Engineering",
+        "Languages & Cloud: Python, SQL, TypeScript, R, C#; Azure, AWS, GCP, Cloudflare Workers, Docker, Kubernetes, Git, CI/CD, Turborepo"
+      ],
       "experience": [
         {
-          "role_title": "Lead AI Engineer",
+          "role_title": "Forward Deployed AI Engineer",
           "company": "EY",
           "dates": "Jan 2025 - Present",
           "bullets": [
             {
-              "text": "Shipped a **multimodal image-generation agent** to **100,000+ users** in 11 days: chat-driven generation and editing (FastAPI, React, Azure OpenAI on Azure Container Apps)."
+              "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at the **Global Leadership Summit**, handing them the tools instead of demoing to them."
+            },
+            {
+              "text": "Built the **agent orchestrator, context layer and Databricks ELT pipeline** for a **production** financial prediction platform, optimising transformations in **PySpark** and mentoring a junior engineer."
+            },
+            {
+              "text": "Cut approval cycles **from 3 weeks to 2 days** with a **production AI agent for a JIRA-style PM tool**: an Autogen harness, **MCP servers hosting its tools and prompts**, human checkpoints at each decision."
+            },
+            {
+              "text": "Co-built the **production-grade Enterprise Agent Starter Kit** so teams build their own agents instead of commissioning ours: **15+ repositories** of templates and protocol servers (**MCP, A2A, A2UI**)."
+            },
+            {
+              "text": "Took a **multimodal image-generation agent** from **dev to production in 11 days**, now used by **100K+ people** (FastAPI, React, Azure OpenAI, Grafana)."
             },
             {
               "text": "Generated **$2M+ in client pipeline** with a **remote robot command center**: agentic chat guides a Unitree GO2 through factory inspections (ROS2, Azure IoT Hub, MCP)."
             },
             {
-              "text": "Cut approval cycles **from 3 weeks to 2 days** with an **AI agent for a JIRA-style PM tool**: an agent harness on Autogen, MCP servers hosting tools and prompts, HITL checkpoints."
+              "text": "Deployed **Langfuse** observability in its first release week, self-directed, wiring full-stack tracing into a **live agent** to surface latency, cost and failure modes."
+            }
+          ]
+        },
+        {
+          "role_title": "Full-Stack SDE / AI Engineer (Pro-bono)",
+          "company": "Art of Living Foundation - Non-Profit",
+          "dates": "Oct 2024 - Present",
+          "bullets": [
+            {
+              "text": "Built a **voice-first AI agent** running in production on artofliving.org for members across **180 countries**, with **handoff into HubSpot** when a live specialist should take over (Next.js, FastAPI, **GCP** + AWS)."
             },
             {
-              "text": "Co-built the **Enterprise Agent Starter Kit** across **15+ repositories**: agent templates (LangGraph, Autogen, Semantic Kernel) and MCP servers in Python, TypeScript, and C#."
+              "text": "**Demoed it live to an audience of 2.5K people** at an internal conference in Boone, NC."
             },
             {
-              "text": "Deployed **Langfuse** LLM observability **within its first week of release**, self-directed, and demoed it on a live production project to key stakeholders."
+              "text": "Built the **Node.js backend for the RAG evaluation platform**: **LLM-as-judge** scoring, replay runs, review queues and per-run cost tracking (Next.js API routes, Playwright, Qdrant)."
             },
             {
-              "text": "**Solo-engineered 10+ full-stack AI agent prototypes** - multi-agent systems, document intelligence, Physical AI - of which **5 secured production funding**."
+              "text": "Reached **92%+ retrieval accuracy** with **hybrid RAG** over **Weaviate and Qdrant**, built from structured and unstructured sources."
             }
           ]
         },
@@ -2273,26 +2426,19 @@ window.HOPE_DATA = {
           "dates": "Aug 2024 - Present",
           "bullets": [
             {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 4 Founder (backed up to $250K)** sponsored by Microsoft for Startups; now a free, open-source **Claude plugin**."
+              "text": "Founded and solo-built a **multi-agent-driven career platform** (**MCP, A2A, A2UI**, LangChain, Neo4j, FastAPI) as a **Level 4 Founder (backed up to $250K)**, sponsored by Microsoft for Startups."
             },
             {
-              "text": "**86% of active customers** landed multiple interviews and, ultimately, jobs."
+              "text": "**Designed the schema, chose the database, and built the ingestion pipeline**, carrying user-uploaded resumes from upload to queryable."
             },
             {
-              "text": "Cut data-labelling errors **90%** with an **agentic RAG workflow** over the skills graph, and fine-tuned **OpenAI** models on synthetic data to **95% accuracy**."
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / AI Engineer (Pro-bono)",
-          "company": "Art of Living (Non-Profit)",
-          "dates": "Oct 2024 - Present",
-          "bullets": [
-            {
-              "text": "Built a **voice-first AI agent** live on artofliving.org for members across **180 countries**: scalable architecture on OpenAI models, MCP tools, hybrid RAG at **92%+ accuracy** (Next.js, FastAPI, GCP + AWS)."
+              "text": "Built the **real-time backend on NestJS and WebSockets** with **MCP servers**, Prisma over Postgres and OpenTelemetry tracing, in a **Turborepo monorepo** of shared typed packages."
             },
             {
-              "text": "Built private **Claude plugins** that cut content creation **from a full day to a few hours** of human-in-the-loop review (Whisper, ffmpeg, Gemini Veo)."
+              "text": "Cut data-labelling errors **90%** with an **agentic database management workflow** over a **graph database of skills**, and **fine-tuned on synthetic data to 95% accuracy**."
+            },
+            {
+              "text": "**86% of active customers** landed multiple interviews and jobs; the platform now lives on as a free, **open-source Claude plugin**."
             }
           ]
         },
@@ -2302,7 +2448,13 @@ window.HOPE_DATA = {
           "dates": "Aug 2022 - May 2024",
           "bullets": [
             {
-              "text": "Improved data exploration **80%** with big-data pipelines over **700M rows** (PySpark, Dask, Polars) on an NSF-funded study; awarded a competitive **Research Fellowship** with full scholarship."
+              "text": "**Primary researcher** on a **$288K NSF People Analytics study** of research collaboration patterns; awarded a competitive **NSF Research Fellowship** with a **100% scholarship**."
+            },
+            {
+              "text": "Improved data exploration rate **80%** by building **structured and unstructured pipelines over 700M rows** (PySpark, Dask, Polars)."
+            },
+            {
+              "text": "Increased project efficiency **85%** by turning exploratory research code into rigorous **extraction, cleaning and validation pipelines** (QC, A/B testing) that others could run."
             }
           ]
         },
@@ -2312,379 +2464,13 @@ window.HOPE_DATA = {
           "dates": "Aug 2020 - Jul 2022",
           "bullets": [
             {
-              "text": "Lifted portfolio ROI **10%** and cut drug onboarding **80%** with **MINLP optimization** and predictive + prescriptive dashboards (Python, SQL, Gekko, D3.js)."
-            }
-          ]
-        }
-      ]
-    },
-    "simplifiedq": {
-      "summary": "Founder-turned-founding-engineer: six years of full-stack engineering across pharma, research, consulting, and my own Microsoft-backed startup. I ship AI-native products end to end (Next.js and React up front, Python/FastAPI behind, LLMs in production) and love converting prototypes into scalable production systems. Customer discovery is home turf: I ran my startup's own discovery, killed weak ideas early, and shipped what users kept. Off the clock, I'm the loving uncle with the guitar, sharing music and creativity with my six-year-old niece and newborn nephew.",
-      "skills_groups": [
-        "Full-Stack: Next.js, React, TypeScript, Python, FastAPI",
-        "Agentic Systems: Multi-Agent System Design, Agent Harnesses, MCP, RAG, Evals (Langfuse, LangSmith), Agent Deployment",
-        "Cloud Platforms: GCP, Azure, AWS"
-      ],
-      "experience": [
-        {
-          "role_title": "Founder & CTO",
-          "company": "agenthope.ai (previously CareerX, Inc.)",
-          "dates": "Aug 2024 - Present",
-          "bullets": [
-            {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 4 Founder (backed up to $250K)** sponsored by Microsoft for Startups; now a free, open-source **Claude plugin**."
+              "text": "Increased average ROI **10%** across US drug portfolios with **Max-ROI and Target-Revenue MINLP optimization**, streamlining the **production Marketing Mix Modeling data pipeline** behind it."
             },
             {
-              "text": "**86% of active customers** landed multiple interviews and, ultimately, jobs."
+              "text": "Reduced strategic field errors **20%** and improved efficiency **22%** with a **Python Flask** resource-allocation dashboard, built with **global business, finance and operations stakeholders**."
             },
             {
-              "text": "Ran **extensive customer discovery** and market research that directly shaped product, strategy, and go-to-market."
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / AI Engineer (Pro-bono)",
-          "company": "Art of Living (Non-Profit)",
-          "dates": "Oct 2024 - Present",
-          "bullets": [
-            {
-              "text": "Built a **voice-first AI agent** live on artofliving.org across **180 countries**: a production **call-and-messaging workflow** with specialist handoff, **92%+ RAG accuracy** (Next.js, FastAPI, GCP)."
-            },
-            {
-              "text": "Built private **Claude plugins** that cut content creation **from a full day to a few hours** of human-in-the-loop review."
-            }
-          ]
-        },
-        {
-          "role_title": "Lead AI Engineer",
-          "company": "EY",
-          "dates": "Jan 2025 - Present",
-          "bullets": [
-            {
-              "text": "Shipped a **multimodal image-generation agent** to **100,000+ users**, dev to prod in 11 days (FastAPI, React, Azure OpenAI on Azure Container Apps)."
-            },
-            {
-              "text": "Cut approval cycles **from 3 weeks to 2 days** with an **AI agent for a JIRA-style PM tool**: an agent harness on Autogen, MCP servers hosting its tools and prompts."
-            },
-            {
-              "text": "**Solo-engineered 10+ full-stack AI agent prototypes** - multi-agent systems, document intelligence, Physical AI - of which **5 secured production funding**."
-            }
-          ]
-        },
-        {
-          "role_title": "Data Scientist (Research Assistant)",
-          "company": "University of Iowa",
-          "dates": "Aug 2022 - May 2024",
-          "bullets": [
-            {
-              "text": "Improved data exploration **80%** with big-data pipelines over **700M rows** (PySpark, Dask, Polars) on an NSF-funded study; awarded a competitive **Research Fellowship** with full scholarship."
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / Data Scientist",
-          "company": "Novartis Healthcare",
-          "dates": "Aug 2020 - Jul 2022",
-          "bullets": [
-            {
-              "text": "Lifted portfolio ROI **10%** and cut drug onboarding **80%** with **MINLP optimization** and predictive + prescriptive dashboards (Python, SQL, Gekko, D3.js)."
-            }
-          ]
-        }
-      ]
-    },
-    "amex": {
-      "summary": "Lead AI Engineer building production agentic systems at enterprise scale: agent harnesses, MCP servers, RAG, and the shared AI infrastructure teams build on. Six years across financial services, pharma, and my own Microsoft-backed startup. Off the clock, I'm the loving uncle with the guitar.",
-      "skills_groups": [
-        "Agentic Systems: Multi-Agent System Design, Agent Harness Engineering, MCP System Design, RAG, Observability (Langfuse, LangSmith), Agent Deployment",
-        "AI-Native Development: Claude Code, Factory Droid, OpenAI Codex, GitHub Copilot, Gemini CLI",
-        "Backend & APIs: Python, TypeScript, FastAPI, REST APIs, Schema Validation, Vector & Graph DBs",
-        "Cloud & Infra: AWS, GCP, Azure, Kubernetes, Docker",
-        "Industries: Financial Services, Consulting, Pharma & Life Sciences, HR Tech, Robotics, Non-Profit"
-      ],
-      "experience": [
-        {
-          "role_title": "Lead AI Engineer",
-          "company": "EY",
-          "dates": "Jan 2025 - Present",
-          "bullets": [
-            {
-              "text": "Co-built the firm's **Enterprise Agent Starter Kit** - the **shared AI infrastructure** teams build on: agent templates (LangGraph, Autogen) and **MCP servers** across **15+ repositories** in Python, TypeScript, and C#."
-            },
-            {
-              "text": "Cut approval cycles **from 3 weeks to 2 days** with an **AI agent for a JIRA-style PM tool**: an agent harness on Autogen calling tools via MCP servers, with human-in-the-loop checkpoints."
-            },
-            {
-              "text": "**Owned production systems post-launch** - reliability, latency, failure modes - deploying **Langfuse** observability **in its first release week** and wiring full-stack tracing into a live agent."
-            },
-            {
-              "text": "Shipped a **multimodal image-generation agent** used by **100K+ people**, taking it dev to prod in 11 days (FastAPI, React, Azure OpenAI on Azure Container Apps with Grafana monitoring)."
-            },
-            {
-              "text": "Built the Python backend for an **agent-driven financial prediction platform** on a full-stack team of eight, using **LLMs** to generate predictive and prescriptive insights over stock data."
-            },
-            {
-              "text": "**Solo-engineered 10+ full-stack AI agent prototypes** - multi-agent systems, document intelligence, Physical AI - of which **5 secured production funding**."
-            }
-          ]
-        },
-        {
-          "role_title": "Founder & CTO",
-          "company": "agenthope.ai (previously CareerX, Inc.)",
-          "dates": "Aug 2024 - Present",
-          "bullets": [
-            {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** (skills graph database, agentic RAG, Azure Functions) as a **Level 4 Founder (backed up to $250K)**; now a free, **open-source Claude plugin**."
-            },
-            {
-              "text": "Cut data-labelling errors **90%** with an **agentic RAG workflow** (contextual retrieval, re-ranking) over the skills graph, and fine-tuned **OpenAI** models to **95% accuracy**."
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / AI Engineer (Pro-bono)",
-          "company": "Art of Living (Non-Profit)",
-          "dates": "Oct 2024 - Present",
-          "bullets": [
-            {
-              "text": "Built a **voice-first AI agent** live on artofliving.org for members across **180 countries**: OpenAI models, MCP tools, hybrid RAG at **92%+ accuracy** over a vector database (Next.js, FastAPI, GCP + AWS)."
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / Data Scientist",
-          "company": "Novartis Healthcare",
-          "dates": "Aug 2020 - Jul 2022",
-          "bullets": [
-            {
-              "text": "Lifted portfolio ROI **10%** and cut onboarding **80%** in a **regulated environment** with **MINLP optimization** and predictive dashboards."
-            }
-          ]
-        },
-        {
-          "role_title": "Data Scientist (Research Assistant)",
-          "company": "University of Iowa",
-          "dates": "Aug 2022 - May 2024",
-          "bullets": [
-            {
-              "text": "Improved data exploration **80%** with big-data pipelines over **700M rows** (PySpark, Dask, Polars) on an NSF-funded study; awarded a competitive **Research Fellowship** with full scholarship."
-            }
-          ]
-        }
-      ],
-      "projects": [
-        {
-          "name": "Supply-Chain Network Analysis (COVID-19)",
-          "text": "Modeled COVID's impact on the **S&P 1500** through a **17,000-node network graph**, web-scraped and analyzed for industry and business interdependencies."
-        },
-        {
-          "name": "Heineken Case Competition",
-          "text": "Placed **4th nation-wide** forecasting sales and revenue from real finance data using time-series analysis, **ARIMA**, and supervised ML."
-        },
-        {
-          "name": "Clinical Trial Matching Engine",
-          "text": "Patient-trial matching combining rule-based logic, **Named-Entity Recognition** (SciSpacy, BERT), and RAG over complex eligibility criteria."
-        }
-      ]
-    },
-    "bcg": {
-      "summary": "Lead AI Engineer with consulting in my blood: at EY I design agentic architectures for enterprise clients, and my prototypes are the business case - 10+ built solo, 5 funded to production, $2M+ in client pipeline. Six years across consulting, financial services, pharma, and my own Microsoft-backed startup, building daily with AI-assisted tools like Claude Code. Off the clock, I'm the loving uncle with the guitar.",
-      "skills_groups": [
-        "Agentic Systems: Multi-Agent Patterns, Agent Harness Engineering, MCP System Design, RAG & Context Retrieval, Prompt Orchestration, Vector Databases, Agent Evaluation (Langfuse, LangSmith)",
-        "AI-Native Development: Claude Code, Factory Droid, OpenAI Codex, GitHub Copilot, Gemini CLI",
-        "Frameworks: LangChain, LangGraph, Autogen, Semantic Kernel, Claude & OpenAI APIs",
-        "Cloud Platforms: Azure, AWS, GCP, Docker, Kubernetes",
-        "Industries: Consulting, Financial Services, Pharma & Life Sciences, HR Tech, Robotics, Non-Profit"
-      ],
-      "experience": [
-        {
-          "role_title": "Lead AI Engineer",
-          "company": "EY",
-          "dates": "Jan 2025 - Present",
-          "bullets": [
-            {
-              "text": "**Solo-engineered 10+ AI agent prototypes** as client proofs-of-concept - multi-agent, document intelligence, Physical AI - and **5 earned production funding**."
-            },
-            {
-              "text": "Generated **$2M+ in client pipeline** with a **remote robot command center**: agentic chat drives factory inspections with live photo streaming, and the prototype became the business case."
-            },
-            {
-              "text": "Cut approval cycles **from 3 weeks to 2 days** with **agentic components for intelligent workflow automation**: an agent harness on Autogen, **MCP servers** hosting tools and prompts, HITL checkpoints."
-            },
-            {
-              "text": "Co-built the **Enterprise Agent Starter Kit** across **15+ repositories**: reusable agent templates (LangGraph, Autogen, **Semantic Kernel**) and MCP servers, no-code to pro-code."
-            },
-            {
-              "text": "**Trusted advisor for GenAI architecture** firm-wide, guiding senior partners as they built agents live at EY's global leadership summit."
-            },
-            {
-              "text": "Shipped a **multimodal image-generation agent** for a global campaign that reached **100,000+ people**, dev to prod in 11 days."
-            }
-          ]
-        },
-        {
-          "role_title": "Founder & CTO",
-          "company": "agenthope.ai (previously CareerX, Inc.)",
-          "dates": "Aug 2024 - Present",
-          "bullets": [
-            {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 4 Founder (backed up to $250K)**, sponsored by Microsoft for Startups; now a free, open-source **Claude plugin**."
-            },
-            {
-              "text": "**86% of active customers** landed multiple interviews and, ultimately, jobs."
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / AI Engineer (Pro-bono)",
-          "company": "Art of Living (Non-Profit)",
-          "dates": "Oct 2024 - Present",
-          "bullets": [
-            {
-              "text": "Built a **voice-first AI agent** live on artofliving.org for members across **180 countries**: **RAG-based context retrieval** at **92%+ accuracy** over a vector database, with live-specialist handoff."
-            }
-          ]
-        },
-        {
-          "role_title": "Data Scientist (Research Assistant)",
-          "company": "University of Iowa",
-          "dates": "Aug 2022 - May 2024",
-          "bullets": [
-            {
-              "text": "Improved data exploration **80%** with big-data pipelines over **700M rows** (PySpark, Dask, Polars) on an NSF-funded study; awarded a competitive **Research Fellowship** with full scholarship."
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / Data Scientist",
-          "company": "Novartis Healthcare",
-          "dates": "Aug 2020 - Jul 2022",
-          "bullets": [
-            {
-              "text": "Lifted portfolio ROI **10%** and cut onboarding **80%** in a regulated environment with **MINLP optimization** and predictive dashboards."
-            }
-          ]
-        }
-      ]
-    },
-    "nvidia": {
-      "summary": "Applied AI engineer with an electronics spine: a B.Tech in Electronics & Communication, embedded-systems roots (MSP430 firmware, UART), and six years shipping AI systems - today that means production agent harnesses and Physical AI at EY. I have owned LLM-powered workflows end to end, from prototype to funded production, and I love converting prototypes into scalable production systems. Off the clock, I'm the loving uncle with the guitar.",
-      "skills_groups": [
-        "Agentic Systems: Multi-Agent System Design, Agent Harness Engineering, MCP System Design, RAG, Observability & Evals (Langfuse, LangSmith), Agent Deployment",
-        "AI-Native Development: Claude Code, Factory Droid, OpenAI Codex, GitHub Copilot, Gemini CLI",
-        "Agent Frameworks: AutoGen, Semantic Kernel, LangChain, LangGraph, Claude & OpenAI APIs",
-        "Languages: Python, C/C++, C#, TypeScript",
-        "ML & NLP: Fine-tuning LLMs, BERT, NER, Scikit-learn, Synthetic Data",
-        "Hardware & Embedded: MSP430 Firmware, UART, MQTT, ROS2, Physical AI",
-        "Cloud Platforms: Azure, AWS, GCP, Docker, Kubernetes"
-      ],
-      "experience": [
-        {
-          "role_title": "Lead AI Engineer",
-          "company": "EY",
-          "dates": "Jan 2025 - Present",
-          "bullets": [
-            {
-              "text": "Generated **$2M+ in pipeline** with a **remote robot command center** - a real **HW/SW integration** problem spanning ROS2, Azure IoT Hub, and camera pipelines."
-            },
-            {
-              "text": "Cut enterprise approval cycles **from 3 weeks to 2 days** with an **AI agent for a JIRA-style project-management tool**: an agent harness on AutoGen, MCP servers hosting tools and prompts."
-            },
-            {
-              "text": "Co-built the **Enterprise Agent Starter Kit** across **15+ repositories**: agent templates (**AutoGen, Semantic Kernel**, LangGraph) and MCP servers in Python, TypeScript, and C#."
-            },
-            {
-              "text": "**Owned production AI systems post-launch**, deploying **Langfuse** observability **in its first release week** and wiring full-stack tracing into a live agent for monitoring and debugging."
-            },
-            {
-              "text": "Shipped a **multimodal image-generation agent** used by **100,000+ people**, taking it dev to prod in 11 days (FastAPI, React, Azure OpenAI on Azure Container Apps with Grafana monitoring)."
-            },
-            {
-              "text": "**Scouted and evaluated emerging AI tooling** for firm-wide adoption, running an MCP-server competition for a **250-person AI team** weeks after the spec landed."
-            },
-            {
-              "text": "**Solo-engineered 10+ full-stack AI agent prototypes** - multi-agent systems, document intelligence, Physical AI - of which **5 secured production funding**."
-            },
-            {
-              "text": "**Mentored junior engineers** and judged a firm-wide **AI prototype competition**, scoring every project on business value first, then architecture, then execution."
-            }
-          ]
-        },
-        {
-          "role_title": "Founder & CTO",
-          "company": "agenthope.ai (previously CareerX, Inc.)",
-          "dates": "Aug 2024 - Present",
-          "bullets": [
-            {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 4 Founder (backed up to $250K)**, sponsored by Microsoft for Startups; now a free, **open-source Claude plugin**."
-            },
-            {
-              "text": "Built the platform's core on the **OpenAI** stack: skills **graph database**, agentic RAG (**LangChain**), models fine-tuned to **95% accuracy**."
-            },
-            {
-              "text": "Innovated a **proprietary parsing algorithm** converting dynamic HTML to JSON and back in **under one second**, enabling data portability across systems."
-            },
-            {
-              "text": "**86% of active customers** landed multiple interviews and, ultimately, jobs."
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / AI Engineer (Pro-bono)",
-          "company": "Art of Living (Non-Profit)",
-          "dates": "Oct 2024 - Present",
-          "bullets": [
-            {
-              "text": "Built a **voice-first AI agent** live on artofliving.org for members across **180 countries**: hybrid RAG at **92%+ accuracy** over a vector database, with live-specialist handoff (Next.js, FastAPI, GCP + AWS)."
-            },
-            {
-              "text": "Cut content production **from a full day to a few hours** with private **Claude plugins**: **Whisper** transcription, word-level audio cuts, caption rendering, and loudness normalization (ffmpeg)."
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / Data Scientist",
-          "company": "Novartis Healthcare",
-          "dates": "Aug 2020 - Jul 2022",
-          "bullets": [
-            {
-              "text": "Lifted portfolio ROI **10%** and cut drug onboarding **80%** with **MINLP optimization** and predictive dashboards (Python, SQL)."
-            },
-            {
-              "text": "Built a **D3.js live visualization** of the optimizer in real time, making it legible to non-technical stakeholders and earning **'Star Employee' twice**."
-            }
-          ]
-        },
-        {
-          "role_title": "Data Scientist (Research Assistant)",
-          "company": "University of Iowa",
-          "dates": "Aug 2022 - May 2024",
-          "bullets": [
-            {
-              "text": "Improved data exploration **80%** by building big-data pipelines over **700M rows** (PySpark, Dask, Polars) as primary researcher on an NSF-funded study."
-            },
-            {
-              "text": "Increased project efficiency **85%** with rigorous **extraction, cleaning, and validation** pipelines (QC, A/B testing); awarded a competitive **Research Fellowship** with full scholarship."
-            }
-          ]
-        },
-        {
-          "role_title": "Embedded Systems Intern",
-          "company": "Auckam",
-          "dates": "May 2019 - Jun 2019",
-          "bullets": [
-            {
-              "text": "Connected a water-treatment device to Azure Cloud with **MSP430 firmware**, **UART**, SD-card interfacing, and MQTT (Mongoose OS, STM32), including a fail-safe telemetry backup."
-            }
-          ]
-        },
-        {
-          "role_title": "Cloud Technology Intern",
-          "company": "Cholamandalam",
-          "dates": "May 2018 - Jun 2018",
-          "bullets": [
-            {
-              "text": "Researched data centres, cloud services, and providers, then presented the recommended **cloud-migration path** to the team."
+              "text": "Built a **production Qlik dashboard on an automated data pipeline**, **migrated legacy Excel VBA applications to Qlik**, and visualised the ad-optimizer in **D3.js**, earning **'Star Employee' twice**."
             }
           ]
         }
@@ -2692,173 +2478,85 @@ window.HOPE_DATA = {
       "projects": [
         {
           "name": "Clinical Trial Matching Engine",
-          "text": "Patient-trial matching combining rule-based logic, **Named-Entity Recognition** (SciSpacy, BERT), and RAG over complex eligibility criteria, with real-time API validation."
+          "text": "Matched patients to trials over **structured and unstructured data** using **Named-Entity Recognition** (SciSpacy, BERT) and RAG, with real-time API validation."
         },
         {
-          "name": "Optimal Vehicle Selection Tool",
-          "text": "MSBA capstone with **State Farm**: ML models over structured and unstructured data, with **NLP features** extracted from descriptive vehicle reviews."
-        },
-        {
-          "name": "Heineken Case Competition",
-          "text": "Placed **4th nation-wide** forecasting sales and revenue from real finance data using time-series analysis, **ARIMA**, and supervised ML."
-        }
-      ]
-    },
-    "google": {
-      "summary": "Lead AI Engineer who builds fast and ships: 10+ AI agent prototypes solo-engineered at EY with 5 funded to production, and a full-stack GenAI app taken from concept to 100,000+ users in 11 days. Six years across consulting, financial services, pharma, research, and my own Microsoft-backed startup, working AI-native with agent harnesses, MCP, and RAG. I love converting prototypes into scalable production systems. Off the clock, I'm the loving uncle with the guitar.",
-      "skills_groups": [
-        "Agentic Systems: Multi-Agent System Design, Agent Harness Engineering, MCP System Design, RAG, Observability & Evals (Langfuse, LangSmith), Agent Deployment",
-        "AI-Native Development: Claude Code, Factory Droid, OpenAI Codex, GitHub Copilot, Gemini CLI",
-        "Frameworks: LangGraph, AutoGen, LangChain, Semantic Kernel, FastAPI, Next.js, React",
-        "Languages: Python, TypeScript, C#, C/C++, SQL",
-        "ML & Data: Fine-tuning LLMs, BERT, NER, Scikit-learn, PySpark, Vector & Graph Databases",
-        "Cloud & Google Stack: GCP, Gemini (Veo, Nano Banana), Google AI Studio, AWS, Azure, Docker"
-      ],
-      "experience": [
-        {
-          "role_title": "Lead AI Engineer",
-          "company": "EY",
-          "dates": "Jan 2025 - Present",
-          "bullets": [
-            {
-              "text": "Shipped a **multimodal image-generation agent** from concept to production **in 11 days**, reaching **100,000+ people** with zero downtime (FastAPI, React)."
-            },
-            {
-              "text": "**Solo-engineered 10+ full-stack AI agent prototypes** - multi-agent systems, document intelligence, Physical AI - and **5 were funded into production**."
-            },
-            {
-              "text": "Cut enterprise approval cycles **from 3 weeks to 2 days** with an **AI agent for a JIRA-style project-management tool**: an agent harness on AutoGen, MCP servers hosting tools and prompts."
-            },
-            {
-              "text": "Co-built the **Enterprise Agent Starter Kit** - the shared infrastructure teams build on - across **15+ repositories** in Python, TypeScript, and C#."
-            },
-            {
-              "text": "Generated **$2M+ in client pipeline** with a **remote robot command center**: agentic chat drives a Unitree GO2 through factory inspections, streaming photos back live (ROS2, IoT)."
-            },
-            {
-              "text": "**Owned production systems post-launch** - reliability, latency, failure modes - deploying **Langfuse** observability **in its first release week** with full-stack tracing into a live agent."
-            },
-            {
-              "text": "Authored the guide, docs, and rules for an **MCP-server-building competition** that got a **250-person AI team** hands-on weeks after the spec landed."
-            },
-            {
-              "text": "**Mentored junior engineers** and judged a firm-wide **AI prototype competition**, scoring every project on business value first, then architecture, then execution."
-            }
-          ]
-        },
-        {
-          "role_title": "Founder & CTO",
-          "company": "agenthope.ai (previously CareerX, Inc.)",
-          "dates": "Aug 2024 - Present",
-          "bullets": [
-            {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 4 Founder (backed up to $250K)**, sponsored by Microsoft for Startups; now a free, **open-source Claude plugin**."
-            },
-            {
-              "text": "Built the platform's core on the **OpenAI** stack: skills **graph database**, agentic RAG, models fine-tuned on synthetic data to **95% accuracy**."
-            },
-            {
-              "text": "Innovated a **proprietary parsing algorithm** converting dynamic HTML to JSON and back in **under one second**, enabling data portability across systems."
-            },
-            {
-              "text": "**86% of active customers** landed multiple interviews and, ultimately, jobs."
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / AI Engineer (Pro-bono)",
-          "company": "Art of Living (Non-Profit)",
-          "dates": "Oct 2024 - Present",
-          "bullets": [
-            {
-              "text": "Built a **voice-first AI agent** live on artofliving.org for members across **180 countries**, deployed on **Google Cloud**: hybrid RAG at **92%+ accuracy** over a vector database (Next.js, FastAPI)."
-            },
-            {
-              "text": "Evaluated **Gemini voice and text models via Google AI Studio** head-to-head with OpenAI before choosing the production stack."
-            },
-            {
-              "text": "Cut content production **from a full day to a few hours** with private **Claude plugins**: **Gemini Veo and Nano Banana** for generated media, Whisper and ffmpeg for the edit."
-            }
-          ]
-        },
-        {
-          "role_title": "Data Scientist (Research Assistant)",
-          "company": "University of Iowa",
-          "dates": "Aug 2022 - May 2024",
-          "bullets": [
-            {
-              "text": "Improved data exploration **80%** with big-data pipelines over **700M rows** (PySpark, Dask, Polars) on an NSF-funded study; awarded a competitive **Research Fellowship** with full scholarship."
-            },
-            {
-              "text": "Increased project efficiency **85%** with rigorous **extraction, cleaning, and validation** pipelines (QC, A/B testing) in Python."
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / Data Scientist",
-          "company": "Novartis Healthcare",
-          "dates": "Aug 2020 - Jul 2022",
-          "bullets": [
-            {
-              "text": "Lifted portfolio ROI **10%** and cut drug onboarding **80%** with **MINLP optimization** and predictive dashboards (Python, SQL)."
-            },
-            {
-              "text": "Built a **D3.js live visualization** of the optimizer in real time, making it legible to non-technical stakeholders and earning **'Star Employee' twice**."
-            }
-          ]
-        }
-      ],
-      "projects": [
-        {
-          "name": "Clinical Trial Matching Engine",
-          "text": "Patient-trial matching combining rule-based logic, **Named-Entity Recognition** (SciSpacy, BERT), and RAG over complex eligibility criteria, with real-time API validation."
+          "name": "Optimal Vehicle Selection (State Farm)",
+          "text": "MSBA capstone: **regression, classification and clustering** over structured and unstructured data, with **NLP features extracted** from vehicle reviews."
         },
         {
           "name": "Supply-Chain Network Analysis (COVID-19)",
-          "text": "Modeled COVID's impact on the **S&P 1500** through a **17,000-node network graph**, web-scraped and analyzed for industry and business interdependencies."
+          "text": "**Web-scraped** and modeled COVID's impact on the **S&P 1500** through a **17,000-node network graph**, analysing industry and business interdependencies."
         },
         {
           "name": "Heineken Case Competition",
-          "text": "Placed **4th nation-wide** forecasting sales and revenue from real finance data using time-series analysis, **ARIMA**, and supervised ML."
+          "text": "Placed **4th nation-wide** forecasting sales and revenue from real finance data using **time-series analysis, ARIMA** and supervised ML (Python, JMP, Oracle SQL)."
         }
       ]
     },
-    "bain": {
-      "summary": "Lead AI Engineer who ships generative AI end to end and brings the consulting half with it: at EY I design agentic architectures for enterprise clients, advise firm-wide on GenAI, and mentor the engineers building alongside me. Six years across consulting, financial services, pharma, research, and my own Microsoft-backed startup. I love converting prototypes into scalable production systems. Off the clock, I'm the loving uncle with the guitar.",
+    "forwarddeployed": {
+      "headline": "Forward Deployed Engineer · Agentic Systems, Full-Stack Delivery & Enterprise Adoption",
+      "summary": "Generative AI unleashed a productivity beast in me. Six years of engineering across pharma, research, consulting and life as a Microsoft-backed founder taught me the hardest part is rarely the model; it is turning a vague ask into something that ships and then survives. Today that means half my week in the room with the people who will use the thing and half of it building. I give live demos rather than recorded ones, and I put in the work beforehand so they run perfectly. Off the clock, I'm the loving uncle with the guitar.",
       "skills_groups": [
-        "Generative AI Systems: Multi-Agent Workflows, Agent Harness Engineering, MCP System Design, RAG, Graph-Based Retrieval, Context & Prompt Engineering, Claude & OpenAI APIs",
-        "AI-Native Development: Claude Code, Factory Droid, OpenAI Codex, GitHub Copilot",
-        "Evaluation & Ops: LLM Evals, Hallucination & Relevance Testing, Langfuse & LangSmith, Cost/Latency Tuning, HITL",
-        "Engineering: Python, TypeScript, C#, FastAPI, Microservices, CI/CD, Vector & Graph Databases",
-        "Cloud Platforms: Azure, AWS, GCP, Docker, Kubernetes",
-        "Industries: Consulting, Financial Services, Pharma & Life Sciences, HR Tech, Robotics, Non-Profit"
+        "Agentic Systems: Multi-Agent System Design, Agent Harness Engineering, MCP Servers, ReAct Reasoning, Human-in-the-Loop",
+        "Full-Stack: Python, TypeScript, Node.js, NestJS, Express, React, Next.js, FastAPI, REST & API Design, WebSockets",
+        "Retrieval & Data: Hybrid RAG, Vector & Graph Databases, SQL, PostgreSQL, Prisma, Structured + Unstructured Pipelines",
+        "Evaluation & Observability: LLM Evals, LLM-as-Judge, Langfuse, LangSmith, OpenTelemetry, Full-Stack Tracing, Cost Metrics",
+        "AI-Assisted Development: Claude Code, Codex, Claude Agent SDK, Prompt & Context Engineering",
+        "Frameworks & Protocols: LangGraph, Autogen, Semantic Kernel, LangChain; MCP, A2A, A2UI",
+        "Cloud & Delivery: Azure, AWS, GCP, Cloudflare Workers, Docker, Kubernetes, Git, CI/CD, Turborepo"
       ],
       "experience": [
         {
-          "role_title": "Lead AI Engineer",
+          "role_title": "Forward Deployed AI Engineer",
           "company": "EY",
           "dates": "Jan 2025 - Present",
           "bullets": [
             {
-              "text": "**Solo-engineered 10+ generative AI systems end to end** for enterprise clients - multi-agent workflows, document intelligence, Physical AI - and **5 earned production funding**."
+              "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at the **Global Leadership Summit**, handing them the tools instead of demoing to them."
             },
             {
-              "text": "Cut approval cycles **from 3 weeks to 2 days** with **multi-agent workflows**: an agent harness on Autogen, MCP servers hosting tools and prompts, human-in-the-loop checkpoints."
+              "text": "Co-built the **Enterprise Agent Starter Kit** so teams build their own agents instead of commissioning ours: **15+ repositories** of templates and protocol servers (**MCP, A2A, A2UI**)."
             },
             {
-              "text": "Generated **$2M+ in client pipeline** with a **remote robot command center**, where the prototype itself became the client business case."
+              "text": "Generated **$2M+ in client pipeline** with a **remote robot command center**: agentic chat guides a Unitree GO2 through factory inspections (ROS2, Azure IoT Hub, MCP)."
             },
             {
-              "text": "Co-built the **Enterprise Agent Starter Kit** across **15+ repositories**: reusable agent templates and MCP servers behind production APIs (Python, TypeScript, C#)."
+              "text": "Cut approval cycles **from 3 weeks to 2 days** with an **AI agent for a JIRA-style PM tool**: an Autogen harness, MCP servers hosting its tools and prompts, **human checkpoints** at each decision."
             },
             {
-              "text": "Built the **evaluation and observability layer** for live agents - **Langfuse** tracing for latency, cost, and failure modes - deployed in its first release week."
+              "text": "Built the Python backend and **ELT pipeline on Databricks** for a **production** financial prediction platform, optimising transformations in **PySpark** for the analysts who depended on it."
             },
             {
-              "text": "**Trusted advisor for GenAI architecture** firm-wide: led technical design decisions, managed developers and analysts, and guided senior partners building agents live at EY's global leadership summit."
+              "text": "Reached **100K+ users** with a **multimodal image-generation agent** taken dev to production in 11 days (FastAPI, React, Azure OpenAI on Container Apps, Grafana)."
             },
             {
-              "text": "**Mentored junior engineers** and judged a firm-wide **AI prototype competition**, scoring on business value first, then architecture, then execution."
+              "text": "Deployed and integrated **Langfuse** observability and evaluation frameworks as a **week-one adopter**, wiring full-stack tracing into a live agent to keep it accurate and fast."
+            },
+            {
+              "text": "**Solo-engineered 10+ full-stack AI agent prototypes** with **5 funded to production**, mentoring a junior engineer through the build."
+            }
+          ]
+        },
+        {
+          "role_title": "Full-Stack SDE / AI Engineer (Pro-bono)",
+          "company": "Art of Living Foundation - Non-Profit",
+          "dates": "Oct 2024 - Present",
+          "bullets": [
+            {
+              "text": "Built a **voice-first AI agent** running in production on artofliving.org for members across **180 countries**, with **handoff into HubSpot** when a live specialist should take over (Next.js, FastAPI, **GCP** + AWS)."
+            },
+            {
+              "text": "**Demoed it live to an audience of 2.5K people** at an internal conference in Boone, NC."
+            },
+            {
+              "text": "Built the **Node.js backend for the RAG evaluation platform**: **LLM-as-judge** scoring, replay runs, review queues and per-run cost tracking (Next.js API routes, Playwright, Qdrant)."
+            },
+            {
+              "text": "Reached **92%+ retrieval accuracy** with **hybrid RAG** over Weaviate and Qdrant, built from structured and unstructured sources."
+            },
+            {
+              "text": "Chose the production stack on evidence by **benchmarking Gemini voice and text models head to head against OpenAI** in Google AI Studio."
             }
           ]
         },
@@ -2868,23 +2566,16 @@ window.HOPE_DATA = {
           "dates": "Aug 2024 - Present",
           "bullets": [
             {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 4 Founder (backed up to $250K)** sponsored by Microsoft for Startups; now a free, open-source **Claude plugin**."
+              "text": "Founded and solo-built a **multi-agent-driven career platform** (**MCP, A2A, A2UI**, **NestJS/Node.js**, Prisma, Neo4j) as a **Level 4 Founder (backed up to $250K)**, sponsored by Microsoft for Startups."
             },
             {
-              "text": "Cut data-labelling errors **90%** with **graph-based retrieval**: an agentic RAG workflow using contextual retrieval and re-ranking over a Neo4j skills graph."
+              "text": "Built the **real-time backend on NestJS and WebSockets** with **MCP servers**, Prisma over Postgres and OpenTelemetry tracing, in a **Turborepo monorepo** of shared typed packages."
             },
             {
-              "text": "**86% of active customers** landed multiple interviews and, ultimately, jobs."
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / AI Engineer (Pro-bono)",
-          "company": "Art of Living (Non-Profit)",
-          "dates": "Oct 2024 - Present",
-          "bullets": [
+              "text": "Cut data-labelling errors **90%** with an **agentic RAG workflow**: contextual retrieval and re-ranking over a skills **graph database**."
+            },
             {
-              "text": "Built a **voice-first AI agent** live on artofliving.org across **180 countries**: hybrid RAG at **92%+ retrieval accuracy** over a vector database, with live-specialist handoff."
+              "text": "**86% of active customers** landed multiple interviews and, ultimately, jobs; the platform now lives on as a free, **open-source Claude plugin**."
             }
           ]
         },
@@ -2894,7 +2585,10 @@ window.HOPE_DATA = {
           "dates": "Aug 2022 - May 2024",
           "bullets": [
             {
-              "text": "Improved data exploration **80%** with big-data pipelines over **700M rows** (PySpark, Dask, Polars) on an NSF-funded study; awarded a competitive **Research Fellowship** with full scholarship."
+              "text": "Improved data exploration rate **80%** by building **structured and unstructured pipelines over 700M rows** (PySpark, Dask, Polars) on an NSF-funded study."
+            },
+            {
+              "text": "Awarded a competitive **NSF Research Fellowship** carrying a **100% educational scholarship**."
             }
           ]
         },
@@ -2904,7 +2598,10 @@ window.HOPE_DATA = {
           "dates": "Aug 2020 - Jul 2022",
           "bullets": [
             {
-              "text": "Lifted portfolio ROI **10%** and cut drug onboarding **80%** with **MINLP optimization** and predictive + prescriptive dashboards (Python, SQL, Gekko)."
+              "text": "Reduced strategic field errors **20%** and improved efficiency **22%** with a **Python Flask** resource-allocation dashboard, built with **global business, finance and operations stakeholders**."
+            },
+            {
+              "text": "Increased average ROI **10%** across US drug portfolios with **MINLP optimization** in a **regulated environment** where a wrong answer is expensive."
             }
           ]
         }
@@ -2912,67 +2609,52 @@ window.HOPE_DATA = {
       "projects": [
         {
           "name": "Clinical Trial Matching Engine",
-          "text": "Patient-trial matching combining rule-based logic, **Named-Entity Recognition** (SciSpacy, BERT), and RAG over complex eligibility criteria, with real-time API validation."
+          "text": "Patient-trial matching over **structured and unstructured data** using **Named-Entity Recognition** (SciSpacy, BERT) and RAG, with real-time API validation."
         },
         {
           "name": "Supply-Chain Network Analysis (COVID-19)",
-          "text": "Modeled COVID's impact on the **S&P 1500** through a **17,000-node network graph**, web-scraped and analyzed for industry and business interdependencies."
-        },
-        {
-          "name": "Heineken Case Competition",
-          "text": "Placed **4th nation-wide** forecasting sales and revenue from real finance data using time-series analysis, **ARIMA**, and supervised ML."
+          "text": "Modeled COVID's impact on the **S&P 1500** through a **17,000-node network graph**, web-scraped and analysed for industry and business interdependencies."
         }
       ]
     },
-    "tmobile": {
-      "summary": "Lead AI Engineer who runs agents in production, not just builds them: agent harnesses, LLM observability, model evaluation, and the shared platforms other teams roll out on. Six years across consulting, financial services, pharma, research, and my own Microsoft-backed startup, working daily in Claude and OpenAI. I love converting prototypes into scalable production systems. Off the clock, I'm the loving uncle with the guitar.",
+    "dataai": {
+      "headline": "AI Data Engineer · Pipelines, Retrieval Systems & Multi-Agent Platforms",
+      "summary": "Generative AI unleashed a productivity beast in me. 6 years across consulting, finance, pharma and my own Microsoft-backed startup taught me that the model is rarely the problem in today's world. The data reaching it usually is. I have built 700M-row pipelines on an NSF study, designed the graph schema for my own product where 86% of active customers landed jobs in a hard job market, and I run hybrid RAG at 92%+ retrieval accuracy in production today. I like the half of this work nobody puts in the trending AI demos. Off the clock, I'm the loving uncle with the guitar.",
       "skills_groups": [
-        "Agentic Systems: Multi-Agent System Design, Agent Harness Engineering, MCP System Design, RAG, Agent Deployment",
-        "AI-Native Development: Claude Code, Factory Droid, OpenAI Codex, GitHub Copilot, Gemini CLI",
-        "Evaluation & Governance: LLM Evals, Model Selection, Langfuse & LangSmith, Cost & Token Tracking, HITL",
-        "LLM Platforms: Claude, OpenAI, Gemini, Azure OpenAI, Fine-tuning, Prompt & Context Engineering",
-        "Cloud Platforms: Azure, AWS, GCP, Docker, Kubernetes",
-        "Industries: Consumer AI at Scale, Financial Services, Consulting, Pharma, HR Tech, Non-Profit"
+        "Data Engineering: SQL, Python, ETL/ELT Pipelines, Schema Design, Data Modeling, Data Quality & Validation, QC, A/B Testing",
+        "Data Stores: PostgreSQL, Oracle SQL, Databricks, BigQuery, Azure SQL, CosmosDB, Neo4j, Weaviate, Qdrant, Azure AI Search",
+        "AI Retrieval: Hybrid RAG, Contextual Retrieval & Re-ranking, Embeddings, Chunking, Context Engineering, MCP",
+        "Big Data: PySpark, Dask, Polars, Pandas",
+        "Analytics & Visualization: Tableau, Power BI, D3.js, Qlik, Alteryx, DAX, Statistical Analysis",
+        "Agentic Systems: Multi-Agent Design, Agent Harness Engineering, LangGraph, Autogen, Semantic Kernel, LangChain",
+        "Languages & Cloud: Python, SQL, R, TypeScript, C#; Azure, AWS, GCP, Docker, Kubernetes, Git, CI/CD"
       ],
       "experience": [
         {
-          "role_title": "Lead AI Engineer",
+          "role_title": "Forward Deployed AI Engineer",
           "company": "EY",
           "dates": "Jan 2025 - Present",
           "bullets": [
             {
-              "text": "**Owned production agents after launch** - latency, cost, and failure modes - by deploying **Langfuse observability** on Docker in its first release week and wiring full-stack tracing into a live agent."
+              "text": "Built the Python backend and **ELT pipeline on Databricks** for a **production** agent-driven financial prediction platform, optimising transformations in **PySpark** and mentoring a junior engineer."
             },
             {
-              "text": "Co-built the **Enterprise Agent Starter Kit** across **15+ repositories**, the platform other teams roll out on: agent templates and **MCP servers** with **no-code to pro-code** paths."
+              "text": "Deployed **Langfuse** observability in its first release week, self-directed, wiring full-stack tracing into a **live agent** to surface latency, cost and failure modes."
             },
             {
-              "text": "Cut approval cycles **from 3 weeks to 2 days** with an **agent harness** on Autogen: MCP servers host the agent's tools and prompts, with human-in-the-loop checkpoints at the decisions that matter."
+              "text": "Cut approval cycles **from 3 weeks to 2 days** with an **AI agent in production for a JIRA-style project-management tool**: an agent harness on Autogen with **MCP servers hosting its tools and prompts**."
             },
             {
-              "text": "Shipped a **multimodal image-generation agent** to **100,000+ people** in a global campaign, dev to prod in 11 days, with Grafana monitoring on Azure Container Apps."
+              "text": "Co-built the **production-grade Enterprise Agent Starter Kit** across **15+ repositories**: agent templates and protocol servers (**MCP, A2A, A2UI**) in Python, TypeScript and C#."
             },
             {
-              "text": "**Scouted and evaluated emerging AI tooling** for firm-wide adoption, running an MCP-server competition that got a **250-person AI team** hands-on weeks after the spec landed."
+              "text": "Shipped a **multimodal image-generation agent** used by **100K+ people**, **dev to production in 11 days** (FastAPI, React, Azure OpenAI, Grafana)."
             },
             {
-              "text": "**Solo-engineered 10+ full-stack AI agent prototypes** - multi-agent systems, document intelligence, Physical AI - and **5 were funded into production**."
+              "text": "**Solo-engineered 10+ full-stack AI agent prototypes**, **5 funded to production**, including a **remote robot command center** (Unitree GO2, ROS2, Azure IoT Hub) that generated **$2M+ in pipeline**."
             },
             {
-              "text": "**Mentored junior engineers** and judged a firm-wide **AI prototype competition**, scoring on business value first, then architecture, then execution."
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / AI Engineer (Pro-bono)",
-          "company": "Art of Living (Non-Profit)",
-          "dates": "Oct 2024 - Present",
-          "bullets": [
-            {
-              "text": "Built a **voice-first customer-service agent** live on artofliving.org across **180 countries**: hybrid RAG at **92%+ retrieval accuracy**, with live-specialist handoff through HubSpot when the agent should hand off."
-            },
-            {
-              "text": "Ran an **evidence-based model evaluation**, benchmarking **Gemini voice and text models** head-to-head against **OpenAI** before committing the production stack."
+              "text": "Ran the **agent-builder booth** at EY's global leadership summit, handing partners the tools instead of demoing to them."
             }
           ]
         },
@@ -2982,30 +2664,79 @@ window.HOPE_DATA = {
           "dates": "Aug 2024 - Present",
           "bullets": [
             {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** as a **Level 4 Founder (backed up to $250K)**, sponsored by Microsoft for Startups; now a free, **open-source Claude plugin**."
+              "text": "**Designed the schema, chose the database, and built the ingestion pipeline** for a multi-agent career platform, carrying user-uploaded resumes from upload to queryable."
             },
             {
-              "text": "Fine-tuned **OpenAI** models on **synthetic training data** to **95% task accuracy**, and cut data-labelling errors **90%** with an agentic RAG workflow over a skills graph."
+              "text": "Cut data-labelling errors **90%** with an **agentic database management workflow** over a **graph database of skills**, using contextual retrieval and re-ranking."
+            },
+            {
+              "text": "Built a **proprietary parser converting dynamic HTML to JSON and back in under one second**, storing records **LLM-readable** while keeping them renderable, for **portability across parsing systems**."
+            },
+            {
+              "text": "Shipped an **agentic RAG assistant** on **Azure AI Search, Blob Storage and CosmosDB** with async Python, exposed through **APIs on Azure Functions**."
+            },
+            {
+              "text": "Improved **clustering and semantic retrieval** with **hybrid RAG** (Scikit-learn, NLTK, vector DB), and fine-tuned on **synthetic data** to **95% accuracy**."
+            },
+            {
+              "text": "Designed **anonymised user-data collection** so product analytics never traded on individual privacy."
+            },
+            {
+              "text": "Backed to **$250K as a Level 4 Microsoft for Startups founder**; **86% of active customers** landed multiple interviews and jobs, and the platform now lives on as a free, **open-source Claude plugin**."
             }
           ]
         },
         {
-          "role_title": "Full-Stack SDE / Data Scientist",
-          "company": "Novartis Healthcare",
-          "dates": "Aug 2020 - Jul 2022",
+          "role_title": "AI Engineer (Pro-bono)",
+          "company": "Art of Living Foundation - Non-Profit",
+          "dates": "Oct 2024 - Present",
           "bullets": [
             {
-              "text": "Lifted portfolio ROI **10%** and cut drug onboarding **80%** with **MINLP optimization** and predictive + prescriptive dashboards (Python, SQL)."
+              "text": "Built a **voice-first AI agent running in production** on artofliving.org for **180 countries**, with **handoff into HubSpot** when a live specialist should take over (Next.js, FastAPI, **GCP** + AWS)."
+            },
+            {
+              "text": "Runs **hybrid RAG at 92%+ retrieval accuracy** over **Weaviate and Qdrant**, built from **structured and unstructured sources**."
+            },
+            {
+              "text": "Chose the production stack on evidence by **benchmarking Gemini voice and text models head to head against OpenAI** in Google AI Studio."
             }
           ]
         },
         {
-          "role_title": "Data Scientist (Research Assistant)",
+          "role_title": "Data Analyst",
           "company": "University of Iowa",
           "dates": "Aug 2022 - May 2024",
           "bullets": [
             {
-              "text": "Improved data exploration **80%** with big-data pipelines over **700M rows** (PySpark, Dask, Polars) on an NSF-funded study; awarded a competitive **Research Fellowship** with full scholarship."
+              "text": "Improved data exploration rate **80%** by building **structured and unstructured pipelines over 700M rows** (PySpark, Dask, Polars) as **primary researcher**."
+            },
+            {
+              "text": "Increased project efficiency **85%** with rigorous **extraction, cleaning and validation pipelines** (QC, A/B testing) in Python."
+            },
+            {
+              "text": "Awarded a competitive **NSF Research Fellowship** with a **100% educational scholarship** on a **$288K NSF People Analytics study** of research collaboration patterns; publication forthcoming."
+            }
+          ]
+        },
+        {
+          "role_title": "Data Analyst",
+          "company": "Novartis Healthcare",
+          "dates": "Aug 2020 - Jul 2022",
+          "bullets": [
+            {
+              "text": "Increased average ROI **10%** across US drug portfolios with **Max-ROI and Target-Revenue MINLP optimization**, streamlining the **production Marketing Mix Modeling data pipeline**."
+            },
+            {
+              "text": "Reduced drug onboarding time **80%** with a **predictive and prescriptive analytics dashboard** (Python, SQL, Gekko)."
+            },
+            {
+              "text": "Reduced strategic field errors **20%** and improved efficiency **22%** with a resource-allocation dashboard in **Python Flask**, **deployed** to global stakeholders across business, finance and operations."
+            },
+            {
+              "text": "Built a **production Qlik dashboard on an automated data pipeline** to monitor campaign spend and KPIs, and **migrated legacy Excel VBA applications to Qlik**."
+            },
+            {
+              "text": "Built a **D3.js live visualization** of the ad-optimizer that made the algorithm legible to non-technical stakeholders, earning **'Star Employee' recognition twice**."
             }
           ]
         }
@@ -3013,120 +2744,19 @@ window.HOPE_DATA = {
       "projects": [
         {
           "name": "Clinical Trial Matching Engine",
-          "text": "Patient-trial matching combining rule-based logic, **Named-Entity Recognition** (SciSpacy, BERT), and RAG over complex eligibility criteria."
+          "text": "Matched patients to trials over **structured and unstructured data** using **Named-Entity Recognition** (SciSpacy, BERT) and RAG, with real-time API validation."
         },
         {
-          "name": "Optimal Vehicle Selection Tool",
-          "text": "MSBA capstone with **State Farm**: ML models over structured and unstructured data, with **NLP features** from descriptive reviews."
+          "name": "Optimal Vehicle Selection (State Farm)",
+          "text": "MSBA capstone: **regression, classification and clustering** over structured and unstructured data, with **NLP features extracted** from vehicle reviews."
         },
-        {
-          "name": "Heineken Case Competition",
-          "text": "Placed **4th nation-wide** forecasting sales and revenue using time-series analysis, **ARIMA**, and supervised ML."
-        }
-      ]
-    },
-    "amexclassic": {
-      "summary": "Lead AI Engineer building production agentic systems at enterprise scale: agent harnesses, MCP servers, RAG, and the shared AI infrastructure teams build on. Six years across financial services, pharma, and my own Microsoft-backed startup. Off the clock, I'm the loving uncle with the guitar.",
-      "skills_groups": [
-        "Agentic Systems: Multi-Agent System Design, Agent Harness Engineering, MCP System Design, RAG, Observability (Langfuse, LangSmith), Agent Deployment",
-        "AI-Native Development: Claude Code, Factory Droid, OpenAI Codex, GitHub Copilot, Gemini CLI",
-        "Backend & APIs: Python, TypeScript, FastAPI, REST APIs, Schema Validation, Vector & Graph DBs",
-        "Cloud & Infra: AWS, GCP, Azure, Kubernetes, Docker",
-        "Industries: Financial Services, Consulting, Pharma & Life Sciences, HR Tech, Robotics, Non-Profit"
-      ],
-      "experience": [
-        {
-          "role_title": "Lead AI Engineer",
-          "company": "EY",
-          "dates": "Jan 2025 - Present",
-          "bullets": [
-            {
-              "text": "Co-built the firm's **Enterprise Agent Starter Kit**, the **shared AI infrastructure** teams build on: agent templates (LangGraph, Autogen) + MCP servers, Python, TypeScript, C#.",
-              "tag": "15+ repos"
-            },
-            {
-              "text": "Built an **AI agent for a JIRA-style project-management tool**: an **agent harness** on Autogen that reasons, calls tools via MCP servers, and recovers with human-in-the-loop checkpoints.",
-              "tag": "3 wks → 2 days"
-            },
-            {
-              "text": "**Owned production systems post-launch** - reliability, latency, failure modes: deployed **Langfuse** observability and wired full-stack tracing into a live agent.",
-              "tag": "week-1 adopter"
-            },
-            {
-              "text": "Shipped a **multimodal image-generation agent** (FastAPI, React, Azure OpenAI) on Azure Container Apps with Grafana monitoring; dev to prod in 11 days.",
-              "tag": "100K+ users"
-            },
-            {
-              "text": "Built the Python backend for an **agent-driven financial prediction platform**: LLMs generating predictive and prescriptive insights over stock data, on a full-stack team of eight.",
-              "tag": "financial services"
-            },
-            {
-              "text": "**Solo-engineered 10+ full-stack AI agent prototypes**: multi-agent systems, document intelligence, Physical AI.",
-              "tag": "5 funded to prod"
-            }
-          ]
-        },
-        {
-          "role_title": "Founder & CTO",
-          "company": "agenthope.ai (previously CareerX, Inc.)",
-          "dates": "Aug 2024 - Present",
-          "bullets": [
-            {
-              "text": "Founded and solo-built a **multi-agent-driven career platform** (skills graph database, agentic RAG, Azure Functions); now a free, **open-source Claude plugin**.",
-              "tag": "Level 4 Founder, backed up to $250K"
-            },
-            {
-              "text": "Built an **agentic RAG workflow** (contextual retrieval, re-ranking) over the skills graph and fine-tuned **OpenAI** models on synthetic data to 95% task accuracy.",
-              "tag": "90% fewer labeling errors"
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / AI Engineer (Pro-bono)",
-          "company": "Art of Living (Non-Profit)",
-          "dates": "Oct 2024 - Present",
-          "bullets": [
-            {
-              "text": "Built a **voice-first AI agent**, live on artofliving.org: OpenAI models, MCP tools, hybrid RAG at 92%+ accuracy over a vector database (Next.js, FastAPI, GCP + AWS).",
-              "tag": "Live · 180 countries"
-            }
-          ]
-        },
-        {
-          "role_title": "Full-Stack SDE / Data Scientist",
-          "company": "Novartis Healthcare",
-          "dates": "Aug 2020 - Jul 2022",
-          "bullets": [
-            {
-              "text": "Built production analytics for drug portfolios in a **regulated environment**: **MINLP optimization** and predictive dashboards, cutting onboarding 80%.",
-              "tag": "+10% ROI"
-            }
-          ]
-        },
-        {
-          "role_title": "Data Scientist (Research Assistant)",
-          "company": "University of Iowa",
-          "dates": "Aug 2022 - May 2024",
-          "bullets": [
-            {
-              "text": "Built big-data pipelines over **700M rows** (PySpark, Dask, Polars) on an NSF-funded study; awarded a competitive **Research Fellowship** with full scholarship.",
-              "tag": "80% faster exploration"
-            }
-          ]
-        }
-      ],
-      "projects": [
         {
           "name": "Supply-Chain Network Analysis (COVID-19)",
-          "text": "Modeled COVID's impact on the **S&P 1500** through a **17,000-node network graph**, web-scraped and analyzed for industry and business interdependencies."
+          "text": "**Web-scraped** and modeled COVID's impact on the **S&P 1500** through a **17,000-node network graph**, analysing industry and business interdependencies."
         },
         {
           "name": "Heineken Case Competition",
-          "text": "Placed **4th nation-wide** forecasting sales and revenue from real finance data using time-series analysis, **ARIMA**, and supervised ML."
-        },
-        {
-          "name": "Clinical Trial Matching Engine",
-          "text": "Patient-trial matching combining rule-based logic, **Named-Entity Recognition** (SciSpacy, BERT), and RAG over complex eligibility criteria."
+          "text": "Placed **4th nation-wide** forecasting sales and revenue from real finance data using **time-series analysis, ARIMA** and supervised ML (Python, JMP, Oracle SQL)."
         }
       ]
     }
@@ -3451,7 +3081,7 @@ window.HOPE_DATA = {
       "type": "experience",
       "date_start": "2025-01",
       "date_end": null,
-      "label": "Lead AI Engineer @ EY",
+      "label": "Forward Deployed AI Engineer @ EY",
       "org": "EY",
       "domain": "ey.com",
       "metric": "5 funded · $2M+ pipeline",
