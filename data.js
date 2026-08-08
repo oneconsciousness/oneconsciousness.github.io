@@ -826,7 +826,7 @@ window.HOPE_DATA = {
             {
               "num": 6,
               "icon": "bolt",
-              "action": "Built the **real-time backend on NestJS and WebSockets**, Prisma over Postgres, in a **Turborepo monorepo** of shared typed packages.",
+              "action": "Built the **real-time backend on NestJS and WebSockets** with **MCP servers**, Prisma over Postgres and OpenTelemetry tracing, in a **Turborepo monorepo** of shared typed packages.",
               "skills": [
                 {
                   "name": "NestJS",
@@ -850,6 +850,10 @@ window.HOPE_DATA = {
                 },
                 {
                   "name": "Turborepo",
+                  "category": "tools"
+                },
+                {
+                  "name": "OpenTelemetry",
                   "category": "tools"
                 }
               ],
@@ -2363,7 +2367,7 @@ window.HOPE_DATA = {
         "Full-Stack: Node.js, Express, React, Next.js, REST & API Design, WebSockets, Prisma, Async Python",
         "Data Engineering: SQL, ETL/ELT Pipelines, Schema Design, Data Modeling, Data Quality & Validation, QC, A/B Testing",
         "Big Data & Stores: PySpark, Dask, Polars, Pandas, Databricks; PostgreSQL, Oracle SQL, BigQuery, CosmosDB, Neo4j, Weaviate, Qdrant, Azure AI Search",
-        "Evaluation & Observability: LLM Evals, LLM-as-Judge, Replay Harnesses, Langfuse, LangSmith, Grafana, Cost Metrics",
+        "Evaluation & Observability: LLM Evals, LLM-as-Judge, Replay Harnesses, Langfuse, LangSmith, OpenTelemetry, Grafana, Cost Metrics",
         "Modeling & Analytics: MINLP Optimization, Marketing Mix Modeling, Time-Series (ARIMA), Clustering, Tableau, Power BI, D3.js, Qlik, Alteryx, DAX",
         "AI-Assisted Development: Claude Code, Codex, Claude Agent SDK, Prompt & Context Engineering",
         "Languages & Cloud: Python, SQL, TypeScript, R, C#; Azure, AWS, GCP, Cloudflare Workers, Docker, Kubernetes, Git, CI/CD, Turborepo"
@@ -2428,7 +2432,7 @@ window.HOPE_DATA = {
               "text": "**Designed the schema, chose the database, and built the ingestion pipeline**, carrying user-uploaded resumes from upload to queryable."
             },
             {
-              "text": "Built the **real-time backend on NestJS and WebSockets**, Prisma over Postgres, in a **Turborepo monorepo** of shared typed packages."
+              "text": "Built the **real-time backend on NestJS and WebSockets** with **MCP servers**, Prisma over Postgres and OpenTelemetry tracing, in a **Turborepo monorepo** of shared typed packages."
             },
             {
               "text": "Cut data-labelling errors **90%** with an **agentic database management workflow** over a **graph database of skills**, and **fine-tuned on synthetic data to 95% accuracy**."
@@ -2497,7 +2501,7 @@ window.HOPE_DATA = {
         "Agentic Systems: Multi-Agent System Design, Agent Harness Engineering, MCP Servers, ReAct Reasoning, Human-in-the-Loop",
         "Full-Stack: Python, TypeScript, Node.js, NestJS, Express, React, Next.js, FastAPI, REST & API Design, WebSockets",
         "Retrieval & Data: Hybrid RAG, Vector & Graph Databases, SQL, PostgreSQL, Prisma, Structured + Unstructured Pipelines",
-        "Evaluation & Observability: LLM Evals, LLM-as-Judge, Langfuse, LangSmith, Full-Stack Tracing, Cost Metrics",
+        "Evaluation & Observability: LLM Evals, LLM-as-Judge, Langfuse, LangSmith, OpenTelemetry, Full-Stack Tracing, Cost Metrics",
         "AI-Assisted Development: Claude Code, Codex, Claude Agent SDK, Prompt & Context Engineering",
         "Frameworks & Protocols: LangGraph, Autogen, Semantic Kernel, LangChain; MCP, A2A, A2UI",
         "Cloud & Delivery: Azure, AWS, GCP, Cloudflare Workers, Docker, Kubernetes, Git, CI/CD, Turborepo"
@@ -2565,7 +2569,7 @@ window.HOPE_DATA = {
               "text": "Founded and solo-built a **multi-agent-driven career platform** (**MCP, A2A, A2UI**, **NestJS/Node.js**, Prisma, Neo4j) as a **Level 4 Founder (backed up to $250K)**, sponsored by Microsoft for Startups."
             },
             {
-              "text": "Built the **real-time backend on NestJS and WebSockets**, Prisma over Postgres, in a **Turborepo monorepo** of shared typed packages."
+              "text": "Built the **real-time backend on NestJS and WebSockets** with **MCP servers**, Prisma over Postgres and OpenTelemetry tracing, in a **Turborepo monorepo** of shared typed packages."
             },
             {
               "text": "Cut data-labelling errors **90%** with an **agentic RAG workflow**: contextual retrieval and re-ranking over a skills **graph database**."
