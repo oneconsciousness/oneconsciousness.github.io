@@ -471,7 +471,7 @@ window.HOPE_DATA = {
             {
               "num": 10,
               "icon": "groups",
-              "action": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at EY's **Global Leadership Summit**, handing them the tools instead of demoing to them.",
+              "action": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at EY's **Global Leadership Summit**.",
               "skills": [
                 {
                   "name": "Multi-Agent Orchestration",
@@ -2250,7 +2250,7 @@ window.HOPE_DATA = {
         "dates": "Jan 2025 - Present",
         "bullets": [
           {
-            "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at EY's **Global Leadership Summit**, handing them the tools instead of demoing to them."
+            "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at EY's **Global Leadership Summit**."
           },
           {
             "text": "Built the Python backend and **ELT pipeline on Databricks** for a **production** financial prediction platform, optimising transformations in **PySpark** and mentoring a junior engineer."
@@ -2419,18 +2419,18 @@ window.HOPE_DATA = {
     ],
     "aiengineer": {
       "headline": "Forward Deployed AI Engineer · Agentic Systems, Retrieval & Data Platforms",
-      "summary": "Generative AI unleashed a productivity beast in me. Rapid prototyping is most of my job: at EY I solo-built 10+ AI agent prototypes and 5 earned production funding, so I know how to test an idea cheaply and which ones deserve to become systems. Six years across pharma, research, consulting and life as a Microsoft-backed founder taught me the hardest part is rarely the model; it is the data reaching it and the vague ask behind it, which is why half my week is in the room with the people who will use the thing. I give live demos rather than recorded ones, and I put in the work beforehand so they run perfectly. Off the clock, I'm the loving uncle with the guitar.",
+      "summary": "Generative AI unleashed a productivity beast in me. What I bring is the data engineering underneath and the appetite to architect what sits on top: pipelines and schemas at one end, multi-agent systems at the other, and the evals, traces and human checkpoints that keep them honest once they are live. Six years across pharma, research, consulting and life as a Microsoft-backed founder taught me the hardest part is rarely the model; it is the data reaching it and the vague ask behind it. Off the clock, I'm the loving uncle with the guitar.",
       "skills_groups": [
-        "Agentic Systems: Multi-Agent Design, Agent Harness Engineering, LLM Orchestration, MCP Servers, ReAct Reasoning, Human-in-the-Loop",
-        "Retrieval: Hybrid RAG, Embeddings, Chunking, Contextual Retrieval & Re-ranking, Semantic Search, Context Engineering",
-        "Frameworks & Protocols: LangChain, LangGraph, Autogen, Semantic Kernel, FastAPI, NestJS; MCP, A2A, A2UI",
-        "Full-Stack: Node.js, Express, React, Next.js, REST & API Design, WebSockets, Prisma, Async Python",
-        "Data Engineering: SQL, ETL/ELT Pipelines, Schema Design, Data Modeling, Data Quality & Validation, QC, A/B Testing",
-        "Big Data & Stores: PySpark, Dask, Polars, Pandas, Databricks; PostgreSQL, pgvector, Oracle SQL, BigQuery, CosmosDB, Neo4j, Weaviate, Qdrant, Azure AI Search",
-        "Evaluation & Observability: LLM Evals, LLM-as-Judge, Replay Harnesses, Langfuse, LangSmith, OpenTelemetry, Grafana, Cost Metrics",
-        "Modeling & Analytics: MINLP Optimization, Marketing Mix Modeling, Time-Series (ARIMA), Clustering, Tableau, Power BI, D3.js, Qlik, Alteryx, DAX",
-        "AI-Assisted Development: Claude Code, Codex, Claude Agent SDK, Prompt & Context Engineering",
-        "Languages & Cloud: Python, SQL, TypeScript, R, C#; Azure, AWS, GCP, Cloudflare Workers, Docker, Kubernetes, Git, CI/CD, Turborepo"
+        "Agentic Systems: Multi-Agent Design, Agent Harness Engineering, Orchestration, ReAct, Human-in-the-Loop",
+        "Retrieval: Hybrid RAG, Contextual Retrieval & Re-ranking, Embeddings, Chunking, Metadata Enrichment",
+        "Frameworks & Protocols: LangChain, LangGraph, Autogen, Semantic Kernel, FastAPI; MCP, A2A, A2UI",
+        "Full-Stack: Node.js, NestJS, Express, React, Next.js, REST & API Design, WebSockets, Prisma, Async Python",
+        "Data Engineering: SQL, ETL/ELT Pipelines, Schema Design, Data Modeling, Data Quality, QC, A/B Testing",
+        "Big Data & Stores: PySpark, Pandas, Databricks; PostgreSQL, pgvector, CosmosDB, Neo4j, Weaviate, Qdrant",
+        "Evaluation & Observability: LLM Evals, LLM-as-Judge, Replay Runs, Langfuse, OpenTelemetry, Grafana",
+        "Modeling & Analytics: MINLP Optimization, Time-Series (ARIMA), Clustering, Tableau, Power BI, D3.js, Qlik",
+        "AI-Assisted Development: Claude Code, Codex, ChatGPT, Claude Agent SDK, Prompt & Context Engineering",
+        "Languages & Cloud: Python, SQL, TypeScript, R, C#; Azure, AWS, GCP, Docker, Kubernetes, Git, CI/CD"
       ],
       "experience": [
         {
@@ -2439,10 +2439,10 @@ window.HOPE_DATA = {
           "dates": "Jan 2025 - Present",
           "bullets": [
             {
-              "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at the **Global Leadership Summit**, handing them the tools instead of demoing to them."
+              "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at the **Global Leadership Summit**."
             },
             {
-              "text": "Built a **contract review agent** with **hybrid RAG over legal documents** and a **Tinder-style review UI**, owning the **Postgres data model** for agent state, attributes and audit trail (LangGraph, **A2A**, AKS, CI/CD)."
+              "text": "Built a **contract review agent** over legal documents: **hybrid RAG**, **chunking**, **embeddings**, **metadata enrichment**, and **owned the Postgres/pgvector data model** behind a **Tinder-style UI** (LangGraph)."
             },
             {
               "text": "Built the **agent orchestrator, context layer and Databricks ELT pipeline** for a **production** financial prediction platform, optimising transformations in **PySpark** and mentoring a junior engineer."
@@ -2457,7 +2457,7 @@ window.HOPE_DATA = {
               "text": "Took a **multimodal image-generation agent** from **dev to production in 11 days**, now used by **100K+ people** (FastAPI, React, Azure OpenAI, Grafana)."
             },
             {
-              "text": "Generated **$2M+ in client pipeline** with a **remote robot command center**: agentic chat guides a Unitree GO2 through factory inspections (ROS2, Azure IoT Hub, MCP)."
+              "text": "**Solo-engineered 10+ full-stack AI agent prototypes**, **5 funded to production**, including a **remote robot command center** (Unitree GO2, ROS2, Azure IoT Hub) that generated **$2M+ in pipeline**."
             },
             {
               "text": "Deployed **Langfuse** observability in its first release week, self-directed, wiring full-stack tracing into a **live agent** to surface latency, cost and failure modes."
@@ -2479,7 +2479,10 @@ window.HOPE_DATA = {
               "text": "Built the **Node.js backend for the RAG evaluation platform**: **LLM-as-judge** scoring, replay runs, review queues and per-run cost tracking (Next.js API routes, Playwright, Qdrant)."
             },
             {
-              "text": "Reached **92%+ retrieval accuracy** with **hybrid RAG** over **Weaviate and Qdrant**, built from structured and unstructured sources."
+              "text": "Reached **92%+ retrieval accuracy** with **hybrid RAG** over **Weaviate and Qdrant**."
+            },
+            {
+              "text": "Chose the production stack on evidence by **benchmarking Gemini voice and text models head to head against OpenAI** in Google AI Studio."
             }
           ]
         },
@@ -2492,7 +2495,7 @@ window.HOPE_DATA = {
               "text": "Founded and solo-built a **multi-agent-driven career platform** (**MCP, A2A, A2UI**, LangChain, Neo4j, FastAPI) as a **Level 4 Founder (backed up to $250K)**, sponsored by Microsoft for Startups."
             },
             {
-              "text": "**Designed the schema, chose the database, and built the ingestion pipeline**, carrying user-uploaded resumes from upload to queryable."
+              "text": "**Designed the schema, chose the database, and built the ingestion pipeline**, carrying user-uploaded resumes from upload to ready for hybrid RAG."
             },
             {
               "text": "Built the **real-time backend on NestJS and WebSockets** with **MCP servers**, Prisma over Postgres and OpenTelemetry tracing, in a **Turborepo monorepo** of shared typed packages."
@@ -2501,12 +2504,15 @@ window.HOPE_DATA = {
               "text": "Cut data-labelling errors **90%** with an **agentic database management workflow** over a **graph database of skills**, and **fine-tuned on synthetic data to 95% accuracy**."
             },
             {
+              "text": "Designed **anonymised user-data collection** so product analytics never traded on individual privacy."
+            },
+            {
               "text": "**86% of active customers** landed multiple interviews and jobs; the platform now lives on as a free, **open-source Claude plugin**."
             }
           ]
         },
         {
-          "role_title": "Data Scientist (Research Assistant)",
+          "role_title": "Data Scientist",
           "company": "University of Iowa",
           "dates": "Aug 2022 - May 2024",
           "bullets": [
@@ -2522,7 +2528,7 @@ window.HOPE_DATA = {
           ]
         },
         {
-          "role_title": "Full-Stack SDE / Data Scientist",
+          "role_title": "Data Analyst / Data Scientist / Full-Stack SDE",
           "company": "Novartis Healthcare",
           "dates": "Aug 2020 - Jul 2022",
           "bullets": [
@@ -2576,7 +2582,7 @@ window.HOPE_DATA = {
           "dates": "Jan 2025 - Present",
           "bullets": [
             {
-              "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at the **Global Leadership Summit**, handing them the tools instead of demoing to them."
+              "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at the **Global Leadership Summit**."
             },
             {
               "text": "Built a **contract review agent** with **hybrid RAG over legal documents** and a **Tinder-style review UI**, owning the **Postgres data model** for agent state, attributes and audit trail (LangGraph, **A2A**, AKS, CI/CD)."
