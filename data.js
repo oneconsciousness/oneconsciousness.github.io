@@ -2442,7 +2442,7 @@ window.HOPE_DATA = {
               "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at the **Global Leadership Summit**, handing them the tools instead of demoing to them."
             },
             {
-              "text": "Built a **legal contract review agent** with **hybrid RAG on pgvector** and a **Tinder-style review UI**, owning the **Postgres data model** for state, attributes and audit trail (LangGraph, **A2A**, AKS, CI/CD)."
+              "text": "Built a **contract review agent** with **hybrid RAG over legal documents** and a **Tinder-style review UI**, owning the **Postgres data model** for agent state, attributes and audit trail (LangGraph, **A2A**, AKS, CI/CD)."
             },
             {
               "text": "Built the **agent orchestrator, context layer and Databricks ELT pipeline** for a **production** financial prediction platform, optimising transformations in **PySpark** and mentoring a junior engineer."
@@ -2702,7 +2702,7 @@ window.HOPE_DATA = {
               "text": "Built the Python backend and **ELT pipeline on Databricks** for a **production** agent-driven financial prediction platform, optimising transformations in **PySpark** and mentoring a junior engineer."
             },
             {
-              "text": "Built a **legal contract review agent** with **hybrid RAG on pgvector** and a **Tinder-style review UI**, owning the **Postgres data model** for state, attributes and audit trail (LangGraph, **A2A**, AKS, CI/CD)."
+              "text": "Built a **contract review agent** with **hybrid RAG over legal documents** and a **Tinder-style review UI**, owning the **Postgres data model** for agent state, attributes and audit trail (LangGraph, **A2A**, AKS, CI/CD)."
             },
             {
               "text": "Deployed **Langfuse** observability in its first release week, self-directed, wiring full-stack tracing into a **live agent** to surface latency, cost and failure modes."
