@@ -2563,7 +2563,7 @@ window.HOPE_DATA = {
       "skills_groups": [
         "Agentic Systems: Multi-Agent System Design, Agent Harness Engineering, MCP Servers, ReAct Reasoning, Human-in-the-Loop",
         "Full-Stack: Python, TypeScript, Node.js, NestJS, Express, React, Next.js, FastAPI, REST & API Design, WebSockets",
-        "Retrieval & Data: Hybrid RAG, Vector & Graph Databases, SQL, PostgreSQL, Prisma, Structured + Unstructured Pipelines",
+        "Retrieval & Data: Hybrid RAG, Vector & Graph Databases, SQL, PostgreSQL, pgvector, Prisma, Structured + Unstructured Pipelines",
         "Evaluation & Observability: LLM Evals, LLM-as-Judge, Langfuse, LangSmith, OpenTelemetry, Full-Stack Tracing, Cost Metrics",
         "AI-Assisted Development: Claude Code, Codex, Claude Agent SDK, Prompt & Context Engineering",
         "Frameworks & Protocols: LangGraph, Autogen, Semantic Kernel, LangChain; MCP, A2A, A2UI",
@@ -2579,6 +2579,9 @@ window.HOPE_DATA = {
               "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at the **Global Leadership Summit**, handing them the tools instead of demoing to them."
             },
             {
+              "text": "Built a **contract review agent** with **hybrid RAG over legal documents** and a **Tinder-style review UI**, owning the **Postgres data model** for agent state, attributes and audit trail (LangGraph, **A2A**, AKS, CI/CD)."
+            },
+            {
               "text": "Co-built the **Enterprise Agent Starter Kit**, a scaffold to quickly spin up agentic systems for any use case: **15+ repos** of frameworks (LangGraph, Autogen, etc.) and protocol servers (**MCP, A2A, A2UI**)."
             },
             {
@@ -2589,9 +2592,6 @@ window.HOPE_DATA = {
             },
             {
               "text": "Built the Python backend and **ELT pipeline on Databricks** for a **production** financial prediction platform, optimising transformations in **PySpark** for the analysts who depended on it."
-            },
-            {
-              "text": "Reached **100K+ users** with a **multimodal image-generation agent** taken dev to production in 11 days (FastAPI, React, Azure OpenAI on Container Apps, Grafana)."
             },
             {
               "text": "Deployed and integrated **Langfuse** observability and evaluation frameworks as a **week-one adopter**, wiring full-stack tracing into a live agent to keep it accurate and fast."
@@ -2687,8 +2687,7 @@ window.HOPE_DATA = {
         "Data Engineering: SQL, Python, ETL/ELT Pipelines, Schema Design, Data Modeling, Data Quality & Validation, QC, A/B Testing",
         "Data Stores: PostgreSQL, pgvector, Oracle SQL, Databricks, BigQuery, CosmosDB, Neo4j, Weaviate, Qdrant, Azure AI Search",
         "AI Retrieval: Hybrid RAG, Contextual Retrieval & Re-ranking, Embeddings, Chunking, Context Engineering, MCP",
-        "Big Data: PySpark, Dask, Polars, Pandas",
-        "Analytics & Visualization: Tableau, Power BI, D3.js, Qlik, Alteryx, DAX, Statistical Analysis",
+        "Big Data & Analytics: PySpark, Dask, Polars, Pandas, Tableau, Power BI, D3.js, Qlik, Alteryx, DAX, Statistical Analysis",
         "Agentic Systems: Multi-Agent Design, Agent Harness Engineering, LangGraph, Autogen, Semantic Kernel, LangChain",
         "Languages & Cloud: Python, SQL, R, TypeScript, C#; Azure, AWS, GCP, Docker, Kubernetes, Git, CI/CD"
       ],
@@ -2702,7 +2701,7 @@ window.HOPE_DATA = {
               "text": "Built the Python backend and **ELT pipeline on Databricks** for a **production** agent-driven financial prediction platform, optimising transformations in **PySpark** and mentoring a junior engineer."
             },
             {
-              "text": "Built a **contract review agent** with **hybrid RAG over legal documents** and a **Tinder-style review UI**, owning the **Postgres data model** for agent state, attributes and audit trail (LangGraph, **A2A**, AKS, CI/CD)."
+              "text": "Prepared legal documents for retrieval: **normalized schemas**, **chunked and embedded** contract text, **enriched metadata**, and owned the **Postgres/pgvector** store a contract review agent read from."
             },
             {
               "text": "Deployed **Langfuse** observability in its first release week, self-directed, wiring full-stack tracing into a **live agent** to surface latency, cost and failure modes."
@@ -2717,7 +2716,7 @@ window.HOPE_DATA = {
               "text": "**Solo-engineered 10+ full-stack AI agent prototypes**, **5 funded to production**, including a **remote robot command center** (Unitree GO2, ROS2, Azure IoT Hub) that generated **$2M+ in pipeline**."
             },
             {
-              "text": "Ran the **agent-builder booth** at EY's global leadership summit, handing partners the tools instead of demoing to them."
+              "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at the **Global Leadership Summit**."
             },
             {
               "text": "Shipped a **multimodal image-generation agent** used by **100K+ people**, **dev to production in 11 days** (FastAPI, React, Azure OpenAI, Grafana)."
