@@ -90,9 +90,9 @@ window.HOPE_DATA = {
       "company_initial": "E",
       "dates": "Jan 2025 - Present",
       "is_current": true,
-      "contribution_count": 11,
+      "contribution_count": 12,
       "kpis": {
-        "ic": 7,
+        "ic": 8,
         "lead": 4,
         "metric": 5
       },
@@ -137,6 +137,58 @@ window.HOPE_DATA = {
             },
             {
               "num": 2,
+              "icon": "gavel",
+              "action": "Built a **legal contract review agent** for **data-licensing and intercompany contracts**: it extracts attribute sets that vary by contract type, a **judge agent** scores each extraction **substantiated or not substantiated by the evidence provided**, and only high-confidence results reach a **Tinder-style human review queue**. Owned the **Postgres data model** for agent state, attributes and the review audit trail; deployed on **AKS** via CI/CD.",
+              "skills": [
+                {
+                  "name": "LangGraph",
+                  "category": "tools"
+                },
+                {
+                  "name": "A2A Protocol",
+                  "category": "tools"
+                },
+                {
+                  "name": "OpenAI",
+                  "category": "tools"
+                },
+                {
+                  "name": "PostgreSQL",
+                  "category": "tools"
+                },
+                {
+                  "name": "Python",
+                  "category": "tools"
+                },
+                {
+                  "name": "GitHub Actions",
+                  "category": "tools"
+                },
+                {
+                  "name": "AKS",
+                  "category": "tools"
+                },
+                {
+                  "name": "Kubernetes",
+                  "category": "tools"
+                },
+                {
+                  "name": "CI/CD",
+                  "category": "tools"
+                }
+              ],
+              "competencies": [
+                "LLM-as-judge evaluation",
+                "human-in-the-loop",
+                "schema design"
+              ],
+              "domain": "Legal and contracts",
+              "scope": "Production agent",
+              "metric": null,
+              "impact": "Built to join a fleet of A2A agents spanning the contract lifecycle."
+            },
+            {
+              "num": 3,
               "icon": "image",
               "action": "Shipped a **multimodal image-generation agent** used by **100K+ people**, taken **dev to production in 11 days**: it generates and edits images through chat, capturing user intent and style (FastAPI, React, Azure OpenAI on **Azure Container Apps**, Grafana monitoring).",
               "skills": [
@@ -177,7 +229,7 @@ window.HOPE_DATA = {
               "project_ref": "ai-image-gen"
             },
             {
-              "num": 3,
+              "num": 4,
               "icon": "smart_toy",
               "action": "Built a **remote robot command center** for live monitoring and guidance: an **agentic chat** drives a Unitree GO2 through factory inspection tasks, streaming photos back so an operator can direct it to specific areas in real time (ROS2, Azure IoT Hub, Azure OpenAI, Docker).",
               "skills": [
@@ -222,7 +274,7 @@ window.HOPE_DATA = {
               "project_ref": "autonomous-inspection"
             },
             {
-              "num": 4,
+              "num": 5,
               "icon": "schedule",
               "action": "Built an **AI agent for a JIRA-style project-management tool**: an **agent harness** on Autogen, with **MCP servers** hosting the agent's tools and prompts, plus human-in-the-loop checkpoints.",
               "skills": [
@@ -262,9 +314,9 @@ window.HOPE_DATA = {
               "project_ref": "multi-agent-engine"
             },
             {
-              "num": 5,
+              "num": 6,
               "icon": "hub",
-              "action": "Co-built the firm's **Enterprise Agent Starter Kit** with **no-code, low-code, and pro-code** paths: reusable agent templates across LangGraph, Autogen, and Semantic Kernel, plus **MCP servers**, across 15+ repos in Python, TypeScript, and C#.",
+              "action": "Co-built the firm's **Enterprise Agent Starter Kit**, a scaffold to quickly spin up agentic systems for any use case: **15+ repos** of frameworks (LangGraph, Autogen, Semantic Kernel, etc.) and protocol servers (**MCP, A2A, A2UI**), in Python, TypeScript and C#.",
               "skills": [
                 {
                   "name": "LangGraph",
@@ -310,7 +362,7 @@ window.HOPE_DATA = {
               "project_ref": "enterprise-agent-platform"
             },
             {
-              "num": 6,
+              "num": 7,
               "icon": "monitoring",
               "action": "Deployed **Langfuse** observability in its **first release week**, a **self-directed** adoption: wired full-stack tracing into a live production agent to surface **latency, cost and failure modes**, then presented it to stakeholders.",
               "skills": [
@@ -337,7 +389,7 @@ window.HOPE_DATA = {
               "impact": "Owned it end to end; opened the firm's first partnership talks with Langfuse's founders."
             },
             {
-              "num": 7,
+              "num": 8,
               "icon": "rocket_launch",
               "action": "**Solo-engineered 10+ full-stack AI agent prototypes** - multi-agent systems, document intelligence, Physical AI - of which **5 were funded to production**.",
               "skills": [
@@ -382,7 +434,7 @@ window.HOPE_DATA = {
           "kind": "lead",
           "contributions": [
             {
-              "num": 8,
+              "num": 9,
               "icon": "emoji_events",
               "action": "Authored the guide, docs, and rules for an **MCP-server-building competition** in the protocol's first weeks - for a 250-person AI engineering team.",
               "skills": [
@@ -409,7 +461,7 @@ window.HOPE_DATA = {
               "impact": "The whole team shipped working MCP servers within weeks of the spec landing."
             },
             {
-              "num": 9,
+              "num": 10,
               "icon": "groups",
               "action": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at EY's **Global Leadership Summit**, handing them the tools instead of demoing to them.",
               "skills": [
@@ -432,7 +484,7 @@ window.HOPE_DATA = {
               "impact": "Raised the team's profile with global leadership."
             },
             {
-              "num": 10,
+              "num": 11,
               "icon": "gavel",
               "action": "Judged a team-wide **full-stack AI prototypes competition** for junior engineers, scored on **business value first**, then architecture, then execution.",
               "skills": [
@@ -459,7 +511,7 @@ window.HOPE_DATA = {
               "impact": "Pushed early-career builders to think like founders."
             },
             {
-              "num": 11,
+              "num": 12,
               "icon": "groups",
               "action": "**Trusted advisor for GenAI architecture** across the organization - led technical design decisions and managed developers and analysts.",
               "skills": [
@@ -2311,7 +2363,7 @@ window.HOPE_DATA = {
               "text": "Generated **$2M+ in pipeline** with a **remote robot command center** guiding a Unitree GO2 through factory inspections remotely (ROS2, Azure IoT, MCP)."
             },
             {
-              "text": "Co-built the **Enterprise Agent Starter Kit** across **15+ repositories**: no-code to pro-code agent templates and MCP servers (Python, TypeScript, C#)."
+              "text": "Co-built the **Enterprise Agent Starter Kit**, a scaffold to quickly spin up agentic systems for any use case: **15+ repos** of frameworks (LangGraph, Autogen, etc.) and protocol servers (**MCP, A2A, A2UI**)."
             }
           ]
         },
@@ -2382,13 +2434,16 @@ window.HOPE_DATA = {
               "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at the **Global Leadership Summit**, handing them the tools instead of demoing to them."
             },
             {
+              "text": "Built a **legal contract review agent** with a **Tinder-style review UI**, owning the **Postgres data model** for agent state, attributes and the review audit trail (LangGraph, **A2A**, AKS, CI/CD)."
+            },
+            {
               "text": "Built the **agent orchestrator, context layer and Databricks ELT pipeline** for a **production** financial prediction platform, optimising transformations in **PySpark** and mentoring a junior engineer."
             },
             {
               "text": "Cut approval cycles **from 3 weeks to 2 days** with a **production AI agent for a JIRA-style PM tool**: an Autogen harness, **MCP servers hosting its tools and prompts**, human checkpoints at each decision."
             },
             {
-              "text": "Co-built the **production-grade Enterprise Agent Starter Kit** so teams build their own agents instead of commissioning ours: **15+ repositories** of templates and protocol servers (**MCP, A2A, A2UI**)."
+              "text": "Co-built the **Enterprise Agent Starter Kit**, a scaffold to quickly spin up agentic systems for any use case: **15+ repos** of frameworks (LangGraph, Autogen, etc.) and protocol servers (**MCP, A2A, A2UI**)."
             },
             {
               "text": "Took a **multimodal image-generation agent** from **dev to production in 11 days**, now used by **100K+ people** (FastAPI, React, Azure OpenAI, Grafana)."
@@ -2516,7 +2571,7 @@ window.HOPE_DATA = {
               "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at the **Global Leadership Summit**, handing them the tools instead of demoing to them."
             },
             {
-              "text": "Co-built the **Enterprise Agent Starter Kit** so teams build their own agents instead of commissioning ours: **15+ repositories** of templates and protocol servers (**MCP, A2A, A2UI**)."
+              "text": "Co-built the **Enterprise Agent Starter Kit**, a scaffold to quickly spin up agentic systems for any use case: **15+ repos** of frameworks (LangGraph, Autogen, etc.) and protocol servers (**MCP, A2A, A2UI**)."
             },
             {
               "text": "Generated **$2M+ in client pipeline** with a **remote robot command center**: agentic chat guides a Unitree GO2 through factory inspections (ROS2, Azure IoT Hub, MCP)."
@@ -2639,22 +2694,25 @@ window.HOPE_DATA = {
               "text": "Built the Python backend and **ELT pipeline on Databricks** for a **production** agent-driven financial prediction platform, optimising transformations in **PySpark** and mentoring a junior engineer."
             },
             {
+              "text": "Built a **legal contract review agent** with a **Tinder-style review UI**, owning the **Postgres data model** for agent state, attributes and the review audit trail (LangGraph, **A2A**, AKS, CI/CD)."
+            },
+            {
               "text": "Deployed **Langfuse** observability in its first release week, self-directed, wiring full-stack tracing into a **live agent** to surface latency, cost and failure modes."
             },
             {
               "text": "Cut approval cycles **from 3 weeks to 2 days** with an **AI agent in production for a JIRA-style project-management tool**: an agent harness on Autogen with **MCP servers hosting its tools and prompts**."
             },
             {
-              "text": "Co-built the **production-grade Enterprise Agent Starter Kit** across **15+ repositories**: agent templates and protocol servers (**MCP, A2A, A2UI**) in Python, TypeScript and C#."
-            },
-            {
-              "text": "Shipped a **multimodal image-generation agent** used by **100K+ people**, **dev to production in 11 days** (FastAPI, React, Azure OpenAI, Grafana)."
+              "text": "Co-built the **Enterprise Agent Starter Kit**, a scaffold to quickly spin up agentic systems for any use case: **15+ repos** of frameworks (LangGraph, Autogen, etc.) and protocol servers (**MCP, A2A, A2UI**)."
             },
             {
               "text": "**Solo-engineered 10+ full-stack AI agent prototypes**, **5 funded to production**, including a **remote robot command center** (Unitree GO2, ROS2, Azure IoT Hub) that generated **$2M+ in pipeline**."
             },
             {
               "text": "Ran the **agent-builder booth** at EY's global leadership summit, handing partners the tools instead of demoing to them."
+            },
+            {
+              "text": "Shipped a **multimodal image-generation agent** used by **100K+ people**, **dev to production in 11 days** (FastAPI, React, Azure OpenAI, Grafana)."
             }
           ]
         },
