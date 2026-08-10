@@ -138,7 +138,7 @@ window.HOPE_DATA = {
             {
               "num": 2,
               "icon": "gavel",
-              "action": "Built a **legal contract review agent** for **data-licensing and intercompany contracts**: it extracts attribute sets that vary by contract type, a **judge agent** scores each extraction **substantiated or not substantiated by the evidence provided**, and only high-confidence results reach a **Tinder-style human review queue**. Owned the **Postgres data model** for agent state, attributes and the review audit trail; deployed on **AKS** via CI/CD.",
+              "action": "Built a **legal contract review agent** for **data-licensing and intercompany contracts**: **hybrid RAG on pgvector** retrieves the relevant clauses, it extracts attribute sets that vary by contract type, a **judge agent** scores each extraction **substantiated or not substantiated by the evidence provided**, and only high-confidence results reach a **Tinder-style human review queue**. Owned the **Postgres data model** for agent state, attributes and the review audit trail; deployed on **AKS** via CI/CD.",
               "skills": [
                 {
                   "name": "LangGraph",
@@ -174,6 +174,14 @@ window.HOPE_DATA = {
                 },
                 {
                   "name": "CI/CD",
+                  "category": "tools"
+                },
+                {
+                  "name": "pgvector",
+                  "category": "tools"
+                },
+                {
+                  "name": "Hybrid RAG",
                   "category": "tools"
                 }
               ],
@@ -2418,7 +2426,7 @@ window.HOPE_DATA = {
         "Frameworks & Protocols: LangChain, LangGraph, Autogen, Semantic Kernel, FastAPI, NestJS; MCP, A2A, A2UI",
         "Full-Stack: Node.js, Express, React, Next.js, REST & API Design, WebSockets, Prisma, Async Python",
         "Data Engineering: SQL, ETL/ELT Pipelines, Schema Design, Data Modeling, Data Quality & Validation, QC, A/B Testing",
-        "Big Data & Stores: PySpark, Dask, Polars, Pandas, Databricks; PostgreSQL, Oracle SQL, BigQuery, CosmosDB, Neo4j, Weaviate, Qdrant, Azure AI Search",
+        "Big Data & Stores: PySpark, Dask, Polars, Pandas, Databricks; PostgreSQL, pgvector, Oracle SQL, BigQuery, CosmosDB, Neo4j, Weaviate, Qdrant, Azure AI Search",
         "Evaluation & Observability: LLM Evals, LLM-as-Judge, Replay Harnesses, Langfuse, LangSmith, OpenTelemetry, Grafana, Cost Metrics",
         "Modeling & Analytics: MINLP Optimization, Marketing Mix Modeling, Time-Series (ARIMA), Clustering, Tableau, Power BI, D3.js, Qlik, Alteryx, DAX",
         "AI-Assisted Development: Claude Code, Codex, Claude Agent SDK, Prompt & Context Engineering",
@@ -2434,7 +2442,7 @@ window.HOPE_DATA = {
               "text": "Selected as the **only forward deployed engineer** to co-build agents in real time with partners and senior executives at the **Global Leadership Summit**, handing them the tools instead of demoing to them."
             },
             {
-              "text": "Built a **legal contract review agent** with a **Tinder-style review UI**, owning the **Postgres data model** for agent state, attributes and the review audit trail (LangGraph, **A2A**, AKS, CI/CD)."
+              "text": "Built a **legal contract review agent** with **hybrid RAG on pgvector** and a **Tinder-style review UI**, owning the **Postgres data model** for state, attributes and audit trail (LangGraph, **A2A**, AKS, CI/CD)."
             },
             {
               "text": "Built the **agent orchestrator, context layer and Databricks ELT pipeline** for a **production** financial prediction platform, optimising transformations in **PySpark** and mentoring a junior engineer."
@@ -2677,7 +2685,7 @@ window.HOPE_DATA = {
       "summary": "Generative AI unleashed a productivity beast in me. 6 years across consulting, finance, pharma and my own Microsoft-backed startup taught me that the model is rarely the problem in today's world. The data reaching it usually is. I have built 700M-row pipelines on an NSF study, designed the graph schema for my own product where 86% of active customers landed jobs in a hard job market, and I run hybrid RAG at 92%+ retrieval accuracy in production today. I like the half of this work nobody puts in the trending AI demos. Off the clock, I'm the loving uncle with the guitar.",
       "skills_groups": [
         "Data Engineering: SQL, Python, ETL/ELT Pipelines, Schema Design, Data Modeling, Data Quality & Validation, QC, A/B Testing",
-        "Data Stores: PostgreSQL, Oracle SQL, Databricks, BigQuery, Azure SQL, CosmosDB, Neo4j, Weaviate, Qdrant, Azure AI Search",
+        "Data Stores: PostgreSQL, pgvector, Oracle SQL, Databricks, BigQuery, CosmosDB, Neo4j, Weaviate, Qdrant, Azure AI Search",
         "AI Retrieval: Hybrid RAG, Contextual Retrieval & Re-ranking, Embeddings, Chunking, Context Engineering, MCP",
         "Big Data: PySpark, Dask, Polars, Pandas",
         "Analytics & Visualization: Tableau, Power BI, D3.js, Qlik, Alteryx, DAX, Statistical Analysis",
@@ -2694,7 +2702,7 @@ window.HOPE_DATA = {
               "text": "Built the Python backend and **ELT pipeline on Databricks** for a **production** agent-driven financial prediction platform, optimising transformations in **PySpark** and mentoring a junior engineer."
             },
             {
-              "text": "Built a **legal contract review agent** with a **Tinder-style review UI**, owning the **Postgres data model** for agent state, attributes and the review audit trail (LangGraph, **A2A**, AKS, CI/CD)."
+              "text": "Built a **legal contract review agent** with **hybrid RAG on pgvector** and a **Tinder-style review UI**, owning the **Postgres data model** for state, attributes and audit trail (LangGraph, **A2A**, AKS, CI/CD)."
             },
             {
               "text": "Deployed **Langfuse** observability in its first release week, self-directed, wiring full-stack tracing into a **live agent** to surface latency, cost and failure modes."
